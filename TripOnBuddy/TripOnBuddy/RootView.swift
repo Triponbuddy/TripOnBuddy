@@ -8,18 +8,31 @@
 import SwiftUI
 
 struct RootView: View {
+    @State var selectedTab: Tabs
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Origin")
+            
+            switch selectedTab {
+            case .mySpace:
+                    MySpaceView()
+            case .explore:
+                ExploreView()
+            case .post:
+                PostView()
+            case .trips:
+                TripsView()
+            case .profile:
+                ProfileView()
+            }
+            Spacer()
+            
+            TabBarView(selectedTab: $selectedTab)
             
         }
-        .padding()
+        .padding(.horizontal, 10)
     }
 }
 
 #Preview {
-    RootView()
+    RootView(selectedTab: .mySpace)
 }

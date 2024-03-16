@@ -11,7 +11,7 @@ import SwiftUI
 struct TripOnBuddyApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(selectedTab: .mySpace)
         }
     }
 }
