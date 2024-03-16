@@ -15,41 +15,62 @@ struct SignUpView: View {
     @FocusState var isFocus: Bool
     let textLimit = 10
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            Text("Mobile Number")
-            TextField("", text: $mobileNumber) { (status) in
-                // change the status of the text field if this is selected or not
-                if status {
-                    withAnimation(.easeIn) {
-                        isTapped = true
+        ZStack {
+        NavigationStack {
+            
+                VStack(alignment: .center) {
+                    Image("TOB")
+                        .resizable()
+                        .frame(width: 220, height: 250)
+//                    HStack {
+//                        Text("Mobile Number")
+//                            .font(.title)
+//                            .bold()
+//                        Spacer()
+//                    }
+                    CustomTextFieldView(inputText: $mobileNumber, infoText: "Enter Mobile Numnber")
+                    // This is keyboard type
+                    .keyboardType(.numberPad)
+                    // this is to limit the number of characters in the text field
+                    .onReceive(Just(mobileNumber)) { _ in
+                        limitText(textLimit)
+                    }
+                    .keyboardType(.numberPad)
+                    // The focus state of the keyboard
+                    .focused($isFocus)
+                    if !mobileNumber.isEmpty && checkPhoneNumber() {
+                        NavigationLink("Get OTP", destination:
+                                        OTPScreenView()
+                        )
+                            .padding()
+                            .foregroundStyle(.white)
+                            .background(Capsule()
+                                .frame(width: 200)
+                            )
+                            .padding(20)
+                    }
+                    else {
+                        Text("Get OTP")
+                            .padding()
+                            .foregroundStyle(.white)
+                            .background(Capsule()
+                                .frame(width: 200)
+                                .foregroundStyle(.gray)
+                            )
+                            .padding(40)
                     }
                 }
-            } onCommit: {
+            }
+            .onTapGesture {
+                // this dismisses the keyboard and deactiavtes the TextField
                 withAnimation(.easeOut) {
+                    isFocus = false
                     isTapped = false
                 }
             }
-            .padding(.horizontal)
-            .background(
-                // this is the small border line below the text field
-                RoundedRectangle(cornerRadius: 12)
-                // change the colour and opacity of the bar below if tapped or not
-                    //.foregroundStyle(isTapped ? Color.darkStart : Color.gray)
-                    .opacity(isTapped ? 1.0 : 0.5)
-                    .frame(height: 2)
-                    .padding(.top, 40))
-            // This is keyboard type
-            .keyboardType(.numberPad)
-            // this is to limit the number of characters in the text field
-            .onReceive(Just(mobileNumber)) { _ in
-                limitText(textLimit)
-            }
-            .keyboardType(.numberPad)
-            // The focus state of the keyboard
-            .focused($isFocus)
         }
-            
+        .padding()
+        
     }
     // check the phonenumber for 10 digits or not
     func checkPhoneNumber() -> Bool {
