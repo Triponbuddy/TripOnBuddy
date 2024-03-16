@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		656B97942BA6238C00A1F34C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97932BA6238C00A1F34C /* SignUpView.swift */; };
+		656B97962BA6239600A1F34C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97952BA6239600A1F34C /* LoginView.swift */; };
+		656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97972BA623A300A1F34C /* MySpaceView.swift */; };
 		65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F962BA6199E00381628 /* TripOnBuddyApp.swift */; };
-		65953F992BA6199E00381628 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F982BA6199E00381628 /* ContentView.swift */; };
+		65953F992BA6199E00381628 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F982BA6199E00381628 /* RootView.swift */; };
 		65953F9B2BA619A000381628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65953F9A2BA619A000381628 /* Assets.xcassets */; };
 		65953F9E2BA619A000381628 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65953F9D2BA619A000381628 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		656B97932BA6238C00A1F34C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		656B97952BA6239600A1F34C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		656B97972BA623A300A1F34C /* MySpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceView.swift; sourceTree = "<group>"; };
 		65953F932BA6199E00381628 /* TripOnBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripOnBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65953F962BA6199E00381628 /* TripOnBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripOnBuddyApp.swift; sourceTree = "<group>"; };
-		65953F982BA6199E00381628 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		65953F982BA6199E00381628 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		65953F9A2BA619A000381628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65953F9D2BA619A000381628 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +38,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		656B97922BA6234A00A1F34C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				656B97932BA6238C00A1F34C /* SignUpView.swift */,
+				656B97952BA6239600A1F34C /* LoginView.swift */,
+				656B97972BA623A300A1F34C /* MySpaceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		656B979A2BA624A000A1F34C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		656B979C2BA624DA00A1F34C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		65953F8A2BA6199E00381628 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				65953F962BA6199E00381628 /* TripOnBuddyApp.swift */,
-				65953F982BA6199E00381628 /* ContentView.swift */,
+				65953F982BA6199E00381628 /* RootView.swift */,
+				656B979A2BA624A000A1F34C /* Models */,
+				656B97922BA6234A00A1F34C /* Views */,
+				656B979C2BA624DA00A1F34C /* ViewModels */,
 				65953F9A2BA619A000381628 /* Assets.xcassets */,
 				65953F9C2BA619A000381628 /* Preview Content */,
 			);
@@ -137,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65953F992BA6199E00381628 /* ContentView.swift in Sources */,
+				65953F992BA6199E00381628 /* RootView.swift in Sources */,
+				656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */,
+				656B97942BA6238C00A1F34C /* SignUpView.swift in Sources */,
+				656B97962BA6239600A1F34C /* LoginView.swift in Sources */,
 				65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
