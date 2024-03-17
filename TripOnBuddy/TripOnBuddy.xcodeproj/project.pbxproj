@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */; };
 		656B97942BA6238C00A1F34C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97932BA6238C00A1F34C /* SignUpView.swift */; };
 		656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97972BA623A300A1F34C /* MySpaceView.swift */; };
 		65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F962BA6199E00381628 /* TripOnBuddyApp.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDetails.swift; sourceTree = "<group>"; };
 		656B97932BA6238C00A1F34C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		656B97972BA623A300A1F34C /* MySpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceView.swift; sourceTree = "<group>"; };
 		65953F932BA6199E00381628 /* TripOnBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripOnBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65275C612BA778FA00EBCE34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		656B97922BA6234A00A1F34C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,20 +76,6 @@
 				65FC27CD2BA7700F00BD123F /* ProfileView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		656B979A2BA624A000A1F34C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		656B979C2BA624DA00A1F34C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		65953F8A2BA6199E00381628 = {
@@ -103,9 +99,8 @@
 			children = (
 				65953F962BA6199E00381628 /* TripOnBuddyApp.swift */,
 				65953F982BA6199E00381628 /* RootView.swift */,
-				656B979A2BA624A000A1F34C /* Models */,
+				65275C612BA778FA00EBCE34 /* Models */,
 				656B97922BA6234A00A1F34C /* Views */,
-				656B979C2BA624DA00A1F34C /* ViewModels */,
 				65953F9A2BA619A000381628 /* Assets.xcassets */,
 				65FC27C02BA76A7700BD123F /* CustomViews */,
 				65953F9C2BA619A000381628 /* Preview Content */,
@@ -214,6 +209,7 @@
 				65FC27C62BA76BB800BD123F /* CustomTabButton.swift in Sources */,
 				65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */,
 				65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */,
+				65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */,
 				65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
