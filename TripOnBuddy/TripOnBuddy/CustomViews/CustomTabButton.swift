@@ -13,6 +13,9 @@ struct SimpleButtonStyle: ButtonStyle {
             .opacity(configuration.isPressed ? 0.8 : 1)
     }
 }
+extension Color {
+    static let nileBlue = Color(red: 36/255, green: 63/255, blue: 77/255)
+}
 
 struct CustomTabButton: View {
     var imageName: String
@@ -28,13 +31,14 @@ struct CustomTabButton: View {
                     
                     Image(systemName: isActive ? imageNameFilled : imageName)
                         .resizable()
-                        .frame(width: isActive ? 27 : 25, height: isActive ? 27 : 25)
-                        .foregroundColor(isActive ? Color(red: 0.984, green: 0.442, blue: 0.152): .gray)
+                        .symbolEffect(.scale.up, options: .nonRepeating, isActive: isActive)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.nileBlue)
                         .animation(.bouncy, value: isActive)
-                    
+                        
                 }
                 .frame(width: geo.size.width, height: geo.size.height)
-                .foregroundStyle(isActive ? Color(red: 0.984, green: 0.442, blue: 0.152) : Color.gray)
+//                .foregroundStyle(isActive ? Color(red: 36/255, green: 63/255, blue: 77/255) : Color.gray)
             }
         }
         
