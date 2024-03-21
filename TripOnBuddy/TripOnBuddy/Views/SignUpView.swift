@@ -22,13 +22,8 @@ struct SignUpView: View {
                     Image("TOB")
                         .resizable()
                         .frame(width: 220, height: 250)
-//                    HStack {
-//                        Text("Mobile Number")
-//                            .font(.title)
-//                            .bold()
-//                        Spacer()
-//                    }
-                    CustomTextFieldView(inputText: $mobileNumber, infoText: "Enter Mobile Numnber")
+//
+                    CustomTextFieldView(inputText: $mobileNumber, infoText: "Enter Mobile Numnber", isTapped: $isTapped)
                     // This is keyboard type
                     .keyboardType(.numberPad)
                     // this is to limit the number of characters in the text field

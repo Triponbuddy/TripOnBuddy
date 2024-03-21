@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomTextFieldView: View {
     @Binding var inputText: String
     @State var infoText: String = ""
-    @State var isTapped: Bool  = false
+    @Binding var isTapped: Bool
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         
@@ -43,7 +43,7 @@ struct CustomTextFieldView: View {
                 .padding(.horizontal)
                 
                 RoundedRectangle(cornerRadius: 80)
-                    //.fill(isTapped && colorScheme == .light ? Color.darkEnd : Color.grayishGreen)
+                    .fill(isTapped ? Color.nileBlue : Color.gray)
                     .opacity(isTapped ? 1 : 0.5)
                     .frame(height: 2)
                     .padding(.top, 10)
@@ -51,18 +51,17 @@ struct CustomTextFieldView: View {
             }
             .padding(.top, 12)
             .background(RoundedRectangle(cornerRadius: isTapped ? 3 : 10)
-                .foregroundStyle(.black)
+                .foregroundStyle(Color.nileBlue)
                 .opacity(0.2)
             )
 //
         }
-        
-      //  .foregroundStyle(colorScheme == .dark ? Color.grayishGreen : Color.darkEnd)
+        .foregroundStyle(Color.nileBlue)
     }
     
 }
 
 #Preview {
-    CustomTextFieldView(inputText: .constant(""))
+    CustomTextFieldView(inputText: .constant(""), isTapped: .constant(false))
 }
 
