@@ -39,10 +39,12 @@ struct TabBarView: View {
             Button(action: {
                 selectedTab = .trips
             }, label: {
-                CustomTabButton( imageName: "binoculars", imageNameFilled: "binoculars.fill", isActive: selectedTab == .trips)
+                CustomTabButton( imageName: "backpack", imageNameFilled: "backpack.fill", isActive: selectedTab == .trips)
             })
             Button(action: {
+                
                 selectedTab = .profile
+                
             }, label: {
                 CustomTabButton(imageName: "person.crop.circle", imageNameFilled: "person.crop.circle.fill", isActive: selectedTab == .profile)
             })
