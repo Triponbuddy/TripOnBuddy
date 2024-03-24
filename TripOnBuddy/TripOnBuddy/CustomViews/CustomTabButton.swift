@@ -22,6 +22,7 @@ struct CustomTabButton: View {
     var imageNameFilled: String
     var isActive: Bool
     @Namespace private var animationNameSpace
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         ZStack{
@@ -33,12 +34,11 @@ struct CustomTabButton: View {
                         .resizable()
                         .symbolEffect(.scale.up, options: .nonRepeating, isActive: isActive)
                         .frame(width: 25, height: 25)
-                        .foregroundColor(.nileBlue)
+                        .foregroundColor(colorScheme == .light ? Color.nileBlue : .white)
                         .animation(.bouncy, value: isActive)
-                        
+                    
                 }
                 .frame(width: geo.size.width, height: geo.size.height)
-//                .foregroundStyle(isActive ? Color(red: 36/255, green: 63/255, blue: 77/255) : Color.gray)
             }
         }
         
