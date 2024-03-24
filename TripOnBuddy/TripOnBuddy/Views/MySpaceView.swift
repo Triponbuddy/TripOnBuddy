@@ -12,6 +12,7 @@ struct MySpaceView: View {
     @State var yourStories: [StoriesTabModel] = []
     var dataServices = DataServices()
     @State var forYouData: [ForYouViewModel] = []
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationStack {
             VStack {
@@ -92,9 +93,7 @@ struct MySpaceView: View {
                 .scrollIndicators(.hidden)
             }
             .padding([.horizontal, .top], 10)
-            //.background(Color.offWhite)
             .monospaced()
-            .foregroundStyle(Color.nileBlue)
             .onAppear {
                 yourStories = dataServices.getData()
                 forYouData = dataServices.getForYouData()

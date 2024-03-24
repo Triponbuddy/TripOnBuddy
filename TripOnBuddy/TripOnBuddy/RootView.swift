@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     @State var selectedTab: Tabs
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         VStack {
             
@@ -27,9 +28,11 @@ struct RootView: View {
             Spacer()
             
             TabBarView(selectedTab: $selectedTab)
+                
             
         }
         .padding(.horizontal, 10)
+        .foregroundStyle(colorScheme == .light ? Color.nileBlue : .white)
     }
 }
 

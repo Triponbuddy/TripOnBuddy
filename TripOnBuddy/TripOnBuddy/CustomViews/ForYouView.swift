@@ -26,7 +26,7 @@ struct ForYouView: View {
                     }) {
                         if isFollowed {
                             Menu(content: {
-                                Button("Following",action: {
+                                Button("Following", action: {
                                     isFollowed = false
                                 })
                                 NavigationLink(destination: Text("User Profile View"), label: {
