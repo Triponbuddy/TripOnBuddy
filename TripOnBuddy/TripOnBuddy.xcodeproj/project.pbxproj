@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */; };
+		656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E602BB09D0B00985076 /* StoriesTabModel.swift */; };
+		656A8E642BB09D2500985076 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E632BB09D2500985076 /* DataServices.swift */; };
+		656A8E662BB09E5C00985076 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E652BB09E5C00985076 /* StoryView.swift */; };
+		656A8E682BB0A8BD00985076 /* CustomStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E672BB0A8BD00985076 /* CustomStoryView.swift */; };
+		656A8E6A2BB0AC1B00985076 /* ForYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E692BB0AC1B00985076 /* ForYouViewModel.swift */; };
+		656A8E6C2BB0ACF800985076 /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E6B2BB0ACF800985076 /* ForYouView.swift */; };
 		656B97942BA6238C00A1F34C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97932BA6238C00A1F34C /* SignUpView.swift */; };
 		656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97972BA623A300A1F34C /* MySpaceView.swift */; };
 		65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F962BA6199E00381628 /* TripOnBuddyApp.swift */; };
@@ -27,6 +33,12 @@
 
 /* Begin PBXFileReference section */
 		65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDetails.swift; sourceTree = "<group>"; };
+		656A8E602BB09D0B00985076 /* StoriesTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTabModel.swift; sourceTree = "<group>"; };
+		656A8E632BB09D2500985076 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		656A8E652BB09E5C00985076 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		656A8E672BB0A8BD00985076 /* CustomStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStoryView.swift; sourceTree = "<group>"; };
+		656A8E692BB0AC1B00985076 /* ForYouViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewModel.swift; sourceTree = "<group>"; };
+		656A8E6B2BB0ACF800985076 /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		656B97932BA6238C00A1F34C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		656B97972BA623A300A1F34C /* MySpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceView.swift; sourceTree = "<group>"; };
 		65953F932BA6199E00381628 /* TripOnBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripOnBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,8 +72,18 @@
 			isa = PBXGroup;
 			children = (
 				65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */,
+				656A8E692BB0AC1B00985076 /* ForYouViewModel.swift */,
+				656A8E602BB09D0B00985076 /* StoriesTabModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		656A8E622BB09D1300985076 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				656A8E632BB09D2500985076 /* DataServices.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		656B97922BA6234A00A1F34C /* Views */ = {
@@ -70,6 +92,7 @@
 				656B97932BA6238C00A1F34C /* SignUpView.swift */,
 				65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */,
 				656B97972BA623A300A1F34C /* MySpaceView.swift */,
+				656A8E652BB09E5C00985076 /* StoryView.swift */,
 				65FC27C72BA76FEA00BD123F /* ExploreView.swift */,
 				65FC27C92BA76FF500BD123F /* PostView.swift */,
 				65FC27CB2BA7700200BD123F /* TripsView.swift */,
@@ -99,9 +122,10 @@
 			children = (
 				65953F962BA6199E00381628 /* TripOnBuddyApp.swift */,
 				65953F982BA6199E00381628 /* RootView.swift */,
-				65275C612BA778FA00EBCE34 /* Models */,
 				656B97922BA6234A00A1F34C /* Views */,
 				65953F9A2BA619A000381628 /* Assets.xcassets */,
+				656A8E622BB09D1300985076 /* ViewModel */,
+				65275C612BA778FA00EBCE34 /* Models */,
 				65FC27C02BA76A7700BD123F /* CustomViews */,
 				65953F9C2BA619A000381628 /* Preview Content */,
 			);
@@ -122,6 +146,8 @@
 				65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */,
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
 				65FC27C52BA76BB800BD123F /* CustomTabButton.swift */,
+				656A8E672BB0A8BD00985076 /* CustomStoryView.swift */,
+				656A8E6B2BB0ACF800985076 /* ForYouView.swift */,
 				65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */,
 			);
 			path = CustomViews;
@@ -200,6 +226,8 @@
 				65953F992BA6199E00381628 /* RootView.swift in Sources */,
 				65FC27CE2BA7700F00BD123F /* ProfileView.swift in Sources */,
 				656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */,
+				656A8E682BB0A8BD00985076 /* CustomStoryView.swift in Sources */,
+				656A8E662BB09E5C00985076 /* StoryView.swift in Sources */,
 				65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */,
 				65FC27CC2BA7700200BD123F /* TripsView.swift in Sources */,
 				656B97942BA6238C00A1F34C /* SignUpView.swift in Sources */,
@@ -208,9 +236,13 @@
 				65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */,
 				65FC27C62BA76BB800BD123F /* CustomTabButton.swift in Sources */,
 				65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */,
+				656A8E642BB09D2500985076 /* DataServices.swift in Sources */,
+				656A8E6C2BB0ACF800985076 /* ForYouView.swift in Sources */,
 				65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */,
+				656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */,
 				65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */,
 				65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */,
+				656A8E6A2BB0AC1B00985076 /* ForYouViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

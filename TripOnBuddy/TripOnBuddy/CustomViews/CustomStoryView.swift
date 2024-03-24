@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct CustomStoryView: View {
+    var stories: StoriesTabModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack {
+                HStack {
+                    Text(stories.name)
+                        .font(.title3)
+                        .bold()
+                    Spacer()
+                }
+                .padding([.horizontal, .top ], 10)
+                Spacer()
+            }
+            .background(
+                Image(stories.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+            )
+         
+            
+        }
+        .foregroundStyle(.white)
+        
+        
     }
 }
 
 #Preview {
-    CustomStoryView()
+    CustomStoryView(stories: StoriesTabModel(name: "Sunil", image: "demo", video: ""))
 }
