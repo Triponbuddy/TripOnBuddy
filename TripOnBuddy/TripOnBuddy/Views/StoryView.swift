@@ -18,10 +18,11 @@ struct StoryView: View {
         VStack {
             
             ZStack {
+                
                 Circle()
                     .stroke(lineWidth: 2)
                     .frame(width: 90)
-                    .foregroundStyle(isViewed ? .gray : .red)
+                    .foregroundStyle(isDown ? .gray : .red)
                 Image(stories.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -29,6 +30,7 @@ struct StoryView: View {
                     .frame(width: 80, height: 80)
                     .onTapGesture {
                         isViewed = true
+                        isDown = true
                     }
             }
             

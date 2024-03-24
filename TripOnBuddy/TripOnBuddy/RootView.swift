@@ -14,7 +14,7 @@ struct RootView: View {
             
             switch selectedTab {
             case .mySpace:
-                    MySpaceView()
+                MySpaceView()
             case .explore:
                 ExploreView()
             case .post:

@@ -11,92 +11,94 @@ struct MySpaceView: View {
     
     @State var yourStories: [StoriesTabModel] = []
     var dataServices = DataServices()
-    @State var mySpaceData: [ForYouViewModel] = []
+    @State var forYouData: [ForYouViewModel] = []
     var body: some View {
-        VStack {
-            HStack {
-                Text("TripOnBuddy")
-                    .bold()
-                    .font(.title)
-                
-                Spacer()
-                Image(systemName: "bell")
-                    .imageScale(.large)
-                    .padding(.trailing, 5)
-                Image(systemName: "message")
-                    .imageScale(.large)
-                
-            }
-            
-            
-            ScrollView {
-                //
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: [GridItem()], content: {
-                        ForEach(yourStories) { item in
-                            StoryView(stories: StoriesTabModel(name: item.name, image: item.image, video: item.video))
-                        }
-                    })
-                }
-                .scrollIndicators(.hidden)
+        NavigationStack {
+            VStack {
                 HStack {
-                    Text("Hotspots")
-                        .font(.title2)
+                    Text("TripOnBuddy")
                         .bold()
+                        .font(.title)
+                    
                     Spacer()
+                    Image(systemName: "bell")
+                        .imageScale(.large)
+                        .padding(.trailing, 5)
+                    Image(systemName: "message")
+                        .imageScale(.large)
+                    
                 }
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: [GridItem()],spacing: 10, content: {
-                        ForEach(0..<14) { item in
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 12)
-                                    .frame(width: 300, height: 200)
-                                    .foregroundStyle(.blue)
-                                VStack {
-                                    Spacer()
-                                    HStack {
+                
+                
+                ScrollView {
+                    //
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: [GridItem()], content: {
+                            ForEach(yourStories) { item in
+                                StoryView(stories: StoriesTabModel(name: item.name, image: item.image, video: item.video))
+                            }
+                        })
+                    }
+                    .scrollIndicators(.hidden)
+                    HStack {
+                        Text("Hotspots")
+                            .font(.title2)
+                            .bold()
+                        Spacer()
+                    }
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: [GridItem()],spacing: 10, content: {
+                            ForEach(0..<14) { item in
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .frame(width: 300, height: 200)
+                                        .foregroundStyle(.blue)
+                                    VStack {
                                         Spacer()
                                         HStack {
-                                            Image(systemName: "person.crop.circle.badge.plus.fill")
-                                                .padding(.bottom, 15)
-                                            Image(systemName: "person.crop.circle.badge.plus.fill")
-                                                .padding(.bottom, 15)
-                                                .opacity(0.7)
-                                            Image(systemName: "person.crop.circle.badge.plus.fill")
-                                                .padding(.bottom, 15)
-                                                .opacity(0.5)
-                                            
+                                            Spacer()
+                                            HStack {
+                                                Image(systemName: "person.crop.circle.badge.plus.fill")
+                                                    .padding(.bottom, 15)
+                                                Image(systemName: "person.crop.circle.badge.plus.fill")
+                                                    .padding(.bottom, 15)
+                                                    .opacity(0.7)
+                                                Image(systemName: "person.crop.circle.badge.plus.fill")
+                                                    .padding(.bottom, 15)
+                                                    .opacity(0.5)
+                                                
+                                            }
+                                            .padding(.trailing)
                                         }
-                                        .padding(.trailing)
                                     }
                                 }
+                                
                             }
-                            
+                        })
+                    }
+                    .scrollIndicators(.hidden)
+                    HStack {
+                        Text("For You")
+                            .font(.title2)
+                            .bold()
+                        Spacer()
+                    }
+                    LazyVGrid(columns: [GridItem()], spacing: 10, content: {
+                        ForEach(forYouData) { item in
+                            ForYouView(mySpaceViewModel: ForYouViewModel(name: item.name, image: item.image, userName: item.userName, caption: item.caption))
                         }
                     })
                 }
                 .scrollIndicators(.hidden)
-                HStack {
-                    Text("For You")
-                        .font(.title2)
-                        .bold()
-                    Spacer()
-                }
-                LazyVGrid(columns: [GridItem()], spacing: 10, content: {
-                    ForEach(mySpaceData) { item in
-                        ForYouView(mySpaceViewModel: ForYouViewModel(name: item.name, image: item.image, userName: item.userName, caption: item.caption))
-                    }
-                })
             }
-            .scrollIndicators(.hidden)
-        }
-        .padding([.horizontal, .top], 10)
-        //.background(Color.offWhite)
-        .monospaced()
-        .foregroundStyle(Color.nileBlue)
-        .onAppear {
-            yourStories = dataServices.getData()
-            mySpaceData = dataServices.getMySpaceData()
+            .padding([.horizontal, .top], 10)
+            //.background(Color.offWhite)
+            .monospaced()
+            .foregroundStyle(Color.nileBlue)
+            .onAppear {
+                yourStories = dataServices.getData()
+                forYouData = dataServices.getForYouData()
+            }
         }
     }
 }
