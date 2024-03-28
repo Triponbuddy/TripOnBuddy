@@ -12,6 +12,6 @@ struct ForYouViewModel: Identifiable {
     var name: String
     var image: String
     var userName: String
-    var caption: String
+    var caption: String?
     
 }

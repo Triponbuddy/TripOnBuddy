@@ -30,12 +30,16 @@ struct CustomTabButton: View {
                 
                 VStack(spacing: 4){
                     
-                    Image(systemName: isActive ? imageNameFilled : imageName)
-                        .resizable()
-                        .symbolEffect(.scale.up, options: .nonRepeating, isActive: isActive)
-                        .frame(width: 25, height: 25)
-                        .foregroundColor(colorScheme == .light ? Color.nileBlue : .white)
-                        .animation(.bouncy, value: isActive)
+                    if #available(iOS 17.0, *) {
+                        Image(systemName: isActive ? imageNameFilled : imageName)
+                            .resizable()
+                            .symbolEffect(.scale.up, options: .nonRepeating, isActive: isActive)
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(colorScheme == .light ? Color.nileBlue : .white)
+                            .animation(.bouncy, value: isActive)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     
                 }
                 .frame(width: geo.size.width, height: geo.size.height)

@@ -70,7 +70,7 @@ struct ForYouView: View {
                 HStack {
                     Text(mySpaceViewModel.userName.capitalized)
                         .bold()
-                    Text(mySpaceViewModel.caption)
+                    Text(mySpaceViewModel.caption!)
                     Spacer()
                 }
                 .padding(.bottom, 10)
