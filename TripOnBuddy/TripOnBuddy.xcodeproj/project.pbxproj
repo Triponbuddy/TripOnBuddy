@@ -20,6 +20,7 @@
 		65953F992BA6199E00381628 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F982BA6199E00381628 /* RootView.swift */; };
 		65953F9B2BA619A000381628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65953F9A2BA619A000381628 /* Assets.xcassets */; };
 		65953F9E2BA619A000381628 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65953F9D2BA619A000381628 /* Preview Assets.xcassets */; };
+		65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */; };
 		65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */; };
 		65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */; };
 		65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */; };
@@ -46,6 +47,7 @@
 		65953F982BA6199E00381628 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		65953F9A2BA619A000381628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65953F9D2BA619A000381628 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTripCardView.swift; sourceTree = "<group>"; };
 		65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPScreenView.swift; sourceTree = "<group>"; };
 		65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOtpView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */,
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
 				65FC27C52BA76BB800BD123F /* CustomTabButton.swift */,
+				65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */,
 				656A8E672BB0A8BD00985076 /* CustomStoryView.swift */,
 				656A8E6B2BB0ACF800985076 /* ForYouView.swift */,
 				65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */,
@@ -238,6 +241,7 @@
 				65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */,
 				656A8E642BB09D2500985076 /* DataServices.swift in Sources */,
 				656A8E6C2BB0ACF800985076 /* ForYouView.swift in Sources */,
+				65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */,
 				65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */,
 				656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */,
 				65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */,
