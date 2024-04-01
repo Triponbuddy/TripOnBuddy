@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */; };
+		65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */; };
+		65585F5E2BBAAEBA006EAE60 /* TripsTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */; };
+		65585F612BBAB26A006EAE60 /* CompletedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F602BBAB26A006EAE60 /* CompletedTripsView.swift */; };
+		65585F632BBAB274006EAE60 /* UpcomingTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F622BBAB274006EAE60 /* UpcomingTripsView.swift */; };
+		65585F672BBAB565006EAE60 /* TripsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F662BBAB565006EAE60 /* TripsDetails.swift */; };
 		656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E602BB09D0B00985076 /* StoriesTabModel.swift */; };
 		656A8E642BB09D2500985076 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E632BB09D2500985076 /* DataServices.swift */; };
 		656A8E662BB09E5C00985076 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E652BB09E5C00985076 /* StoryView.swift */; };
@@ -34,6 +39,11 @@
 
 /* Begin PBXFileReference section */
 		65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDetails.swift; sourceTree = "<group>"; };
+		65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarView.swift; sourceTree = "<group>"; };
+		65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarButton.swift; sourceTree = "<group>"; };
+		65585F602BBAB26A006EAE60 /* CompletedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTripsView.swift; sourceTree = "<group>"; };
+		65585F622BBAB274006EAE60 /* UpcomingTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTripsView.swift; sourceTree = "<group>"; };
+		65585F662BBAB565006EAE60 /* TripsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDetails.swift; sourceTree = "<group>"; };
 		656A8E602BB09D0B00985076 /* StoriesTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTabModel.swift; sourceTree = "<group>"; };
 		656A8E632BB09D2500985076 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		656A8E652BB09E5C00985076 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
@@ -75,9 +85,19 @@
 			children = (
 				65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */,
 				656A8E692BB0AC1B00985076 /* ForYouViewModel.swift */,
+				65585F662BBAB565006EAE60 /* TripsDetails.swift */,
 				656A8E602BB09D0B00985076 /* StoriesTabModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		65585F5F2BBAB246006EAE60 /* TripsTabsViews */ = {
+			isa = PBXGroup;
+			children = (
+				65585F602BBAB26A006EAE60 /* CompletedTripsView.swift */,
+				65585F622BBAB274006EAE60 /* UpcomingTripsView.swift */,
+			);
+			path = TripsTabsViews;
 			sourceTree = "<group>";
 		};
 		656A8E622BB09D1300985076 /* ViewModel */ = {
@@ -99,6 +119,7 @@
 				65FC27C92BA76FF500BD123F /* PostView.swift */,
 				65FC27CB2BA7700200BD123F /* TripsView.swift */,
 				65FC27CD2BA7700F00BD123F /* ProfileView.swift */,
+				65585F5F2BBAB246006EAE60 /* TripsTabsViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +170,8 @@
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
 				65FC27C52BA76BB800BD123F /* CustomTabButton.swift */,
 				65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */,
+				65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */,
+				65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */,
 				656A8E672BB0A8BD00985076 /* CustomStoryView.swift */,
 				656A8E6B2BB0ACF800985076 /* ForYouView.swift */,
 				65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */,
@@ -227,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65953F992BA6199E00381628 /* RootView.swift in Sources */,
+				65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */,
 				65FC27CE2BA7700F00BD123F /* ProfileView.swift in Sources */,
 				656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */,
 				656A8E682BB0A8BD00985076 /* CustomStoryView.swift in Sources */,
@@ -238,14 +262,18 @@
 				65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */,
 				65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */,
 				65FC27C62BA76BB800BD123F /* CustomTabButton.swift in Sources */,
+				65585F612BBAB26A006EAE60 /* CompletedTripsView.swift in Sources */,
 				65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */,
 				656A8E642BB09D2500985076 /* DataServices.swift in Sources */,
 				656A8E6C2BB0ACF800985076 /* ForYouView.swift in Sources */,
+				65585F632BBAB274006EAE60 /* UpcomingTripsView.swift in Sources */,
 				65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */,
 				65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */,
 				656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */,
+				65585F672BBAB565006EAE60 /* TripsDetails.swift in Sources */,
 				65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */,
 				65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */,
+				65585F5E2BBAAEBA006EAE60 /* TripsTabBarButton.swift in Sources */,
 				656A8E6A2BB0AC1B00985076 /* ForYouViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

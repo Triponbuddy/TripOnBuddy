@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct TripsView: View {
+    @State var switchTabs: TripTabs
     var body: some View {
-        Text("Trips")
+        VStack {
+            TripsTabBarView(switchTabs: $switchTabs)
+            switch switchTabs {
+            case .completed:
+                CompletedTripsView()
+            case .upcoming:
+                UpcomingTripsView()
+            }
+            Spacer()
+        }
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 
 #Preview {
-    TripsView()
+    TripsView(switchTabs: .completed)
 }

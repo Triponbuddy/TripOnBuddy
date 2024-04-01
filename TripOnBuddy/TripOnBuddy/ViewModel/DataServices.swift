@@ -24,4 +24,12 @@ struct DataServices {
             ForYouViewModel(name: "Ankit", image: "TOB", userName: "ankit_03", caption: "joining teams")
         ]
     }
+    func getTripsData() -> [TripsDetails] {
+        return [
+            TripsDetails(userName: "soul_ofaDreamer", name: "Sunil Sharma", fromDate: "31-March-2024", toDate: "4-April-2024", expectedFare: "5000", destinations: "New Delhi", destinationImage: "India Gate"),
+            TripsDetails(userName: "sandeep_02", name: "Sandeep Boda", fromDate: "4-April-2024", toDate: "7-April-2024", expectedFare: "4000", destinations: "Amritsar", destinationImage: "demo"),
+            TripsDetails(userName: "ajay_01", name: "Ajay Bhandari", fromDate: "12-April-2024", toDate: "14-April-2024", expectedFare: "19000", destinations: "Goa", destinationImage: "demo"),
+            TripsDetails(userName: "ankit_03", name: "Ankit Kumar", fromDate: "19-March-2024", toDate: "24-March-2024", expectedFare: "25000", destinations: "Vrindavan", destinationImage: "prem mandir")
+        ]
+    }
 }

@@ -21,7 +21,7 @@ struct RootView: View {
             case .post:
                 PostView()
             case .trips:
-                TripsView()
+                TripsView(switchTabs: .completed)
             case .profile:
                 ProfileView()
             }

@@ -49,7 +49,7 @@ struct TabBarView: View {
                 CustomTabButton(imageName: "person.crop.circle", imageNameFilled: "person.crop.circle.fill", isActive: selectedTab == .profile)
             })
         }
-        .frame(height: 70)
+        .frame(height: 50)
         .buttonStyle(SimpleButtonStyle())
     }
 }
