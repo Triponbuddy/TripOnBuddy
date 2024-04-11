@@ -32,4 +32,12 @@ struct DataServices {
             TripsDetails(userName: "ankit_03", name: "Ankit Kumar", fromDate: "19-March-2024", toDate: "24-March-2024", expectedFare: "25000", destinations: "Vrindavan", destinationImage: "prem mandir")
         ]
     }
+    func getUserData() -> [MyProfileDetails] {
+        return [
+            MyProfileDetails(name: "Sunil", userImage: "demo"),
+            MyProfileDetails(name: "Ajay", userImage: "TOB"),
+            MyProfileDetails(name: "Ankit", userImage: "prem mandir"),
+            MyProfileDetails(name: "Sandeep", userImage: "demo")
+        ]
+    }
 }

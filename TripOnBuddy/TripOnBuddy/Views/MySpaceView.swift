@@ -138,7 +138,7 @@ struct MySpaceView: View {
                 .scrollIndicators(.hidden)
             }
             .padding([.horizontal, .top], 10)
-            .monospaced()
+            //.monospaced()
             .onAppear {
                 yourStories = dataServices.getData()
                 forYouData = dataServices.getForYouData()

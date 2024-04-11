@@ -67,13 +67,17 @@ struct ForYouView: View {
                     Text("Add Trip")
                 }
                 .padding(.vertical, 10)
-                HStack(alignment: .firstTextBaseline) {
-                    Text(mySpaceViewModel.userName.capitalized)
-                        .bold()
-                    Text(mySpaceViewModel.caption!)
-                    Spacer()
+                VStack (alignment: .leading, spacing: 0) {
+                    Group {
+                         Text(mySpaceViewModel.userName.capitalized)
+                             .bold()
+                             + Text(" ")
+                        + Text(mySpaceViewModel.caption!)
+                     }
+                     .padding(.bottom, 10)
                 }
-                .padding(.bottom, 10)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+               
             }
         }
     }
