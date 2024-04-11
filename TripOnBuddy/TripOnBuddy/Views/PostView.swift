@@ -30,27 +30,51 @@ final class PhotoPickerViewModel: ObservableObject {
 
 struct PostView: View {
     @StateObject private var viewModel = PhotoPickerViewModel()
+    @State var aspectRatio: ContentMode = .fit
     var body: some View {
         VStack {
             PhotosPicker(selection: $viewModel.imageSelection, matching: .any(of: [.images, .videos, .slomoVideos, .cinematicVideos, .depthEffectPhotos, .panoramas, .timelapseVideos]),label: {
                 
                 if let image = viewModel.selecetedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
+                    ZStack {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .aspectRatio(contentMode: aspectRatio)
+                        //.frame(width: 80, height: 100)
+                        
+                    }
+                    .overlay(alignment: .bottomLeading, content: {
+                        Button(action: {
+                            aspectRatio = .fill
+                        }){
+                            Image(systemName: "crop")
+                                .imageScale(.large)
+                                .bold()
+                                .foregroundStyle(.white)
+                                .background(Circle()
+                                    .opacity(0.5))
+                                
+                        }
+                        .padding()
+                    })
                     
                 }
                 else {
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    Image(systemName: "plus")
-                        .frame(width: 30, height: 30)
-                        .foregroundStyle(.white)
-                        .background(.gray)
-                        .clipShape(Circle())
+                    ZStack {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                            .overlay(alignment: .bottomTrailing, content: {
+                                Image(systemName: "plus")
+                                    .frame(width: 30, height: 30)
+                                    .foregroundStyle(.white)
+                                    .background(.gray)
+                                    .clipShape(Circle())
+                            })
+                        
+                    }
+                    
                 }
             })
             

@@ -13,22 +13,34 @@ struct MySpaceView: View {
     @State var yourStories: [StoriesTabModel] = []
     var dataServices = DataServices()
     @State var forYouData: [ForYouViewModel] = []
+    @State var isTapped: Bool = false
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationStack {
             VStack {
                 HStack {
-                    Text("TripOnBuddy")
+                    Text("TripOnBuddy") // Show username
                         .bold()
                         .font(.title)
                     
                     Spacer()
-                    Image(systemName: "bell")
-                        .imageScale(.large)
-                        .padding(.trailing, 5)
-                    Image(systemName: "message")
-                        .imageScale(.large)
+                    NavigationLink(destination: {
+                        NotificationsView()
+                    }, label: {
+                        Image(systemName: "bell")
+                            .imageScale(.large)
+                            .padding(.trailing, 5)
+
+                    })
                     
+                    NavigationLink(destination: {
+                        AllChatsView()
+                    }, label: {
+                        Image(systemName: "message")
+                            .imageScale(.large)
+
+                    })
+                                       
                 }
                 
                 
@@ -63,6 +75,7 @@ struct MySpaceView: View {
                                     
                                 }
                             })
+                            .foregroundStyle(Color.nileBlue)
                             LazyHGrid(rows: [GridItem()], spacing: 20, content: {
                                 ForEach(yourStories) { item in
                                     

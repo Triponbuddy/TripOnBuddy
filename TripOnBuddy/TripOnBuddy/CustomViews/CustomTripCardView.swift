@@ -29,6 +29,8 @@ struct CustomTripCardView: View {
                         Text(tripDetails.userName)
                             .font(.callout)
                     }
+                    Spacer()
+                    Image(systemName: "arrowshape.turn.up.right")
                     
                 }
                 HStack {

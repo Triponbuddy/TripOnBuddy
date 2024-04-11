@@ -17,11 +17,11 @@ struct DataServices {
     }
     func getForYouData() -> [ForYouViewModel] {
         return [
-            ForYouViewModel(name: "Sunil", image: "demo", userName: "soul_ofadreamer", caption: "Went to see the sunset"),
+            ForYouViewModel(name: "Sunil", image: "demo", userName: "soul_ofadreamer", caption: "Went to see the sunset on the beach. What a beautifull view."),
             ForYouViewModel(name: "Ajay", image: "TOB", userName: "ajay_01", caption: " starting a new startup"),
             ForYouViewModel(name: "Sandeep", image: "demo", userName: "sandeep_02", caption: "vehle"),
-            ForYouViewModel(name: "Ankit", image: "TOB", userName: "ankit_03", caption: "joining teams"),
-            ForYouViewModel(name: "Ankit", image: "TOB", userName: "ankit_03", caption: "joining teams")
+            ForYouViewModel(name: "Ankit", image: "prem mandir", userName: "ankit_03", caption: "joining teams"),
+            ForYouViewModel(name: "Ankit", image: "India Gate", userName: "ankit_03", caption: "joining teams")
         ]
     }
     func getTripsData() -> [TripsDetails] {

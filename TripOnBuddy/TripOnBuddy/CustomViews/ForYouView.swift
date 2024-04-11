@@ -67,7 +67,7 @@ struct ForYouView: View {
                     Text("Add Trip")
                 }
                 .padding(.vertical, 10)
-                HStack {
+                HStack(alignment: .firstTextBaseline) {
                     Text(mySpaceViewModel.userName.capitalized)
                         .bold()
                     Text(mySpaceViewModel.caption!)

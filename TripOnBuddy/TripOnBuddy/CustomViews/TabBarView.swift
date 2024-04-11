@@ -44,13 +44,13 @@ struct TabBarView: View {
                 .fill(.clear)
                 .shadow(color: .gray.opacity(0.4), radius: 20, x: 0, y: 20)
             
-            TabsLayoutView()
+            TabsLayoutView(selectedTab: $selectedTab)
         }
         .frame(height: 70, alignment: .center)
     }
 }
 fileprivate struct TabsLayoutView: View {
-    @State var selectedTab: Tabs = .mySpace
+    @Binding var selectedTab: Tabs
     @Namespace var namespace
     
     var body: some View {
