@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import _PhotosUI_SwiftUI
 
 struct MySpaceView: View {
-    
+    @StateObject private var viewModel = PhotoPickerViewModel()
     @State var yourStories: [StoriesTabModel] = []
     var dataServices = DataServices()
     @State var forYouData: [ForYouViewModel] = []
@@ -34,11 +35,42 @@ struct MySpaceView: View {
                 ScrollView {
                     //
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: [GridItem()], content: {
-                            ForEach(yourStories) { item in
-                                StoryView(stories: StoriesTabModel(name: item.name, image: item.image, video: item.video))
-                            }
-                        })
+                        HStack {
+                            PhotosPicker(selection: $viewModel.imageSelection, matching: .any(of: [.images, .videos, .slomoVideos, .cinematicVideos, .depthEffectPhotos, .panoramas, .timelapseVideos]),label: {
+                                
+                                if let image = viewModel.selecetedImage {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 80, height: 100)
+                                        .clipShape(Circle())
+                                    
+                                }
+                                else {
+                                    ZStack {
+                                        Image(systemName: "person.crop.circle")
+                                            .resizable()
+                                            .frame(width: 80, height: 80)
+                                            .overlay(alignment: .bottomTrailing, content: {
+                                                Image(systemName: "plus")
+                                                    .frame(width: 30, height: 30)
+                                                    .foregroundStyle(.white)
+                                                    .background(.gray)
+                                                    .clipShape(Circle())
+                                            })
+                                        
+                                    }
+                                    
+                                }
+                            })
+                            LazyHGrid(rows: [GridItem()], spacing: 20, content: {
+                                ForEach(yourStories) { item in
+                                    
+                                    StoryView(stories: StoriesTabModel(name: item.name, image: item.image, video: item.video))
+                                    
+                                }
+                            })
+                        }
                     }
                     .scrollIndicators(.hidden)
                     HStack {

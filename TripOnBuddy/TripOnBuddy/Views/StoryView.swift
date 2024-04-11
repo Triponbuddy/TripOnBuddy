@@ -21,22 +21,22 @@ struct StoryView: View {
                 
                 Circle()
                     .stroke(lineWidth: 2)
-                    .frame(width: 90)
+                    .frame(width: 80)
                     .foregroundStyle(isDown ? .gray : .red)
                 Image(stories.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    .frame(width: 80, height: 80)
+                    .frame(width: 70, height: 70)
                     .onTapGesture {
                         isViewed = true
                         isDown = true
                     }
             }
             
-            Text(stories.name)
-                .bold()
-            
+//            Text(stories.name)
+//                .bold()
+//            
         }
         .ignoresSafeArea()
         .sheet(isPresented: $isViewed, content: {

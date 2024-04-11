@@ -6,6 +6,15 @@
 //
 
 import SwiftUI
+struct SimpleButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.8 : 1)
+    }
+}
+extension Color {
+    static let nileBlue = Color(red: 36/255, green: 63/255, blue: 77/255)
+}
 
 struct RootView: View {
     @State var selectedTab: Tabs
@@ -28,6 +37,7 @@ struct RootView: View {
             Spacer()
             
             TabBarView(selectedTab: $selectedTab)
+                .ignoresSafeArea(edges: .bottom)
                 
             
         }

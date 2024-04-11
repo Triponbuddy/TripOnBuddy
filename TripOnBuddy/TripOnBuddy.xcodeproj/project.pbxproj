@@ -30,7 +30,6 @@
 		65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */; };
 		65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */; };
 		65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C12BA76AC800BD123F /* TabBarView.swift */; };
-		65FC27C62BA76BB800BD123F /* CustomTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C52BA76BB800BD123F /* CustomTabButton.swift */; };
 		65FC27C82BA76FEA00BD123F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C72BA76FEA00BD123F /* ExploreView.swift */; };
 		65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C92BA76FF500BD123F /* PostView.swift */; };
 		65FC27CC2BA7700200BD123F /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27CB2BA7700200BD123F /* TripsView.swift */; };
@@ -62,7 +61,6 @@
 		65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPScreenView.swift; sourceTree = "<group>"; };
 		65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOtpView.swift; sourceTree = "<group>"; };
 		65FC27C12BA76AC800BD123F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		65FC27C52BA76BB800BD123F /* CustomTabButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabButton.swift; sourceTree = "<group>"; };
 		65FC27C72BA76FEA00BD123F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		65FC27C92BA76FF500BD123F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		65FC27CB2BA7700200BD123F /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 			children = (
 				65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */,
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
-				65FC27C52BA76BB800BD123F /* CustomTabButton.swift */,
 				65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */,
 				65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */,
 				65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */,
@@ -261,7 +258,6 @@
 				65FC27C82BA76FEA00BD123F /* ExploreView.swift in Sources */,
 				65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */,
 				65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */,
-				65FC27C62BA76BB800BD123F /* CustomTabButton.swift in Sources */,
 				65585F612BBAB26A006EAE60 /* CompletedTripsView.swift in Sources */,
 				65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */,
 				656A8E642BB09D2500985076 /* DataServices.swift in Sources */,
