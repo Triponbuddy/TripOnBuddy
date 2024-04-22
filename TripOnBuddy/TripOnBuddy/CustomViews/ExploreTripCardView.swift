@@ -55,7 +55,7 @@ struct ExploreTripCardView: View {
                     Text("From Date:".capitalized)
                     Text(tripDetails.fromDate.capitalized)
                     Spacer()
-                    Button("Add Trip", action: {
+                    Button("Request Trip", action: {
                         
                     })
                     
@@ -66,6 +66,8 @@ struct ExploreTripCardView: View {
                     Text(tripDetails.toDate.capitalized)
                 }
                 .font(.headline)
+                Text("Number Of Joinees: \(tripDetails.numberOfJoinees ?? "1") /\(tripDetails.totalNumOfPeople ?? "")".capitalized)
+                
                 HStack {
                     Text("Estimated Fare:".capitalized)
                     Text(tripDetails.expectedFare.capitalized)
@@ -91,5 +93,5 @@ struct ExploreTripCardView: View {
 }
 
 #Preview {
-    ExploreTripCardView(tripDetails:  TripsDetails(userName: "soul_ofaDreamer", name: "Sunil Sharma", fromDate: "31-March-2024", toDate: "4-April-2024", expectedFare: "5000", destinations: "New Delhi", destinationImage: "India Gate", destinationOverview: "Delhi is a great place to visit. There are a lot of places to visit in Delhi, such as India Gate, Red Fort, Jama Masjid etc."))
+    ExploreTripCardView(tripDetails:  TripsDetails(userName: "soul_ofaDreamer", name: "Sunil Sharma", fromDate: "31-March-2024", toDate: "4-April-2024", expectedFare: "5000", destinations: "New Delhi", destinationImage: "India Gate", destinationOverview: "Delhi is a great place to visit. There are a lot of places to visit in Delhi, such as India Gate, Red Fort, Jama Masjid etc.", totalNumOfPeople: "10"))
 }

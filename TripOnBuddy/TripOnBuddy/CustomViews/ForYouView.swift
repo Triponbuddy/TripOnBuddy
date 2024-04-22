@@ -11,6 +11,7 @@ struct ForYouView: View {
     @State var isLiked: Bool = false
     var mySpaceViewModel: ForYouViewModel
     @State var isFollowed: Bool = false
+    @State private var isCommentSectionActive: Bool = false
     var body: some View {
         
         ZStack {
@@ -60,8 +61,12 @@ struct ForYouView: View {
                             .symbolEffect(.bounce, value: isLiked)
                             .foregroundStyle(isLiked ? .red : Color.nileBlue)
                     })
-                    
-                    Image(systemName: "message")
+                    Button(action: {
+                        isCommentSectionActive = true
+                    }, label: {
+                        Image(systemName: "message")
+                    })
+                   
                     Image(systemName: "arrowshape.turn.up.right")
                     Spacer()
                     Text("Add Trip")
@@ -79,7 +84,11 @@ struct ForYouView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                
             }
+            .sheet(isPresented: $isCommentSectionActive, content: {
+                Text("Add Comments Here")
+            })
         }
+        .buttonStyle(SimpleButtonStyle())
     }
 }
 

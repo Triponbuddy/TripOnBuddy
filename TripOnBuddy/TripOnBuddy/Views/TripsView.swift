@@ -11,6 +11,13 @@ struct TripsView: View {
     @State var switchTabs: TripTabs
     var body: some View {
         VStack {
+            HStack {
+                Text("Trips View")
+                    .font(.title)
+                    .bold()
+                Spacer()
+                EditButton()
+            }
             TripsTabBarView(switchTabs: $switchTabs)
             switch switchTabs {
             case .completed:

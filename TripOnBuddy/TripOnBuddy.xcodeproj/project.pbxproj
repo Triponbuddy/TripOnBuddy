@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651E06232BD6EA52008917C6 /* HotSpotsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E06222BD6EA52008917C6 /* HotSpotsModel.swift */; };
 		65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */; };
 		65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */; };
 		65585F5E2BBAAEBA006EAE60 /* TripsTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		651E06222BD6EA52008917C6 /* HotSpotsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotsModel.swift; sourceTree = "<group>"; };
 		65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDetails.swift; sourceTree = "<group>"; };
 		65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarView.swift; sourceTree = "<group>"; };
 		65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarButton.swift; sourceTree = "<group>"; };
@@ -88,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		651E06212BD6E79F008917C6 /* LoginViews */ = {
+			isa = PBXGroup;
+			children = (
+				656B97932BA6238C00A1F34C /* SignUpView.swift */,
+				65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */,
+			);
+			path = LoginViews;
+			sourceTree = "<group>";
+		};
 		65275C612BA778FA00EBCE34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +106,7 @@
 				656A8E692BB0AC1B00985076 /* ForYouViewModel.swift */,
 				65585F662BBAB565006EAE60 /* TripsDetails.swift */,
 				656A8E602BB09D0B00985076 /* StoriesTabModel.swift */,
+				651E06222BD6EA52008917C6 /* HotSpotsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,8 +131,7 @@
 		656B97922BA6234A00A1F34C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				656B97932BA6238C00A1F34C /* SignUpView.swift */,
-				65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */,
+				651E06212BD6E79F008917C6 /* LoginViews */,
 				656B97972BA623A300A1F34C /* MySpaceView.swift */,
 				656A8E652BB09E5C00985076 /* StoryView.swift */,
 				657284592BC8661A00DAF637 /* Title Bar Views */,
@@ -303,6 +314,7 @@
 				656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */,
 				65585F672BBAB565006EAE60 /* TripsDetails.swift in Sources */,
 				65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */,
+				651E06232BD6EA52008917C6 /* HotSpotsModel.swift in Sources */,
 				65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */,
 				65585F5E2BBAAEBA006EAE60 /* TripsTabBarButton.swift in Sources */,
 				657284562BC8657200DAF637 /* AllChatsView.swift in Sources */,

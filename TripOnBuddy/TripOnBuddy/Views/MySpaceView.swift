@@ -144,6 +144,10 @@ struct MySpaceView: View {
                 forYouData = dataServices.getForYouData()
             }
         }
+        .buttonStyle(SimpleButtonStyle())
+        .refreshable {
+            // put code here to sync the Feed
+        }
     }
 }
 

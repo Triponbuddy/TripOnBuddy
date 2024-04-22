@@ -15,7 +15,7 @@ struct MyProfileDetails: Identifiable {
     var bio: String?
     var profession: String?
     var gender: String?
-   
+    //var interests: String?
 //    init(name: String, userImage: String? = nil, bio: String? = nil, profession: String? = nil, gender: String? = nil, emailId: String, phoneNumber: [LoginDetails]) {
 //        self.name = name
 //        self.userImage = userImage

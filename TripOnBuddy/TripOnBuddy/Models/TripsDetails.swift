@@ -6,6 +6,9 @@
 //
 
 import Foundation
+enum Gender: Int {
+    case male, female
+}
 struct TripsDetails: Identifiable {
     let id = UUID()
     var userName: String
@@ -16,4 +19,7 @@ struct TripsDetails: Identifiable {
     var destinations: String
     var destinationImage: String
     var destinationOverview: String?
+    var genderSpecific: Gender?
+    var totalNumOfPeople: String?
+    var numberOfJoinees: String?
 }

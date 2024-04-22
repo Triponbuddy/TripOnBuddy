@@ -11,6 +11,7 @@ struct ExploreView: View {
     @State var tripDetails: [TripsDetails] = []
     var dataServices = DataServices()
     @State var searchText = ""
+    @State private var addNewTrip: Bool = false
     var body: some View {
         NavigationStack {
             VStack {
@@ -34,7 +35,7 @@ struct ExploreView: View {
         }
         .overlay(alignment: .bottomTrailing, content: {
             Button(action: {
-                
+                addNewTrip = true
             }, label: {
                 Image(systemName: "plus")
                     .resizable()
@@ -52,6 +53,17 @@ struct ExploreView: View {
         })
         .refreshable(action: {
             // write the code to refresh the page
+        })
+        .sheet(isPresented: $addNewTrip, content: {
+            NavigationStack {
+                CustomTextFieldView(inputText: .constant("Destination"), isTapped: .constant(true))
+                CustomTextFieldView(inputText: .constant("Duration"), isTapped: .constant(true))
+                NavigationLink(destination: {
+                    Text("Next Page View")
+                }, label: {
+                    Text("Next")
+                })
+            }
         })
         
     }

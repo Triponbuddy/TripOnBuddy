@@ -22,17 +22,23 @@ struct SignUpView: View {
                     Image("TOB")
                         .resizable()
                         .frame(width: 220, height: 250)
-//
-                    CustomTextFieldView(inputText: $mobileNumber, infoText: "Enter Mobile Numnber", isTapped: $isTapped)
-                    // This is keyboard type
-                    .keyboardType(.numberPad)
-                    // this is to limit the number of characters in the text field
-                    .onReceive(Just(mobileNumber)) { _ in
-                        limitText(textLimit)
+                    HStack {
+//                        Menu("+91", content: {
+//                            Text("+1")
+//                        })
+                        Text("+91")
+                        //
+                        CustomTextFieldView(inputText: $mobileNumber, infoText: "Enter Mobile Numnber", isTapped: $isTapped)
+                        // This is keyboard type
+                            .keyboardType(.numberPad)
+                        // this is to limit the number of characters in the text field
+                            .onReceive(Just(mobileNumber)) { _ in
+                                limitText(textLimit)
+                            }
+                            .keyboardType(.numberPad)
+                        // The focus state of the keyboard
+                            .focused($isFocus)
                     }
-                    .keyboardType(.numberPad)
-                    // The focus state of the keyboard
-                    .focused($isFocus)
                     if !mobileNumber.isEmpty && checkPhoneNumber() {
                         NavigationLink("Get OTP", destination:
                                         OTPScreenView()
