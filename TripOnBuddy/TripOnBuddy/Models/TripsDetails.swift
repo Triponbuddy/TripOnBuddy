@@ -15,4 +15,5 @@ struct TripsDetails: Identifiable {
     var expectedFare: String
     var destinations: String
     var destinationImage: String
+    var destinationOverview: String?
 }

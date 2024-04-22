@@ -8,31 +8,52 @@
 import SwiftUI
 
 struct ExploreView: View {
-    @State var userProfileView: [MyProfileDetails] = []
+    @State var tripDetails: [TripsDetails] = []
     var dataServices = DataServices()
     @State var searchText = ""
     var body: some View {
         NavigationStack {
-            LazyVGrid(columns: [GridItem()], content: {
-                ForEach(userProfileView) { item in
-                    HStack {
-                        Image(item.userImage ?? "")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                        Text(item.name)
-                        Spacer()
+            VStack {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem()], content: {
+                        ForEach(tripDetails) { item in
                             
+                            ExploreTripCardView(tripDetails: TripsDetails(userName: item.userName, name: item.name, fromDate: item.fromDate, toDate: item.toDate, expectedFare: item.expectedFare, destinations: item.destinations, destinationImage: item.destinationImage))
+                           
+                        }
+                    })
+                    .searchable(text: $searchText, prompt: "Search...")
+                    .onAppear {
+                        tripDetails = dataServices.getTripsData()
                     }
-                    
                 }
-            })
-            .searchable(text: $searchText, prompt: "Search...")
-            .onAppear {
-                userProfileView = dataServices.getUserData()
             }
+            .navigationTitle("Explore View")
+            .navigationBarTitleDisplayMode(.large)
+            .scrollIndicators(.hidden)
         }
+        .overlay(alignment: .bottomTrailing, content: {
+            Button(action: {
+                
+            }, label: {
+                Image(systemName: "plus")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundStyle(.white)
+                    .padding(40)
+                    .background(Circle()
+                        .frame(width: 70, height: 70)
+                        .foregroundStyle(Color.nileBlue)
+                        .opacity(0.5)
+                        .padding(30)
+                    )
+            })
+            .buttonStyle(SimpleButtonStyle())
+        })
+        .refreshable(action: {
+            // write the code to refresh the page
+        })
+        
     }
 }
 

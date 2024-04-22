@@ -41,8 +41,9 @@ struct RootView: View {
                 
             
         }
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 2)
         .foregroundStyle(colorScheme == .light ? Color.nileBlue : .white)
+
     }
 }
 

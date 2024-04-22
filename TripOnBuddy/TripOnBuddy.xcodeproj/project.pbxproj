@@ -23,6 +23,9 @@
 		656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97972BA623A300A1F34C /* MySpaceView.swift */; };
 		657284562BC8657200DAF637 /* AllChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657284552BC8657200DAF637 /* AllChatsView.swift */; };
 		657284582BC8661600DAF637 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657284572BC8661500DAF637 /* NotificationsView.swift */; };
+		658DD7CD2BD6307800F10E3A /* UserProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DD7CC2BD6307800F10E3A /* UserProfilePageView.swift */; };
+		658DD7D02BD6352D00F10E3A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DD7CF2BD6352D00F10E3A /* CustomButton.swift */; };
+		658DD7D22BD63FF300F10E3A /* ExploreTripCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DD7D12BD63FF300F10E3A /* ExploreTripCardView.swift */; };
 		65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F962BA6199E00381628 /* TripOnBuddyApp.swift */; };
 		65953F992BA6199E00381628 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F982BA6199E00381628 /* RootView.swift */; };
 		65953F9B2BA619A000381628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65953F9A2BA619A000381628 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		656B97972BA623A300A1F34C /* MySpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceView.swift; sourceTree = "<group>"; };
 		657284552BC8657200DAF637 /* AllChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChatsView.swift; sourceTree = "<group>"; };
 		657284572BC8661500DAF637 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		658DD7CC2BD6307800F10E3A /* UserProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePageView.swift; sourceTree = "<group>"; };
+		658DD7CF2BD6352D00F10E3A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		658DD7D12BD63FF300F10E3A /* ExploreTripCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTripCardView.swift; sourceTree = "<group>"; };
 		65953F932BA6199E00381628 /* TripOnBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripOnBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65953F962BA6199E00381628 /* TripOnBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripOnBuddyApp.swift; sourceTree = "<group>"; };
 		65953F982BA6199E00381628 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -121,7 +127,7 @@
 				65FC27C72BA76FEA00BD123F /* ExploreView.swift */,
 				65FC27C92BA76FF500BD123F /* PostView.swift */,
 				65FC27CB2BA7700200BD123F /* TripsView.swift */,
-				65FC27CD2BA7700F00BD123F /* ProfileView.swift */,
+				658DD7CE2BD6307D00F10E3A /* Profile Views */,
 				65585F5F2BBAB246006EAE60 /* TripsTabsViews */,
 			);
 			path = Views;
@@ -134,6 +140,15 @@
 				657284572BC8661500DAF637 /* NotificationsView.swift */,
 			);
 			path = "Title Bar Views";
+			sourceTree = "<group>";
+		};
+		658DD7CE2BD6307D00F10E3A /* Profile Views */ = {
+			isa = PBXGroup;
+			children = (
+				65FC27CD2BA7700F00BD123F /* ProfileView.swift */,
+				658DD7CC2BD6307800F10E3A /* UserProfilePageView.swift */,
+			);
+			path = "Profile Views";
 			sourceTree = "<group>";
 		};
 		65953F8A2BA6199E00381628 = {
@@ -181,6 +196,8 @@
 				65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */,
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
 				65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */,
+				658DD7D12BD63FF300F10E3A /* ExploreTripCardView.swift */,
+				658DD7CF2BD6352D00F10E3A /* CustomButton.swift */,
 				65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */,
 				65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */,
 				656A8E672BB0A8BD00985076 /* CustomStoryView.swift */,
@@ -264,8 +281,10 @@
 				65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */,
 				65FC27CE2BA7700F00BD123F /* ProfileView.swift in Sources */,
 				656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */,
+				658DD7D02BD6352D00F10E3A /* CustomButton.swift in Sources */,
 				656A8E682BB0A8BD00985076 /* CustomStoryView.swift in Sources */,
 				656A8E662BB09E5C00985076 /* StoryView.swift in Sources */,
+				658DD7D22BD63FF300F10E3A /* ExploreTripCardView.swift in Sources */,
 				65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */,
 				65FC27CC2BA7700200BD123F /* TripsView.swift in Sources */,
 				656B97942BA6238C00A1F34C /* SignUpView.swift in Sources */,
@@ -280,6 +299,7 @@
 				657284582BC8661600DAF637 /* NotificationsView.swift in Sources */,
 				65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */,
 				65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */,
+				658DD7CD2BD6307800F10E3A /* UserProfilePageView.swift in Sources */,
 				656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */,
 				65585F672BBAB565006EAE60 /* TripsDetails.swift in Sources */,
 				65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */,

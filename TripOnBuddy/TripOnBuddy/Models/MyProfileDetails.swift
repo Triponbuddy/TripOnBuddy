@@ -9,6 +9,7 @@ import Foundation
 
 struct MyProfileDetails: Identifiable {
     let id = UUID()
+    var userName: String
     var name: String
     var userImage: String?
     var bio: String?

@@ -34,10 +34,11 @@ struct DataServices {
     }
     func getUserData() -> [MyProfileDetails] {
         return [
-            MyProfileDetails(name: "Sunil", userImage: "demo"),
-            MyProfileDetails(name: "Ajay", userImage: "TOB"),
-            MyProfileDetails(name: "Ankit", userImage: "prem mandir"),
-            MyProfileDetails(name: "Sandeep", userImage: "demo")
+            MyProfileDetails(userName: "soul_ofaDreamer", name: "Sunil", userImage: "demo", bio: "Radhe Radhe"),
+            MyProfileDetails(userName: "ajay_01", name: "Ajay", userImage: "TOB", bio: "Life is worth living."),
+            MyProfileDetails(userName: "ankit_03", name: "Ankit", userImage: "prem mandir"),
+            MyProfileDetails(userName: "sandeep_02", name: "Sandeep", userImage: "demo", bio: "Just Relax and Keep Moving")
         ]
     }
+    
 }

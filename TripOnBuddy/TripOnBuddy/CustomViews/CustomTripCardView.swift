@@ -45,12 +45,12 @@ struct CustomTripCardView: View {
                 }
                 .font(.headline)
                 HStack {
-                    Text("To Date".capitalized)
+                    Text("To Date:".capitalized)
                     Text(tripDetails.toDate.capitalized)
                 }
                 .font(.headline)
                 HStack {
-                    Text("Estimated Fare".capitalized)
+                    Text("Estimated Fare:".capitalized)
                     Text(tripDetails.expectedFare.capitalized)
                 }
                 .font(.headline)
@@ -71,9 +71,7 @@ struct CustomTripCardView: View {
             .buttonStyle(SimpleButtonStyle())
             .padding()
         }
-        .ignoresSafeArea()
         .frame(height: .infinity)
-        .monospaced()
     }
 }
 

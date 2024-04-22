@@ -21,6 +21,7 @@ struct TripsView: View {
             Spacer()
         }
         .ignoresSafeArea(edges: .bottom)
+        .navigationTitle("All Trips")
     }
 }
 
