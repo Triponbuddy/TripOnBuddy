@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import _PhotosUI_SwiftUI
+import PhotosUI
 
 struct MySpaceView: View {
     @StateObject private var viewModel = PhotoPickerViewModel()
@@ -15,6 +15,7 @@ struct MySpaceView: View {
     @State var forYouData: [ForYouViewModel] = []
     @State var isTapped: Bool = false
     @Environment(\.colorScheme) var colorScheme
+    var profileDetails: MyProfileDetails = MyProfileDetails(userName: "", name: "Sunil Sharma")
     var body: some View {
         NavigationStack {
             VStack {

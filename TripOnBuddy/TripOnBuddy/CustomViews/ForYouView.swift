@@ -27,7 +27,7 @@ struct ForYouView: View {
                     }) {
                         if isFollowed {
                             Menu(content: {
-                                Button("Following", action: {
+                                Button("Remove Buddy", action: {
                                     isFollowed = false
                                 })
                                 NavigationLink(destination: Text("User Profile View"), label: {
@@ -39,7 +39,7 @@ struct ForYouView: View {
                             })
                         }
                         else {
-                            Text("Follow")
+                            Text("Join")
                         }
                     }
                 }

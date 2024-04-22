@@ -13,7 +13,7 @@ struct ExploreTripCardView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
-                .foregroundStyle(colorScheme == .light ? Color.gray.opacity(0.5) : Color.nileBlue.opacity(0.5))
+                .foregroundStyle(colorScheme == .light ? Color.gray.opacity(0.3) : Color.nileBlue.opacity(0.3))
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
                     VStack(alignment: .leading) {
@@ -29,8 +29,11 @@ struct ExploreTripCardView: View {
                 Image(tripDetails.destinationImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .opacity(0.4)
-                    .background(RoundedRectangle(cornerRadius: 10))
+                    .opacity(0.6)
+                    .background(RoundedRectangle(cornerRadius: 10)
+                        .foregroundStyle(.black)
+                        .opacity(0.7)
+                        )
                     .padding(.horizontal, 8)
                     .overlay(content: {
                         VStack(alignment: .leading) {
@@ -87,6 +90,7 @@ struct ExploreTripCardView: View {
             }
             .padding(8)
         }
+        .ignoresSafeArea()
         .frame(height: .infinity)
         .buttonStyle(SimpleButtonStyle())
     }

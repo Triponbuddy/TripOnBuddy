@@ -14,9 +14,9 @@ struct ExploreView: View {
     @State private var addNewTrip: Bool = false
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 10) {
                 ScrollView {
-                    LazyVGrid(columns: [GridItem()], content: {
+                    LazyVGrid(columns: [GridItem()], spacing: 20,content: {
                         ForEach(tripDetails) { item in
                             
                             ExploreTripCardView(tripDetails: TripsDetails(userName: item.userName, name: item.name, fromDate: item.fromDate, toDate: item.toDate, expectedFare: item.expectedFare, destinations: item.destinations, destinationImage: item.destinationImage))
@@ -32,6 +32,7 @@ struct ExploreView: View {
             .navigationTitle("Explore View")
             .navigationBarTitleDisplayMode(.large)
             .scrollIndicators(.hidden)
+            .padding(.horizontal, 4)
         }
         .overlay(alignment: .bottomTrailing, content: {
             Button(action: {

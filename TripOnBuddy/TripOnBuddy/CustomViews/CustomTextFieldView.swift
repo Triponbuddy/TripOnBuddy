@@ -22,13 +22,13 @@ struct CustomTextFieldView: View {
                     
                     // it will fire when text field is clicked
                     if status {
-                        withAnimation(.easeIn) {
+                        withAnimation(.easeIn(duration: 0.5)) {
                             isTapped = true
                         }
                     }
                 } onCommit: {
                      // it will fire when return button is pressed...
-                    withAnimation(.easeOut) {
+                    withAnimation(.easeOut(duration: 0.5)) {
                         isTapped = false
                     }
                 }

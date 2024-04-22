@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+
 struct OTPScreenView: View {
     
     @State var isVerified: Bool = false
@@ -48,13 +49,12 @@ struct OTPScreenView: View {
                 
             }
             .blur(radius: isVerified ? 5 : 0.0)
-            
             .foregroundStyle(colorScheme == .dark ? .white : .black)
             .onTapGesture {
                 isFocus = false
             }
         }
-        //.navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
     
 }

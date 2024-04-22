@@ -64,7 +64,7 @@ struct SignUpView: View {
             }
             .onTapGesture {
                 // this dismisses the keyboard and deactiavtes the TextField
-                withAnimation(.easeOut) {
+                withAnimation(.easeOut(duration: 0.2)) {
                     isFocus = false
                     isTapped = false
                 }
