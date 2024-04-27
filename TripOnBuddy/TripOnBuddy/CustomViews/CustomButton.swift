@@ -16,7 +16,7 @@ struct CustomButton: View {
         }, label: {
             HStack {
                 Image(systemName: image ?? "")
-                Text("Edit")
+                Text(name)
             }
             .frame(width: 250)
         })
@@ -27,5 +27,5 @@ struct CustomButton: View {
 }
 
 #Preview {
-    CustomButton(name: "", image: "pencil")
+    CustomButton(name: "Edit", image: "pencil")
 }

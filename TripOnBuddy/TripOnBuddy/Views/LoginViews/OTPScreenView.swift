@@ -14,6 +14,7 @@ struct OTPScreenView: View {
     @State var otp: [String] = [""]
     @FocusState var isFocus: Bool
     @Environment(\.colorScheme) var colorScheme
+    @State private var presentSheetView: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -34,13 +35,12 @@ struct OTPScreenView: View {
                         .focused($isFocus)
                     
                     // Add code to make the Navigation Link work only if the OTP is filled
-                    NavigationLink("LogIn Now", destination: Text("Get OTP View"))
-                        .padding()
-                        .foregroundStyle(.white)
-                        .background(Capsule()
-                            .frame(width: 200)
-                        )
-                        .padding(40)
+                    
+                    Button(action: {
+                        presentSheetView = true
+                    }, label: {
+                        CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
+                    })
                     
                     Spacer()
                     
@@ -48,6 +48,9 @@ struct OTPScreenView: View {
                 .padding()
                 
             }
+            .sheet(isPresented: $presentSheetView, content: {
+                EnterUsernameView()
+            })
             .blur(radius: isVerified ? 5 : 0.0)
             .foregroundStyle(colorScheme == .dark ? .white : .black)
             .onTapGesture {

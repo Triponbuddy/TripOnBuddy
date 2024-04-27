@@ -1,0 +1,41 @@
+//
+//  EnterFullNameView.swift
+//  TripOnBuddy
+//
+//  Created by Sunil Sharma on 26/04/24.
+//
+
+import SwiftUI
+
+struct EnterFullNameView: View {
+    @State var username: String = ""
+    @State var isTapped: Bool = false
+    @FocusState var isFocus: Bool
+    var body: some View {
+        VStack {
+            CustomTextFieldView(inputText: $username, infoText: "Your buddy name...*", isTapped: $isTapped)
+                .autocapitalization(.none)
+                .focused($isFocus)
+            if !username.isEmpty {
+                NavigationLink(destination: {
+                    Text("Next Page")
+                }, label: {
+                    CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
+                })
+            }
+            else {
+                CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
+            }
+            Spacer()
+        }
+        
+    }
+    func validateUserName(_ userName: String) -> Bool {
+        let regex = "^[A-Za-z0-9._-]+$"
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: username)
+    }
+}
+
+#Preview {
+    EnterFullNameView()
+}

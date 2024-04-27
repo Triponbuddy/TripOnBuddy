@@ -40,25 +40,14 @@ struct SignUpView: View {
                             .focused($isFocus)
                     }
                     if !mobileNumber.isEmpty && checkPhoneNumber() {
-                        NavigationLink("Get OTP", destination:
+                        NavigationLink(destination:
                                         OTPScreenView()
-                        )
-                            .padding()
-                            .foregroundStyle(.white)
-                            .background(Capsule()
-                                .frame(width: 200)
-                            )
-                            .padding(20)
+                        ) {
+                            CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
+                        }
                     }
                     else {
-                        Text("Get OTP")
-                            .padding()
-                            .foregroundStyle(.white)
-                            .background(Capsule()
-                                .frame(width: 200)
-                                .foregroundStyle(.gray)
-                            )
-                            .padding(40)
+                        CustomButtonTemplate(name: "Next", width: 350, color: .gray, paddingTop: 50)
                     }
                 }
             }
