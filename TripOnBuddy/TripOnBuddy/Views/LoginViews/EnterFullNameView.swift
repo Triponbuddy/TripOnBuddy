@@ -11,23 +11,39 @@ struct EnterFullNameView: View {
     @State var username: String = ""
     @State var isTapped: Bool = false
     @FocusState var isFocus: Bool
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        VStack {
-            CustomTextFieldView(inputText: $username, infoText: "Your buddy name...*", isTapped: $isTapped)
-                .autocapitalization(.none)
-                .focused($isFocus)
-            if !username.isEmpty {
-                NavigationLink(destination: {
-                    Text("Next Page")
-                }, label: {
-                    CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
+        NavigationStack {
+            VStack {
+                CustomTextFieldView(inputText: $username, infoText: "Your buddy name...*", isTapped: $isTapped)
+                    .autocapitalization(.none)
+                    .focused($isFocus)
+                if !username.isEmpty {
+                    NavigationLink(destination: {
+                        Text("Next Page")
+                    }, label: {
+                        CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
+                    })
+                }
+                else {
+                    CustomButtonTemplate(name: "Next", width: 350, color: .gray, paddingTop: 50)
+                }
+                Spacer()
+            }
+            .padding()
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarLeading, content: {
+                    Image(systemName: "chevron.left")
+                        .imageScale(.large)
+                        .onTapGesture {
+                            dismiss()
+                        }
                 })
-            }
-            else {
-                CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
-            }
-            Spacer()
+            })
         }
+        .navigationBarBackButtonHidden(true)
+        
+        
         
     }
     func validateUserName(_ userName: String) -> Bool {

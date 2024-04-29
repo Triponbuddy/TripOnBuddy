@@ -54,6 +54,7 @@ struct EnterUsernameView: View {
                     //                    }
                     //                }
                 }
+                
             }
             .onTapGesture {
                 // this dismisses the keyboard and deactiavtes the TextField
@@ -72,6 +73,7 @@ struct EnterUsernameView: View {
                         }
                 })
             })
+            Spacer()
         }
         .navigationBarBackButtonHidden()
         
