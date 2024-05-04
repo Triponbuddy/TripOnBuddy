@@ -14,13 +14,22 @@ struct EnterFullNameView: View {
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 15) {
+                VStack {
+                    Text("Enter Your Full Name")
+                        .font(.title)
+                        .bold()
+                        
+                    Text("Enter your full name")
+                        .font(.footnote)
+                }
+                .padding(.bottom, 20)
                 CustomTextFieldView(inputText: $username, infoText: "Your buddy name...*", isTapped: $isTapped)
                     .autocapitalization(.none)
                     .focused($isFocus)
                 if !username.isEmpty {
                     NavigationLink(destination: {
-                        Text("Next Page")
+                        EnterEmailView()
                     }, label: {
                         CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
                     })

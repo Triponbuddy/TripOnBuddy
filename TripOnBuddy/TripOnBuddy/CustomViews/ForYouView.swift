@@ -15,7 +15,7 @@ struct ForYouView: View {
     var body: some View {
         
         ZStack {
-            
+            //BackgroundView()
             VStack {
                 HStack {
                     Text(mySpaceViewModel.name)

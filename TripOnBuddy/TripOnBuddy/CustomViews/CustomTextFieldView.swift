@@ -18,7 +18,7 @@ struct CustomTextFieldView: View {
             
             VStack(alignment: .leading, spacing: 4) {
                 
-                TextField("", text: $inputText) { (status) in
+                TextField(infoText, text: $inputText) { (status) in
                     
                     // it will fire when text field is clicked
                     if status {
@@ -32,14 +32,14 @@ struct CustomTextFieldView: View {
                         isTapped = false
                     }
                 }
-                .padding(.top, isTapped ? 15 : 0)
-                .background(
-                    Text(infoText)
-                        .scaleEffect(isTapped ? 0.8 : 1)
-                        .offset(x: isTapped ? -7 : 0, y: isTapped ? -15 : 0)
-                        .foregroundStyle(.gray)
-                    , alignment: .leading
-                )
+                .padding(.top, isTapped ? 4 : 0)
+//                .background(
+//                    Text(infoText)
+//                        .scaleEffect(isTapped ? 0.8 : 1)
+//                        .offset(x: isTapped ? -7 : 0, y: isTapped ? -15 : 0)
+//                        .foregroundStyle(.gray)
+//                    , alignment: .leading
+//                )
                 .padding(.horizontal)
                 
                 RoundedRectangle(cornerRadius: 80)

@@ -14,7 +14,11 @@ struct EnterEmailView: View {
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 15) {
+                Text("Enter Your Email Id")
+                    .font(.title)
+                    .bold()
+                    .padding(.bottom, 20)
                 CustomTextFieldView(inputText: $emailId, infoText: "Your Email ID...*", isTapped: $isTapped)
                     .autocapitalization(.none)
                     .focused($isFocus)
@@ -22,15 +26,16 @@ struct EnterEmailView: View {
                     NavigationLink(destination: {
                         Text("Next Page")
                     }, label: {
-                        CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
+                        CustomButtonTemplate(name: "Create Account", width: 350, color: .nileBlue, paddingTop: 40)
                     })
                 }
                 else {
-                    CustomButtonTemplate(name: "Next", width: 350, color: .gray, paddingTop: 50)
+                    CustomButtonTemplate(name: "Create Account", width: 350, color: .gray, paddingTop: 40)
                 }
                 Spacer()
             }
             .padding()
+            .navigationBarBackButtonHidden(true)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarLeading, content: {
                     Image(systemName: "chevron.left")

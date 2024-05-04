@@ -15,9 +15,9 @@ struct SignUpView: View {
     @FocusState var isFocus: Bool
     let textLimit = 10
     var body: some View {
-        ZStack {
         NavigationStack {
-            
+            ZStack {
+                BackgroundView()
                 VStack(alignment: .center) {
                     Image("TOB")
                         .resizable()
@@ -50,7 +50,9 @@ struct SignUpView: View {
                         CustomButtonTemplate(name: "Next", width: 350, color: .gray, paddingTop: 50)
                     }
                 }
+                .padding()
             }
+            
             .onTapGesture {
                 // this dismisses the keyboard and deactiavtes the TextField
                 withAnimation(.easeOut(duration: 0.2)) {
@@ -58,8 +60,8 @@ struct SignUpView: View {
                     isTapped = false
                 }
             }
+            
         }
-        .padding()
         
     }
     // check the phonenumber for 10 digits or not

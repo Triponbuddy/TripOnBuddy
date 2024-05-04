@@ -19,7 +19,7 @@ struct OTPScreenView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                //BackgroundView()
+                BackgroundView()
                 VStack {
                     Image("TOB")
                         .resizable()

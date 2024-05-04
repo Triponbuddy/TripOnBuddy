@@ -14,25 +14,28 @@ struct ExploreView: View {
     @State private var addNewTrip: Bool = false
     var body: some View {
         NavigationStack {
-            VStack(spacing: 10) {
-                ScrollView {
-                    LazyVGrid(columns: [GridItem()], spacing: 20,content: {
-                        ForEach(tripDetails) { item in
-                            
-                            ExploreTripCardView(tripDetails: TripsDetails(userName: item.userName, name: item.name, fromDate: item.fromDate, toDate: item.toDate, expectedFare: item.expectedFare, destinations: item.destinations, destinationImage: item.destinationImage))
-                           
+            ZStack {
+                BackgroundView()
+                VStack(spacing: 10) {
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem()], spacing: 20,content: {
+                            ForEach(tripDetails) { item in
+                                
+                                ExploreTripCardView(tripDetails: TripsDetails(userName: item.userName, name: item.name, fromDate: item.fromDate, toDate: item.toDate, expectedFare: item.expectedFare, destinations: item.destinations, destinationImage: item.destinationImage))
+                                
+                            }
+                        })
+                        .searchable(text: $searchText, prompt: "Search...")
+                        .onAppear {
+                            tripDetails = dataServices.getTripsData()
                         }
-                    })
-                    .searchable(text: $searchText, prompt: "Search...")
-                    .onAppear {
-                        tripDetails = dataServices.getTripsData()
                     }
                 }
+                .navigationTitle("Explore View")
+                .navigationBarTitleDisplayMode(.large)
+                .scrollIndicators(.hidden)
+                .padding(.horizontal, 4)
             }
-            .navigationTitle("Explore View")
-            .navigationBarTitleDisplayMode(.large)
-            .scrollIndicators(.hidden)
-            .padding(.horizontal, 4)
         }
         .overlay(alignment: .bottomTrailing, content: {
             Button(action: {
@@ -52,6 +55,7 @@ struct ExploreView: View {
             })
             .buttonStyle(SimpleButtonStyle())
         })
+            
         .refreshable(action: {
             // write the code to refresh the page
         })

@@ -39,6 +39,7 @@
 		65D24C482BDC754D007578A2 /* EnterFullNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C472BDC754D007578A2 /* EnterFullNameView.swift */; };
 		65D24C4A2BDC7581007578A2 /* EnterEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C492BDC7581007578A2 /* EnterEmailView.swift */; };
 		65DA211A2BD98A4E009D61C6 /* EnterUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA21192BD98A4E009D61C6 /* EnterUsernameView.swift */; };
+		65F772822BE6CB61001588BB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F772812BE6CB61001588BB /* BackgroundView.swift */; };
 		65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C12BA76AC800BD123F /* TabBarView.swift */; };
 		65FC27C82BA76FEA00BD123F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C72BA76FEA00BD123F /* ExploreView.swift */; };
 		65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C92BA76FF500BD123F /* PostView.swift */; };
@@ -80,6 +81,7 @@
 		65D24C472BDC754D007578A2 /* EnterFullNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterFullNameView.swift; sourceTree = "<group>"; };
 		65D24C492BDC7581007578A2 /* EnterEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterEmailView.swift; sourceTree = "<group>"; };
 		65DA21192BD98A4E009D61C6 /* EnterUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameView.swift; sourceTree = "<group>"; };
+		65F772812BE6CB61001588BB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		65FC27C12BA76AC800BD123F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		65FC27C72BA76FEA00BD123F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		65FC27C92BA76FF500BD123F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */,
+				65F772812BE6CB61001588BB /* BackgroundView.swift */,
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
 				65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */,
 				65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */,
@@ -318,6 +321,7 @@
 				65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */,
 				65585F612BBAB26A006EAE60 /* CompletedTripsView.swift in Sources */,
 				65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */,
+				65F772822BE6CB61001588BB /* BackgroundView.swift in Sources */,
 				65DA211A2BD98A4E009D61C6 /* EnterUsernameView.swift in Sources */,
 				656A8E642BB09D2500985076 /* DataServices.swift in Sources */,
 				656A8E6C2BB0ACF800985076 /* ForYouView.swift in Sources */,

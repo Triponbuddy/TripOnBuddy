@@ -16,7 +16,12 @@ struct EnterUsernameView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                
                 VStack(spacing: 15) {
+                    Text("Create Your Username")
+                        .font(.title)
+                        .bold()
+                        .padding(.bottom, 20)
                     CustomTextFieldView(inputText: $username, infoText: "Your buddy name...*", isTapped: $isTapped)
                         .autocapitalization(.none)
                         .focused($isFocus)
