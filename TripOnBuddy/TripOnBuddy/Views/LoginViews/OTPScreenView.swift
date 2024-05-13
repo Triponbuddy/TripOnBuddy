@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 
+
 struct OTPScreenView: View {
     
     @State var isVerified: Bool = false
@@ -19,7 +20,7 @@ struct OTPScreenView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                BackgroundView()
+                //BackgroundView()
                 VStack {
                     Image("TOB")
                         .resizable()

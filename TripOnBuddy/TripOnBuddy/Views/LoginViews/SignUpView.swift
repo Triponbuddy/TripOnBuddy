@@ -17,7 +17,7 @@ struct SignUpView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                BackgroundView()
+                //BackgroundView()
                 VStack(alignment: .center) {
                     Image("TOB")
                         .resizable()

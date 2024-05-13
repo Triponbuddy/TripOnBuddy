@@ -17,7 +17,8 @@ struct ProfileView: View {
                     .font(.title)
                     .bold()
                 Spacer()
-                Image(systemName: "horizontal.line.3")
+                Image(systemName: "line.horizontal.3")
+                    .imageScale(.large)
             }
             UserProfilePageView(userProfileDetails: MyProfileDetails(userName: "soul_ofaDreamer".capitalized, name: "Sunil", userImage: "demo", bio: "Radhe Radhe"))
         }

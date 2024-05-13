@@ -14,6 +14,7 @@
 		65585F612BBAB26A006EAE60 /* CompletedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F602BBAB26A006EAE60 /* CompletedTripsView.swift */; };
 		65585F632BBAB274006EAE60 /* UpcomingTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F622BBAB274006EAE60 /* UpcomingTripsView.swift */; };
 		65585F672BBAB565006EAE60 /* TripsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F662BBAB565006EAE60 /* TripsDetails.swift */; };
+		6559BAAE2BF28F2C007BA81B /* AddNewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559BAAD2BF28F2C007BA81B /* AddNewTripView.swift */; };
 		656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E602BB09D0B00985076 /* StoriesTabModel.swift */; };
 		656A8E642BB09D2500985076 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E632BB09D2500985076 /* DataServices.swift */; };
 		656A8E662BB09E5C00985076 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A8E652BB09E5C00985076 /* StoryView.swift */; };
@@ -55,6 +56,7 @@
 		65585F602BBAB26A006EAE60 /* CompletedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTripsView.swift; sourceTree = "<group>"; };
 		65585F622BBAB274006EAE60 /* UpcomingTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTripsView.swift; sourceTree = "<group>"; };
 		65585F662BBAB565006EAE60 /* TripsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDetails.swift; sourceTree = "<group>"; };
+		6559BAAD2BF28F2C007BA81B /* AddNewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTripView.swift; sourceTree = "<group>"; };
 		656A8E602BB09D0B00985076 /* StoriesTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTabModel.swift; sourceTree = "<group>"; };
 		656A8E632BB09D2500985076 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		656A8E652BB09E5C00985076 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				656A8E652BB09E5C00985076 /* StoryView.swift */,
 				657284592BC8661A00DAF637 /* Title Bar Views */,
 				65FC27C72BA76FEA00BD123F /* ExploreView.swift */,
+				6559BAAD2BF28F2C007BA81B /* AddNewTripView.swift */,
 				65FC27C92BA76FF500BD123F /* PostView.swift */,
 				65FC27CB2BA7700200BD123F /* TripsView.swift */,
 				658DD7CE2BD6307D00F10E3A /* Profile Views */,
@@ -323,6 +326,7 @@
 				65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */,
 				65F772822BE6CB61001588BB /* BackgroundView.swift in Sources */,
 				65DA211A2BD98A4E009D61C6 /* EnterUsernameView.swift in Sources */,
+				6559BAAE2BF28F2C007BA81B /* AddNewTripView.swift in Sources */,
 				656A8E642BB09D2500985076 /* DataServices.swift in Sources */,
 				656A8E6C2BB0ACF800985076 /* ForYouView.swift in Sources */,
 				65585F632BBAB274006EAE60 /* UpcomingTripsView.swift in Sources */,

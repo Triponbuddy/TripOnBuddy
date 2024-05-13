@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    @State private var birthDate = Date.now
     var body: some View {
-        Text("Notifications")
+        VStack {
+            
+        }
     }
 }
 

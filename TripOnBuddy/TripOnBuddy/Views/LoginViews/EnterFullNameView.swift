@@ -12,21 +12,50 @@ struct EnterFullNameView: View {
     @State var isTapped: Bool = false
     @FocusState var isFocus: Bool
     @Environment(\.dismiss) var dismiss
+    @State private var birthDate = Date.now
+    @State var gender: Gender = .male
     var body: some View {
         NavigationStack {
             VStack(spacing: 15) {
                 VStack {
-                    Text("Enter Your Full Name")
+                    Text("Enter Your Details")
                         .font(.title)
                         .bold()
-                        
-                    Text("Enter your full name")
-                        .font(.footnote)
                 }
                 .padding(.bottom, 20)
-                CustomTextFieldView(inputText: $username, infoText: "Your buddy name...*", isTapped: $isTapped)
-                    .autocapitalization(.none)
-                    .focused($isFocus)
+                VStack(alignment: .leading) {
+                    Text("Enter Your Full Name")
+                    CustomTextFieldView(inputText: $username, infoText: "Your Full Name...*", isTapped: $isTapped)
+                        .autocapitalization(.none)
+                        .focused($isFocus)
+                }
+                DatePicker("Date Of Birth*", selection: $birthDate, displayedComponents: .date)
+                    .padding(.vertical, 10)
+                    .datePickerStyle(.compact)
+                HStack {
+                    Text("Gender*")
+                    Spacer()
+                    Button(action: {
+                        gender = .male
+                    }, label: {
+                        Text("Male")
+                            .padding(.horizontal)
+                            .foregroundStyle(.white)
+                    })
+                    .background(Capsule()
+                        .foregroundStyle(gender == .male ? .blue : .gray))
+                    Button(action: {
+                        gender = .female
+                    }, label: {
+                        Text("Female")
+                            .padding(.horizontal)
+                            .foregroundStyle(.white)
+                    })
+                    .background(Capsule()
+                        .foregroundStyle(gender == .female ? .pink : .gray))
+                }
+                
+                
                 if !username.isEmpty {
                     NavigationLink(destination: {
                         EnterEmailView()
@@ -38,6 +67,7 @@ struct EnterFullNameView: View {
                     CustomButtonTemplate(name: "Next", width: 350, color: .gray, paddingTop: 50)
                 }
                 Spacer()
+                
             }
             .padding()
             .toolbar(content: {

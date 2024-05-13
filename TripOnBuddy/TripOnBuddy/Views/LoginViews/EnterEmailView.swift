@@ -24,7 +24,7 @@ struct EnterEmailView: View {
                     .focused($isFocus)
                 if !emailId.isEmpty {
                     NavigationLink(destination: {
-                        Text("Next Page")
+                        MySpaceView()
                     }, label: {
                         CustomButtonTemplate(name: "Create Account", width: 350, color: .nileBlue, paddingTop: 40)
                     })

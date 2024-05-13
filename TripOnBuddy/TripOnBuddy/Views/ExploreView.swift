@@ -60,15 +60,8 @@ struct ExploreView: View {
             // write the code to refresh the page
         })
         .sheet(isPresented: $addNewTrip, content: {
-            NavigationStack {
-                CustomTextFieldView(inputText: .constant("Destination"), isTapped: .constant(true))
-                CustomTextFieldView(inputText: .constant("Duration"), isTapped: .constant(true))
-                NavigationLink(destination: {
-                    Text("Next Page View")
-                }, label: {
-                    Text("Next")
-                })
-            }
+            AddNewTripView()
+                
         })
         
     }

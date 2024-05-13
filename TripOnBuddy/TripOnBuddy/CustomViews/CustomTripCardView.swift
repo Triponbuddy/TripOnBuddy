@@ -12,6 +12,7 @@ struct CustomTripCardView: View {
     var tripDetails: TripsDetails
     @State var isCompleted = false
     @Environment(\.colorScheme) var colorScheme
+    @State var gender: Gender = .male
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
