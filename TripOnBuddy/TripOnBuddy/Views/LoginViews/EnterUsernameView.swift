@@ -43,7 +43,7 @@ struct EnterUsernameView: View {
                     }
                     if !username.isEmpty {
                         NavigationLink(destination: {
-                            EnterFullNameView()
+                            UserDetailsSignUpView()
                         }, label: {
                             CustomButtonTemplate(name: "Next", width: 350, color: .nileBlue, paddingTop: 50)
                         })

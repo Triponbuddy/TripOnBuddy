@@ -37,7 +37,7 @@
 		65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */; };
 		65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */; };
 		65D24C462BDC729C007578A2 /* CustomButtonTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */; };
-		65D24C482BDC754D007578A2 /* EnterFullNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C472BDC754D007578A2 /* EnterFullNameView.swift */; };
+		65D24C482BDC754D007578A2 /* UserDetailsSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C472BDC754D007578A2 /* UserDetailsSignUpView.swift */; };
 		65D24C4A2BDC7581007578A2 /* EnterEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C492BDC7581007578A2 /* EnterEmailView.swift */; };
 		65DA211A2BD98A4E009D61C6 /* EnterUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA21192BD98A4E009D61C6 /* EnterUsernameView.swift */; };
 		65F772822BE6CB61001588BB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F772812BE6CB61001588BB /* BackgroundView.swift */; };
@@ -80,7 +80,7 @@
 		65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPScreenView.swift; sourceTree = "<group>"; };
 		65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOtpView.swift; sourceTree = "<group>"; };
 		65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonTemplate.swift; sourceTree = "<group>"; };
-		65D24C472BDC754D007578A2 /* EnterFullNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterFullNameView.swift; sourceTree = "<group>"; };
+		65D24C472BDC754D007578A2 /* UserDetailsSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsSignUpView.swift; sourceTree = "<group>"; };
 		65D24C492BDC7581007578A2 /* EnterEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterEmailView.swift; sourceTree = "<group>"; };
 		65DA21192BD98A4E009D61C6 /* EnterUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameView.swift; sourceTree = "<group>"; };
 		65F772812BE6CB61001588BB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				656B97932BA6238C00A1F34C /* SignUpView.swift */,
 				65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */,
 				65DA21192BD98A4E009D61C6 /* EnterUsernameView.swift */,
-				65D24C472BDC754D007578A2 /* EnterFullNameView.swift */,
+				65D24C472BDC754D007578A2 /* UserDetailsSignUpView.swift */,
 				65D24C492BDC7581007578A2 /* EnterEmailView.swift */,
 			);
 			path = LoginViews;
@@ -314,7 +314,7 @@
 				658DD7D02BD6352D00F10E3A /* CustomButton.swift in Sources */,
 				656A8E682BB0A8BD00985076 /* CustomStoryView.swift in Sources */,
 				656A8E662BB09E5C00985076 /* StoryView.swift in Sources */,
-				65D24C482BDC754D007578A2 /* EnterFullNameView.swift in Sources */,
+				65D24C482BDC754D007578A2 /* UserDetailsSignUpView.swift in Sources */,
 				658DD7D22BD63FF300F10E3A /* ExploreTripCardView.swift in Sources */,
 				65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */,
 				65FC27CC2BA7700200BD123F /* TripsView.swift in Sources */,

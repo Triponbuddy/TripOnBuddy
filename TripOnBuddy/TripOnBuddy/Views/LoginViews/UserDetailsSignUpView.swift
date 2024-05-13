@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EnterFullNameView: View {
+struct UserDetailsSignUpView: View {
     @State var username: String = ""
     @State var isTapped: Bool = false
     @FocusState var isFocus: Bool
@@ -92,5 +92,5 @@ struct EnterFullNameView: View {
 }
 
 #Preview {
-    EnterFullNameView()
+    UserDetailsSignUpView()
 }
