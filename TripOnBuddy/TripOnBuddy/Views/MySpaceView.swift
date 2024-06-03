@@ -19,7 +19,7 @@ struct MySpaceView: View {
     var body: some View {
         NavigationStack {
         ZStack {
-            BackgroundView()
+           // BackgroundView()
             
                 VStack {
                     HStack {
@@ -46,8 +46,6 @@ struct MySpaceView: View {
                         })
                         
                     }
-                    
-                    
                     ScrollView {
                         //
                         ScrollView(.horizontal) {
@@ -142,7 +140,6 @@ struct MySpaceView: View {
                     .scrollIndicators(.hidden)
                 }
                 .padding([.horizontal, .top], 10)
-                //.monospaced()
                 .onAppear {
                     yourStories = dataServices.getData()
                     forYouData = dataServices.getForYouData()

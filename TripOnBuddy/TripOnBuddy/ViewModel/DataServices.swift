@@ -40,5 +40,8 @@ struct DataServices {
             MyProfileDetails(userName: "sandeep_02", name: "Sandeep", userImage: "demo", bio: "Just Relax and Keep Moving")
         ]
     }
-    
+    func getHotspotsData() -> [HotSpotsModel] {
+        return [
+        HotSpotsModel(image: "TOB", title: "Trip")]
+    }
 }

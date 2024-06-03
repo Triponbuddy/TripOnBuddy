@@ -23,7 +23,7 @@ struct RootView: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
-            BackgroundView()
+            //BackgroundView()
             VStack {
                 
                 switch selectedTab {

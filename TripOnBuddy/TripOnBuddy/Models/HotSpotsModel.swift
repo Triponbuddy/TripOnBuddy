@@ -10,4 +10,5 @@ struct HotSpotsModel: Identifiable, Decodable {
     let id = UUID()
     var image: String
     var personImage: String?
+    var title: String
 }
