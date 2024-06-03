@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomTripCardView: View {
     @State private var currentDate: Date = .now
     var tripDetails: TripsDetails
-    @State var isCompleted = false
+    @Binding var isCompleted: Bool
     @Environment(\.colorScheme) var colorScheme
     @State var gender: Gender = .male
     var body: some View {
@@ -77,5 +77,5 @@ struct CustomTripCardView: View {
 }
 
 #Preview {
-    CustomTripCardView(tripDetails: TripsDetails(userName: "soul_ofaDreamer", name: "Sunil Sharma", fromDate: "31-March-2024", toDate: "4-April-2024", expectedFare: "5000", destinations: "New Delhi", destinationImage: "demo"))
+    CustomTripCardView(tripDetails: TripsDetails(userName: "soul_ofaDreamer", name: "Sunil Sharma", fromDate: "31-March-2024", toDate: "4-April-2024", expectedFare: "5000", destinations: "New Delhi", destinationImage: "demo"), isCompleted: .constant(false))
 }

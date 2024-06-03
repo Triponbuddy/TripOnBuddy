@@ -15,7 +15,7 @@ struct CompletedTripsView: View {
             ScrollView {
                 LazyVGrid(columns: [GridItem()], spacing: 10, content: {
                     ForEach(tripDetails) { item in
-                        CustomTripCardView(tripDetails: TripsDetails(userName: item.userName, name: item.name, fromDate: item.fromDate, toDate: item.toDate, expectedFare: item.expectedFare, destinations: item.destinations, destinationImage: item.destinationImage))
+                        CustomTripCardView(tripDetails: TripsDetails(userName: item.userName, name: item.name, fromDate: item.fromDate, toDate: item.toDate, expectedFare: item.expectedFare, destinations: item.destinations, destinationImage: item.destinationImage), isCompleted: .constant(true))
                             .padding(.horizontal, 5)
                     }
                 })

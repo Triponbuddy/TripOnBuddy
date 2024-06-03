@@ -15,7 +15,7 @@ struct ExploreView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                BackgroundView()
+               // BackgroundView()
                 VStack(spacing: 10) {
                     ScrollView {
                         LazyVGrid(columns: [GridItem()], spacing: 20,content: {

@@ -163,7 +163,7 @@
 		657284592BC8661A00DAF637 /* Title Bar Views */ = {
 			isa = PBXGroup;
 			children = (
-				657284552BC8657200DAF637 /* AllChatsView.swift */,
+				65FE67CB2C0E368200FF486B /* Chat Views */,
 				657284572BC8661500DAF637 /* NotificationsView.swift */,
 			);
 			path = "Title Bar Views";
@@ -234,6 +234,14 @@
 				65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		65FE67CB2C0E368200FF486B /* Chat Views */ = {
+			isa = PBXGroup;
+			children = (
+				657284552BC8657200DAF637 /* AllChatsView.swift */,
+			);
+			path = "Chat Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
