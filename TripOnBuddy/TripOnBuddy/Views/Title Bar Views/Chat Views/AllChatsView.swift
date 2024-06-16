@@ -61,6 +61,7 @@ struct AllChatsView: View {
             }
             .buttonStyle(SimpleButtonStyle())
             .ignoresSafeArea(edges: .bottom)
+            .navigationBarBackButtonHidden()
         }
     }
 }

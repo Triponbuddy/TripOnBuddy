@@ -150,7 +150,7 @@ struct MySpaceView: View {
                 // put code here to sync the Feed
             }
         }
-        
+        .navigationBarBackButtonHidden()
     }
 }
 

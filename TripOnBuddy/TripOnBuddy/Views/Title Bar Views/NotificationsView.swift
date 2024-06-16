@@ -8,42 +8,51 @@
 import SwiftUI
 
 struct NotificationsView: View {
-    // @State private var birthDate = Date.now
+    let notificationMessage = "Notification Text is the text that will provide quick overview of the things happening around."
     var body: some View {
-        ZStack {
-            ScrollView {
-                VStack {
-                    
-                    // Add Code for the push notifications
-                    LazyVGrid(columns: [GridItem()], spacing: 20,content: {
-                        ForEach(0 ..< 100) { item in
-                            
-                            // Add code to redirect the user to the notification post.
-                            
-                            HStack {
-                                Image("India Gate")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .clipShape(Circle())
-                                    .frame(width: 70, height: 70)
-                                Group {
-                                    Text("Username")
-                                        .bold() +
-                                    Text(" ") +
-                                    Text("Notification Text is the text that will provide quick overview of the things happening around.")
+        NavigationStack {
+            ZStack {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        
+                        // Add Code for the push notifications
+                        LazyVGrid(columns: [GridItem()], spacing: 20,content: {
+                            ForEach(0 ..< 100) { item in
+                                
+                                // Add code to redirect the user to the notification post.
+                                
+                                HStack {
+                                    Image("India Gate")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .clipShape(Circle())
+                                        .frame(width: 70, height: 70)
+                                    Group {
+                                        Text("Username")
+                                            .bold() +
+                                        Text(" ") +
+                                        Text(notificationMessage)
+                                    }
+                                    
                                 }
-                                
-                                
+                                Divider()
                             }
-                            Divider()
-                        }
-                    })
+                        })
+                        
+                    }
+                    .padding(.horizontal)
                     
                 }
-                .padding(.horizontal)
-                
+                .refreshable {
+                    
+                }
+              
             }
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("Notifications")
+            .navigationBarBackButtonHidden()
         }
+        
         .ignoresSafeArea(edges: .bottom)
     }
 }
