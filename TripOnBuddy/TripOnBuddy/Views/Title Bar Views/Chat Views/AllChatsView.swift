@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct AllChatsView: View {
+    @State var userName: String = "Sunil Sharma"
     var body: some View {
         NavigationStack {
             ZStack {
@@ -29,7 +30,7 @@ struct AllChatsView: View {
                                 
                                 // Add code to redirect the user to the Chats post.
                                 NavigationLink(destination: {
-                                    Text("Single Chat view")
+                                    SingleChatView(userName: $userName)
                                 }, label: {
                                     HStack {
                                         Image("India Gate")
@@ -40,7 +41,7 @@ struct AllChatsView: View {
                                         
                                         
                                         VStack(alignment: .leading) {
-                                            Text("Username")
+                                            Text(userName)
                                                 .bold()
                                             Text("message")
                                                 .font(.callout)
