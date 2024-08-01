@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Combine
+import FirebaseCore
+import FirebaseAuth
 
 struct SignUpView: View {
     
@@ -14,6 +16,7 @@ struct SignUpView: View {
     @State private var isTapped: Bool = false
     @FocusState var isFocus: Bool
     let textLimit = 10
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -39,6 +42,7 @@ struct SignUpView: View {
                         // The focus state of the keyboard
                             .focused($isFocus)
                     }
+                    
                     if !mobileNumber.isEmpty && checkPhoneNumber() {
                         NavigationLink(destination:
                                         OTPScreenView()
@@ -64,6 +68,7 @@ struct SignUpView: View {
         }
         
     }
+    
     // check the phonenumber for 10 digits or not
     func checkPhoneNumber() -> Bool {
         
