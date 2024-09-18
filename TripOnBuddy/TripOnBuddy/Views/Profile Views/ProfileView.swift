@@ -20,7 +20,7 @@ struct ProfileView: View {
                 Image(systemName: "line.horizontal.3")
                     .imageScale(.large)
             }
-            UserProfilePageView(userProfileDetails: MyProfileDetails(userName: "soul_ofaDreamer".capitalized, name: "Sunil", userImage: "demo", bio: "Radhe Radhe"))
+            
         }
         .onAppear(perform: {
             userProfileDetails = dataServices.getUserData()

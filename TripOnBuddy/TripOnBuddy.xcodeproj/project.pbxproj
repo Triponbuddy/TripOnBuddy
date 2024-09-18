@@ -36,6 +36,7 @@
 		6505DABA2C57E8A700BB1814 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DAB92C57E8A700BB1814 /* FirebaseStorage */; };
 		6505DABC2C57E8A700BB1814 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DABB2C57E8A700BB1814 /* FirebaseStorageCombine-Community */; };
 		6505DABE2C57E8A700BB1814 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DABD2C57E8A700BB1814 /* FirebaseVertexAI-Preview */; };
+		65080E202C99E3D100057CD3 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65080E1F2C99E3D100057CD3 /* Authentication.swift */; };
 		651E06232BD6EA52008917C6 /* HotSpotsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E06222BD6EA52008917C6 /* HotSpotsModel.swift */; };
 		65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */; };
 		65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */; };
@@ -63,13 +64,9 @@
 		65953F9E2BA619A000381628 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65953F9D2BA619A000381628 /* Preview Assets.xcassets */; };
 		65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */; };
 		65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */; };
-		65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */; };
 		65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */; };
+		65C689392C9B81BB00F7A90D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C689382C9B81BB00F7A90D /* SignInView.swift */; };
 		65D24C462BDC729C007578A2 /* CustomButtonTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */; };
-		65D24C482BDC754D007578A2 /* UserDetailsSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C472BDC754D007578A2 /* UserDetailsSignUpView.swift */; };
-		65D24C4A2BDC7581007578A2 /* EnterEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C492BDC7581007578A2 /* EnterEmailView.swift */; };
-		65DA211A2BD98A4E009D61C6 /* EnterUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DA21192BD98A4E009D61C6 /* EnterUsernameView.swift */; };
-		65F772822BE6CB61001588BB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F772812BE6CB61001588BB /* BackgroundView.swift */; };
 		65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C12BA76AC800BD123F /* TabBarView.swift */; };
 		65FC27C82BA76FEA00BD123F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C72BA76FEA00BD123F /* ExploreView.swift */; };
 		65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C92BA76FF500BD123F /* PostView.swift */; };
@@ -81,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		6505DA842C555B3500BB1814 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65080E1F2C99E3D100057CD3 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		651E06222BD6EA52008917C6 /* HotSpotsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotsModel.swift; sourceTree = "<group>"; };
 		65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDetails.swift; sourceTree = "<group>"; };
 		65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarView.swift; sourceTree = "<group>"; };
@@ -109,13 +107,9 @@
 		65953F9D2BA619A000381628 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTripCardView.swift; sourceTree = "<group>"; };
 		65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
-		65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPScreenView.swift; sourceTree = "<group>"; };
 		65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOtpView.swift; sourceTree = "<group>"; };
+		65C689382C9B81BB00F7A90D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonTemplate.swift; sourceTree = "<group>"; };
-		65D24C472BDC754D007578A2 /* UserDetailsSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsSignUpView.swift; sourceTree = "<group>"; };
-		65D24C492BDC7581007578A2 /* EnterEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterEmailView.swift; sourceTree = "<group>"; };
-		65DA21192BD98A4E009D61C6 /* EnterUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameView.swift; sourceTree = "<group>"; };
-		65F772812BE6CB61001588BB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		65FC27C12BA76AC800BD123F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		65FC27C72BA76FEA00BD123F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		65FC27C92BA76FF500BD123F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -167,11 +161,8 @@
 		651E06212BD6E79F008917C6 /* LoginViews */ = {
 			isa = PBXGroup;
 			children = (
+				65C689382C9B81BB00F7A90D /* SignInView.swift */,
 				656B97932BA6238C00A1F34C /* SignUpView.swift */,
-				65B85BF32BA6464400DC6BA2 /* OTPScreenView.swift */,
-				65DA21192BD98A4E009D61C6 /* EnterUsernameView.swift */,
-				65D24C472BDC754D007578A2 /* UserDetailsSignUpView.swift */,
-				65D24C492BDC7581007578A2 /* EnterEmailView.swift */,
 			);
 			path = LoginViews;
 			sourceTree = "<group>";
@@ -201,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				656A8E632BB09D2500985076 /* DataServices.swift */,
+				65080E1F2C99E3D100057CD3 /* Authentication.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -266,7 +258,7 @@
 				65953F9A2BA619A000381628 /* Assets.xcassets */,
 				656A8E622BB09D1300985076 /* ViewModel */,
 				65275C612BA778FA00EBCE34 /* Models */,
-				65FC27C02BA76A7700BD123F /* CustomViews */,
+				65FC27C02BA76A7700BD123F /* Components */,
 				65953F9C2BA619A000381628 /* Preview Content */,
 			);
 			path = TripOnBuddy;
@@ -280,11 +272,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		65FC27C02BA76A7700BD123F /* CustomViews */ = {
+		65FC27C02BA76A7700BD123F /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */,
-				65F772812BE6CB61001588BB /* BackgroundView.swift */,
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
 				65FEAAEB2C0E3AAB005DC2CA /* CustomChatBubbleView.swift */,
 				65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */,
@@ -297,7 +288,7 @@
 				656A8E6B2BB0ACF800985076 /* ForYouView.swift */,
 				65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */,
 			);
-			path = CustomViews;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		65FE67CB2C0E368200FF486B /* Chat Views */ = {
@@ -414,14 +405,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				65953F992BA6199E00381628 /* RootView.swift in Sources */,
-				65D24C4A2BDC7581007578A2 /* EnterEmailView.swift in Sources */,
 				65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */,
 				65FC27CE2BA7700F00BD123F /* ProfileView.swift in Sources */,
 				656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */,
 				658DD7D02BD6352D00F10E3A /* CustomButton.swift in Sources */,
 				656A8E682BB0A8BD00985076 /* CustomStoryView.swift in Sources */,
 				656A8E662BB09E5C00985076 /* StoryView.swift in Sources */,
-				65D24C482BDC754D007578A2 /* UserDetailsSignUpView.swift in Sources */,
 				658DD7D22BD63FF300F10E3A /* ExploreTripCardView.swift in Sources */,
 				65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */,
 				65FC27CC2BA7700200BD123F /* TripsView.swift in Sources */,
@@ -430,12 +419,11 @@
 				65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */,
 				65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */,
 				65585F612BBAB26A006EAE60 /* CompletedTripsView.swift in Sources */,
-				65B85BF42BA6464500DC6BA2 /* OTPScreenView.swift in Sources */,
 				65FEAAEC2C0E3AAB005DC2CA /* CustomChatBubbleView.swift in Sources */,
-				65F772822BE6CB61001588BB /* BackgroundView.swift in Sources */,
-				65DA211A2BD98A4E009D61C6 /* EnterUsernameView.swift in Sources */,
 				6559BAAE2BF28F2C007BA81B /* AddNewTripView.swift in Sources */,
 				656A8E642BB09D2500985076 /* DataServices.swift in Sources */,
+				65C689392C9B81BB00F7A90D /* SignInView.swift in Sources */,
+				65080E202C99E3D100057CD3 /* Authentication.swift in Sources */,
 				656A8E6C2BB0ACF800985076 /* ForYouView.swift in Sources */,
 				65585F632BBAB274006EAE60 /* UpcomingTripsView.swift in Sources */,
 				657284582BC8661600DAF637 /* NotificationsView.swift in Sources */,

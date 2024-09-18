@@ -34,10 +34,10 @@ struct DataServices {
     }
     func getUserData() -> [MyProfileDetails] {
         return [
-            MyProfileDetails(userName: "soul_ofaDreamer", name: "Sunil", userImage: "demo", bio: "Radhe Radhe"),
-            MyProfileDetails(userName: "ajay_01", name: "Ajay", userImage: "TOB", bio: "Life is worth living."),
-            MyProfileDetails(userName: "ankit_03", name: "Ankit", userImage: "prem mandir"),
-            MyProfileDetails(userName: "sandeep_02", name: "Sandeep", userImage: "demo", bio: "Just Relax and Keep Moving")
+            MyProfileDetails(id: "", userName: "soul_ofaDreamer", fullName: "Sunil", userImage: "demo", bio: "Radhe Radhe"),
+            MyProfileDetails(id: "", userName: "ajay_01", fullName: "Ajay", userImage: "TOB", bio: "Life is worth living."),
+            MyProfileDetails(id: "", userName: "ankit_03", fullName: "Ankit", userImage: "prem mandir"),
+            MyProfileDetails(id: "", userName: "sandeep_02", fullName: "Sandeep", userImage: "demo", bio: "Just Relax and Keep Moving")
         ]
     }
     func getHotspotsData() -> [HotSpotsModel] {

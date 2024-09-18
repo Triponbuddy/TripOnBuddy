@@ -16,8 +16,7 @@ struct AddNewTripView: View {
             ZStack {
                 //BackgroundView()
                 VStack {
-                    CustomTextFieldView(inputText: $destination, isTapped: $isTapped)
-                    CustomTextFieldView(inputText: $duration, infoText: "Duration", isTapped: $isTapped)
+                  
                     
                     NavigationLink(destination: {
                         Text("Next Page View")

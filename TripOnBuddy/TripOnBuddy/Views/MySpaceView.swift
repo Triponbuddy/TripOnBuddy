@@ -15,7 +15,7 @@ struct MySpaceView: View {
     @State var forYouData: [ForYouViewModel] = []
     @State var isTapped: Bool = false
     @Environment(\.colorScheme) var colorScheme
-    var profileDetails: MyProfileDetails = MyProfileDetails(userName: "", name: "Sunil Sharma")
+    var profileDetails: MyProfileDetails = MyProfileDetails(id: "", userName: "", fullName: "Sunil Sharma")
     var body: some View {
         NavigationStack {
         ZStack {

@@ -29,7 +29,7 @@ struct UserProfilePageView: View {
             VStack(alignment: .leading) {
                 Text(userProfileDetails.userName)
                     
-                Text(userProfileDetails.name)
+                Text(userProfileDetails.fullName)
             }
             .font(.title3)
                 .bold()
@@ -52,5 +52,5 @@ struct UserProfilePageView: View {
 }
 
 #Preview {
-    UserProfilePageView(userProfileDetails:  MyProfileDetails(userName: "Soul_ofadreamer", name: "Sunil Sharma", userImage: "demo", bio: "Radhe Radhe"))
+    UserProfilePageView(userProfileDetails:  MyProfileDetails(id: "", userName: "Soul_ofadreamer", fullName: "Sunil Sharma", userImage: "demo", bio: "Radhe Radhe"))
 }
