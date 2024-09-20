@@ -44,11 +44,12 @@ class AuthViewModel: ObservableObject {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
             
-            let user = MyProfileDetails(id: result.user.uid, userName: username, fullName: fullName, emailId: email)
+            let user = User(id: result.user.uid, userName: username, fullName: fullName, emailId: email)
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             
             await fetchUser()
+            
         } catch {
             
             print("DEBUG: Failed to Create user with error: \(error.localizedDescription)")
@@ -73,10 +74,18 @@ class AuthViewModel: ObservableObject {
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
-        
-        // self.currentUser = try? snapshot.data(as: MyProfileDetails.self)
-        
-        print("DEBUG: Current User is \(self.currentUser)")
+        do {
+                let snapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
+
+                // Check if the document exists before decoding
+                if let data = snapshot.data() {
+                    self.currentUser = try Firestore.Decoder().decode(User.self, from: data)
+                    print("DEBUG: Current User is \(String(describing: self.currentUser))")
+                } else {
+                    print("DEBUG: No user data found for uid \(uid)")
+                }
+            } catch {
+                print("DEBUG: Error fetching user: \(error.localizedDescription)")
+            }
     }
 }

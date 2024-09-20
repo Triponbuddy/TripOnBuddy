@@ -42,7 +42,6 @@ struct TabBarView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(.clear)
-                .shadow(color: .gray.opacity(0.4), radius: 20, x: 0, y: 20)
             
             TabsLayoutView(selectedTab: $selectedTab)
         }
@@ -81,21 +80,21 @@ fileprivate struct TabsLayoutView: View {
                 ZStack {
                     if isSelected {
                         Capsule()
-                            .shadow(radius: 10)
-                            .frame(width: 80, height: 60)
+                            .shadow(color: .blue.opacity(0.4), radius: 4, y: 10)
+                            .frame(width: 60, height: 8)
                             .background {
                                 Capsule()
-                                    .stroke(lineWidth: 15)
+                                    .stroke(lineWidth: 1)
                                     .foregroundStyle(.background)
                             }
-                            .offset(y: 0)
+                            .offset(y: -20)
                             .matchedGeometryEffect(id: "Selected Tab", in: namespace)
                             .animation(.spring(), value: selectedTab)
                     }
                     
                     Image(systemName: tab.icon)
                         .font(.system(size: 25, weight: .semibold, design: .rounded))
-                        .foregroundColor(isSelected ? .init(white: 0.9) : .gray)
+                        .foregroundColor(isSelected ? Color.nileBlue : .gray.opacity(0.9))
                         .scaleEffect(isSelected ? 1 : 0.7)
                         //.offset(y: isSelected ? -40 : 0)
                         .animation(isSelected ? .spring(response: 0.5, dampingFraction: 0.3, blendDuration: 1) : .spring(), value: selectedTab)

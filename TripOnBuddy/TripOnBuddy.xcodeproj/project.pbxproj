@@ -36,9 +36,9 @@
 		6505DABA2C57E8A700BB1814 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DAB92C57E8A700BB1814 /* FirebaseStorage */; };
 		6505DABC2C57E8A700BB1814 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DABB2C57E8A700BB1814 /* FirebaseStorageCombine-Community */; };
 		6505DABE2C57E8A700BB1814 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DABD2C57E8A700BB1814 /* FirebaseVertexAI-Preview */; };
-		65080E202C99E3D100057CD3 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65080E1F2C99E3D100057CD3 /* Authentication.swift */; };
+		65080E202C99E3D100057CD3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */; };
 		651E06232BD6EA52008917C6 /* HotSpotsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E06222BD6EA52008917C6 /* HotSpotsModel.swift */; };
-		65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */; };
+		65275C632BA7791A00EBCE34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* User.swift */; };
 		65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */; };
 		65585F5E2BBAAEBA006EAE60 /* TripsTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */; };
 		65585F612BBAB26A006EAE60 /* CompletedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F602BBAB26A006EAE60 /* CompletedTripsView.swift */; };
@@ -62,6 +62,8 @@
 		65953F992BA6199E00381628 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65953F982BA6199E00381628 /* RootView.swift */; };
 		65953F9B2BA619A000381628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65953F9A2BA619A000381628 /* Assets.xcassets */; };
 		65953F9E2BA619A000381628 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65953F9D2BA619A000381628 /* Preview Assets.xcassets */; };
+		659ED7B52C9BAA2C0028D783 /* BackgroundColourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ED7B42C9BAA2C0028D783 /* BackgroundColourView.swift */; };
+		659ED7B92C9BAF2C0028D783 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659ED7B82C9BAF2C0028D783 /* ContentView.swift */; };
 		65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */; };
 		65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */; };
 		65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */; };
@@ -78,9 +80,9 @@
 
 /* Begin PBXFileReference section */
 		6505DA842C555B3500BB1814 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		65080E1F2C99E3D100057CD3 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		651E06222BD6EA52008917C6 /* HotSpotsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotsModel.swift; sourceTree = "<group>"; };
-		65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDetails.swift; sourceTree = "<group>"; };
+		65275C622BA7791A00EBCE34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarView.swift; sourceTree = "<group>"; };
 		65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarButton.swift; sourceTree = "<group>"; };
 		65585F602BBAB26A006EAE60 /* CompletedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTripsView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,8 @@
 		65953F982BA6199E00381628 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		65953F9A2BA619A000381628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65953F9D2BA619A000381628 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		659ED7B42C9BAA2C0028D783 /* BackgroundColourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColourView.swift; sourceTree = "<group>"; };
+		659ED7B82C9BAF2C0028D783 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTripCardView.swift; sourceTree = "<group>"; };
 		65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOtpView.swift; sourceTree = "<group>"; };
@@ -170,7 +174,7 @@
 		65275C612BA778FA00EBCE34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				65275C622BA7791A00EBCE34 /* MyProfileDetails.swift */,
+				65275C622BA7791A00EBCE34 /* User.swift */,
 				656A8E692BB0AC1B00985076 /* ForYouViewModel.swift */,
 				65585F662BBAB565006EAE60 /* TripsDetails.swift */,
 				656A8E602BB09D0B00985076 /* StoriesTabModel.swift */,
@@ -192,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				656A8E632BB09D2500985076 /* DataServices.swift */,
-				65080E1F2C99E3D100057CD3 /* Authentication.swift */,
+				65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,13 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				651E06212BD6E79F008917C6 /* LoginViews */,
-				656B97972BA623A300A1F34C /* MySpaceView.swift */,
-				656A8E652BB09E5C00985076 /* StoryView.swift */,
+				65F145742C9CF1A400080999 /* Main Views */,
 				657284592BC8661A00DAF637 /* Title Bar Views */,
-				65FC27C72BA76FEA00BD123F /* ExploreView.swift */,
 				6559BAAD2BF28F2C007BA81B /* AddNewTripView.swift */,
-				65FC27C92BA76FF500BD123F /* PostView.swift */,
-				65FC27CB2BA7700200BD123F /* TripsView.swift */,
 				658DD7CE2BD6307D00F10E3A /* Profile Views */,
 				65585F5F2BBAB246006EAE60 /* TripsTabsViews */,
 			);
@@ -226,7 +226,6 @@
 		658DD7CE2BD6307D00F10E3A /* Profile Views */ = {
 			isa = PBXGroup;
 			children = (
-				65FC27CD2BA7700F00BD123F /* ProfileView.swift */,
 				658DD7CC2BD6307800F10E3A /* UserProfilePageView.swift */,
 			);
 			path = "Profile Views";
@@ -251,8 +250,7 @@
 		65953F952BA6199E00381628 /* TripOnBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				65953F962BA6199E00381628 /* TripOnBuddyApp.swift */,
-				65953F982BA6199E00381628 /* RootView.swift */,
+				65F145752C9CF1E500080999 /* Main App */,
 				6505DA842C555B3500BB1814 /* GoogleService-Info.plist */,
 				656B97922BA6234A00A1F34C /* Views */,
 				65953F9A2BA619A000381628 /* Assets.xcassets */,
@@ -272,10 +270,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		65F145742C9CF1A400080999 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				656A8E652BB09E5C00985076 /* StoryView.swift */,
+				65FC27CB2BA7700200BD123F /* TripsView.swift */,
+				65FC27C92BA76FF500BD123F /* PostView.swift */,
+				65FC27C72BA76FEA00BD123F /* ExploreView.swift */,
+				65FC27CD2BA7700F00BD123F /* ProfileView.swift */,
+				656B97972BA623A300A1F34C /* MySpaceView.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		65F145752C9CF1E500080999 /* Main App */ = {
+			isa = PBXGroup;
+			children = (
+				65953F962BA6199E00381628 /* TripOnBuddyApp.swift */,
+				65953F982BA6199E00381628 /* RootView.swift */,
+				659ED7B82C9BAF2C0028D783 /* ContentView.swift */,
+			);
+			path = "Main App";
+			sourceTree = "<group>";
+		};
 		65FC27C02BA76A7700BD123F /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */,
+				659ED7B42C9BAA2C0028D783 /* BackgroundColourView.swift */,
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
 				65FEAAEB2C0E3AAB005DC2CA /* CustomChatBubbleView.swift */,
 				65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */,
@@ -412,6 +434,7 @@
 				656A8E682BB0A8BD00985076 /* CustomStoryView.swift in Sources */,
 				656A8E662BB09E5C00985076 /* StoryView.swift in Sources */,
 				658DD7D22BD63FF300F10E3A /* ExploreTripCardView.swift in Sources */,
+				659ED7B92C9BAF2C0028D783 /* ContentView.swift in Sources */,
 				65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */,
 				65FC27CC2BA7700200BD123F /* TripsView.swift in Sources */,
 				656B97942BA6238C00A1F34C /* SignUpView.swift in Sources */,
@@ -423,7 +446,7 @@
 				6559BAAE2BF28F2C007BA81B /* AddNewTripView.swift in Sources */,
 				656A8E642BB09D2500985076 /* DataServices.swift in Sources */,
 				65C689392C9B81BB00F7A90D /* SignInView.swift in Sources */,
-				65080E202C99E3D100057CD3 /* Authentication.swift in Sources */,
+				65080E202C99E3D100057CD3 /* AuthViewModel.swift in Sources */,
 				656A8E6C2BB0ACF800985076 /* ForYouView.swift in Sources */,
 				65585F632BBAB274006EAE60 /* UpcomingTripsView.swift in Sources */,
 				657284582BC8661600DAF637 /* NotificationsView.swift in Sources */,
@@ -433,8 +456,9 @@
 				658DD7CD2BD6307800F10E3A /* UserProfilePageView.swift in Sources */,
 				656A8E612BB09D0B00985076 /* StoriesTabModel.swift in Sources */,
 				65585F672BBAB565006EAE60 /* TripsDetails.swift in Sources */,
-				65275C632BA7791A00EBCE34 /* MyProfileDetails.swift in Sources */,
+				65275C632BA7791A00EBCE34 /* User.swift in Sources */,
 				651E06232BD6EA52008917C6 /* HotSpotsModel.swift in Sources */,
+				659ED7B52C9BAA2C0028D783 /* BackgroundColourView.swift in Sources */,
 				65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */,
 				65D24C462BDC729C007578A2 /* CustomButtonTemplate.swift in Sources */,
 				65585F5E2BBAAEBA006EAE60 /* TripsTabBarButton.swift in Sources */,
@@ -568,8 +592,9 @@
 		65953FA22BA619A000381628 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = TripOnBuddyAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TripOnBuddy/Preview Content\"";
@@ -604,8 +629,9 @@
 		65953FA32BA619A000381628 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = TripOnBuddyAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TripOnBuddy/Preview Content\"";

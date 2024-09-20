@@ -32,12 +32,12 @@ struct DataServices {
             TripsDetails(userName: "ankit_03", name: "Ankit Kumar", fromDate: "19-March-2024", toDate: "24-March-2024", expectedFare: "25000", destinations: "Vrindavan", destinationImage: "prem mandir")
         ]
     }
-    func getUserData() -> [MyProfileDetails] {
+    func getUserData() -> [User] {
         return [
-            MyProfileDetails(id: "", userName: "soul_ofaDreamer", fullName: "Sunil", userImage: "demo", bio: "Radhe Radhe"),
-            MyProfileDetails(id: "", userName: "ajay_01", fullName: "Ajay", userImage: "TOB", bio: "Life is worth living."),
-            MyProfileDetails(id: "", userName: "ankit_03", fullName: "Ankit", userImage: "prem mandir"),
-            MyProfileDetails(id: "", userName: "sandeep_02", fullName: "Sandeep", userImage: "demo", bio: "Just Relax and Keep Moving")
+            User(id: "", userName: "soul_ofaDreamer", fullName: "Sunil", userImage: "demo", bio: "Radhe Radhe", emailId: ""),
+            User(id: "", userName: "ajay_01", fullName: "Ajay", userImage: "TOB", bio: "Life is worth living.", emailId: ""),
+            User(id: "", userName: "ankit_03", fullName: "Ankit", userImage: "prem mandir", emailId: ""),
+            User(id: "", userName: "sandeep_02", fullName: "Sandeep", userImage: "demo", bio: "Just Relax and Keep Moving", emailId: "")
         ]
     }
     func getHotspotsData() -> [HotSpotsModel] {

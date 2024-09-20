@@ -21,17 +21,34 @@ struct CustomTextFieldView: View {
                 
                 Text(title)
                     .foregroundStyle(Color.nileBlue)
-                    .font(.footnote)
+                    .font(.system(size: 14))
                     .fontWeight(.bold)
-                
-                TextField(placeholder, text: $inputText)
-                    .foregroundStyle(Color(.systemGray))
-                    .padding(10)
-                    .background(RoundedRectangle(cornerRadius: 3)
-                        .foregroundStyle(Color(.systemGray5)))
                     
                 if isSecureField {
                     SecureField(placeholder, text: $inputText)
+                        .font(.system(size: 14))
+                        .foregroundStyle(Color(.systemGray))
+                        .padding(10)
+                        .background(RoundedRectangle(cornerRadius: 8)
+                            .foregroundStyle(Color(.systemGray3))
+                            .frame(height: 45)
+                            .shadow(color: .gray,radius: 1.5, x: 2, y: 2)
+                        )
+                        
+                        
+                }
+                else {
+                    TextField(placeholder, text: $inputText)
+                        .font(.system(size: 14))
+                        .foregroundStyle(Color(.systemGray))
+                        .padding(10)
+                        .background(RoundedRectangle(cornerRadius: 8)
+                            .foregroundStyle(Color(.systemGray3))
+                            .frame(height: 45)
+                            .shadow(color: .gray,radius: 1.5, x: 2, y: 2)
+                        )
+                        
+                        
                 }
             }
             .padding(.top, 12)

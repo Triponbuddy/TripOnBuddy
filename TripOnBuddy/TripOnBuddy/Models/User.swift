@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MyProfileDetails: Identifiable, Codable {
+struct User: Identifiable, Codable {
     
     let id: String
     var userName: String
@@ -16,7 +16,7 @@ struct MyProfileDetails: Identifiable, Codable {
     var bio: String?
     var profession: String?
     var gender: String?
-    var emailId: String?
+    var emailId: String
     
     var initials: String {
         let formatter = PersonNameComponentsFormatter()
@@ -27,4 +27,8 @@ struct MyProfileDetails: Identifiable, Codable {
         return ""
     }
     
+}
+
+extension User {
+    static var Mock_User = User(id: NSUUID().uuidString, userName: "Soul_Ofadreamer", fullName: "Sunil Sharma", emailId: "name@example.com")
 }

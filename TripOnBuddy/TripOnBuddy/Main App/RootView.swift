@@ -19,11 +19,12 @@ extension Color {
 }
 
 struct RootView: View {
+    
     @State var selectedTab: Tabs
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
-            //BackgroundView()
+            //BackgroundColourView()
             VStack {
                 
                 switch selectedTab {
@@ -42,12 +43,12 @@ struct RootView: View {
                 
                 TabBarView(selectedTab: $selectedTab)
                     .ignoresSafeArea(edges: .bottom)
+                    .padding([.horizontal,.bottom], 10)
                 
                 
             }
-            .padding(.horizontal, 4)
-            .foregroundStyle(colorScheme == .light ? Color.nileBlue : .white)
         }
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 

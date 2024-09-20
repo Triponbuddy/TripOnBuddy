@@ -15,7 +15,7 @@ struct ExploreView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-               // BackgroundView()
+                //BackgroundColourView()
                 VStack(spacing: 10) {
                     ScrollView {
                         LazyVGrid(columns: [GridItem()], spacing: 20,content: {
@@ -31,6 +31,7 @@ struct ExploreView: View {
                         }
                     }
                 }
+                .padding([.horizontal, .top], 10)
                 .navigationTitle("Explore View")
                 .navigationBarTitleDisplayMode(.large)
                 .scrollIndicators(.hidden)

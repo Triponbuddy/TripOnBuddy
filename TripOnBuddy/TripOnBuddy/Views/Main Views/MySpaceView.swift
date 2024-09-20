@@ -15,12 +15,11 @@ struct MySpaceView: View {
     @State var forYouData: [ForYouViewModel] = []
     @State var isTapped: Bool = false
     @Environment(\.colorScheme) var colorScheme
-    var profileDetails: MyProfileDetails = MyProfileDetails(id: "", userName: "", fullName: "Sunil Sharma")
+    var profileDetails: User = User(id: "", userName: "", fullName: "Sunil Sharma", emailId: "")
     var body: some View {
         NavigationStack {
-        ZStack {
-           // BackgroundView()
-            
+            ZStack {
+                //BackgroundColourView()
                 VStack {
                     HStack {
                         Text("TripOnBuddy") // Show username
@@ -144,11 +143,11 @@ struct MySpaceView: View {
                     yourStories = dataServices.getData()
                     forYouData = dataServices.getForYouData()
                 }
-            }
-            .buttonStyle(SimpleButtonStyle())
-            .refreshable {
-                // put code here to sync the Feed
-            }
+            }.buttonStyle(SimpleButtonStyle())
+                .refreshable {
+                    // put code here to sync the Feed
+                }
+            
         }
         .navigationBarBackButtonHidden()
     }
