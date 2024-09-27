@@ -21,30 +21,7 @@ struct MySpaceView: View {
             ZStack {
                 //BackgroundColourView()
                 VStack {
-                    HStack {
-                        Text("TripOnBuddy") // Show username
-                            .bold()
-                            .font(.title)
-                        
-                        Spacer()
-                        NavigationLink(destination: {
-                            NotificationsView()
-                        }, label: {
-                            Image(systemName: "bell")
-                                .imageScale(.large)
-                                .padding(.trailing, 5)
-                            
-                        })
-                        
-                        NavigationLink(destination: {
-                            AllChatsView()
-                        }, label: {
-                            Image(systemName: "message")
-                                .imageScale(.large)
-                            
-                        })
-                        
-                    }
+                
                     ScrollView {
                         //
                         ScrollView(.horizontal) {
@@ -132,7 +109,7 @@ struct MySpaceView: View {
                         }
                         LazyVGrid(columns: [GridItem()], spacing: 10, content: {
                             ForEach(forYouData) { item in
-                                ForYouView(mySpaceViewModel: ForYouViewModel(name: item.name, image: item.image, userName: item.userName, caption: item.caption))
+                                SinglePostView(mySpaceViewModel: ForYouViewModel(name: item.name, image: item.image, userName: item.userName, caption: item.caption))
                             }
                         })
                     }
@@ -142,6 +119,33 @@ struct MySpaceView: View {
                 .onAppear {
                     yourStories = dataServices.getData()
                     forYouData = dataServices.getForYouData()
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Text("TripOnBuddy") // Show username
+                            .bold()
+                            .font(.title)
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink(destination: {
+                            NotificationsView()
+                        }, label: {
+                            Image(systemName: "bell")
+                                .imageScale(.large)
+                                .padding(.trailing, 5)
+                            
+                        })
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink(destination: {
+                            AllChatsView()
+                        }, label: {
+                            Image(systemName: "message")
+                                .imageScale(.large)
+                                .padding(.trailing, 5)
+                            
+                        })
+                    }
                 }
             }.buttonStyle(SimpleButtonStyle())
                 .refreshable {

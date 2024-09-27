@@ -67,7 +67,7 @@ struct SinglePostView: View {
                         }, label: {
                             Image(systemName: isLiked ? "heart.fill" : "heart")
                                 .symbolEffect(.bounce, value: isLiked)
-                                .foregroundStyle(isLiked ? .red : Color.nileBlue)
+                                .foregroundStyle(isLiked ? .red : Color(.accent))
                         })
                         
                         if isLiked {
@@ -98,8 +98,11 @@ struct SinglePostView: View {
                
             }
             .sheet(isPresented: $isCommentSectionActive, content: {
-                Text("Add Comments Here")
+                CommentSectionView()
+                    .presentationDetents([ .medium,  .large])
+                    .presentationDragIndicator(.visible)
             })
+            
         }
         .buttonStyle(SimpleButtonStyle())
     }

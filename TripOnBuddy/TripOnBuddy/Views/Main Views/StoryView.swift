@@ -15,7 +15,7 @@ struct StoryView: View {
     @State private var isDown = false
     var body: some View {
         
-        VStack {
+        VStack(spacing: 12) {
             
             ZStack {
                 
@@ -32,12 +32,14 @@ struct StoryView: View {
                         isViewed = true
                         isDown = true
                     }
+                    
             }
             
 //            Text(stories.name)
 //                .bold()
 //            
         }
+        .padding(.vertical, 5)
         .ignoresSafeArea()
         .sheet(isPresented: $isViewed, content: {
             CustomStoryView(stories: StoriesTabModel(name: stories.name, image: stories.image, video: stories.video))
