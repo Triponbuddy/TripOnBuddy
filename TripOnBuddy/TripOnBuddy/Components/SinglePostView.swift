@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct ForYouView: View {
+struct SinglePostView: View {
     @State var isLiked: Bool = false
     var mySpaceViewModel: ForYouViewModel
     @State var isFollowed: Bool = false
     @State private var isCommentSectionActive: Bool = false
+    @State var likeCount: Int = 0
     var body: some View {
         
         ZStack {
@@ -52,15 +53,27 @@ struct ForYouView: View {
                     .cornerRadius(8)
                 Spacer()
                 HStack {
-                    Button(action: {
-                        withAnimation(.easeInOut) {
-                            isLiked.toggle()
+                    HStack {
+                        Button(action: {
+                            withAnimation(.easeInOut) {
+                                isLiked.toggle()
+                                if isLiked {
+                                    likeCount += 1
+                                }
+                                else  {
+                                    likeCount -= 1
+                                }
+                            }
+                        }, label: {
+                            Image(systemName: isLiked ? "heart.fill" : "heart")
+                                .symbolEffect(.bounce, value: isLiked)
+                                .foregroundStyle(isLiked ? .red : Color.nileBlue)
+                        })
+                        
+                        if isLiked {
+                            Text(String(likeCount))
                         }
-                    }, label: {
-                        Image(systemName: isLiked ? "heart.fill" : "heart")
-                            .symbolEffect(.bounce, value: isLiked)
-                            .foregroundStyle(isLiked ? .red : Color.nileBlue)
-                    })
+                    }
                     Button(action: {
                         isCommentSectionActive = true
                     }, label: {
@@ -93,5 +106,5 @@ struct ForYouView: View {
 }
 
 #Preview {
-    ForYouView(mySpaceViewModel: ForYouViewModel(name: "Ankit", image: "TOB", userName: "ankit_03", caption: "joining teams"))
+    SinglePostView(mySpaceViewModel: ForYouViewModel(name: "Ankit", image: "TOB", userName: "ankit_03", caption: "joining teams"))
 }
