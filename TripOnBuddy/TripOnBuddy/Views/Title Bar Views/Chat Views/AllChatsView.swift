@@ -10,19 +10,12 @@ import PhotosUI
 
 struct AllChatsView: View {
     @State var userName: String = "Sunil Sharma"
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
             ZStack {
                 ScrollView {
                     VStack(alignment: .leading) {
-                        HStack {
-                            Text("Convos")
-                                .font(.title)
-                                .bold()
-                            Spacer()
-                            EditButton()
-                                
-                        }
                         
                         // Add Code for the push notifications
                         LazyVGrid(columns: [GridItem()], spacing: 10,content: {
@@ -63,6 +56,20 @@ struct AllChatsView: View {
             .buttonStyle(SimpleButtonStyle())
             .ignoresSafeArea(edges: .bottom)
             .navigationBarBackButtonHidden()
+            .toolbar {
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Image(systemName: "chevron.left")
+                        .onTapGesture {
+                            dismiss()
+                        }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Convos") // Show username
+                        .bold()
+                        .font(.title)
+                }
+            }
         }
     }
 }

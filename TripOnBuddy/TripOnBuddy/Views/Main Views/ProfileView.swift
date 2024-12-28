@@ -15,26 +15,23 @@ struct ProfileView: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 
-                
-                //if let user = viewModel.currentUser {
-                VStack(alignment: .leading, spacing: 4) {
-                    
-                    // Text(user.userName)
-                    // Text(user.fullName)
-                    //  Text(user.bio ?? "")
-                    Text("Username") // fetch user name
-                    Text("Full Name")// fetch full name
-                    Text("Userbio")
+                if let user = viewModel.currentUser {
+                    VStack(alignment: .leading, spacing: 4) {
+                        
+                        Text(user.userName)
+                        Text(user.fullName)
+                        Text(user.bio ?? "")
+                        
+                    }
+                    .font(.headline)
                 }
-                .font(.headline)
-                // }
                 
                 Button("Sign Out", action: {
                     viewModel.signOut()
                 })
                 
                 
-                //Spacer()
+                Spacer()
             }
             .padding([.horizontal, .top], 10)
             .toolbar {
@@ -56,4 +53,5 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
+        .environmentObject(AuthViewModel())
 }

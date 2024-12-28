@@ -43,7 +43,7 @@ struct CustomTextFieldView: View {
                         .background(RoundedRectangle(cornerRadius: 6)
                             .foregroundStyle(.gray.opacity(0.4))
                             .frame(height: 50)
-                            .shadow(color: .gray,radius: 10, x: 2, y: 2)
+                            .shadow(color: .gray.opacity(0.4),radius: 10, x: 2, y: 2)
                         )
                         
                         

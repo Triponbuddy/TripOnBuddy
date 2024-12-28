@@ -19,7 +19,6 @@ struct MySpaceView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                //BackgroundColourView()
                 VStack {
                 
                     ScrollView {
@@ -120,33 +119,7 @@ struct MySpaceView: View {
                     yourStories = dataServices.getData()
                     forYouData = dataServices.getForYouData()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Text("TripOnBuddy") // Show username
-                            .bold()
-                            .font(.title)
-                    }
-                    ToolbarItem(placement: .topBarTrailing) {
-                        NavigationLink(destination: {
-                            NotificationsView()
-                        }, label: {
-                            Image(systemName: "bell")
-                                .imageScale(.large)
-                                .padding(.trailing, 5)
-                            
-                        })
-                    }
-                    ToolbarItem(placement: .topBarTrailing) {
-                        NavigationLink(destination: {
-                            AllChatsView()
-                        }, label: {
-                            Image(systemName: "message")
-                                .imageScale(.large)
-                                .padding(.trailing, 5)
-                            
-                        })
-                    }
-                }
+                
             }.buttonStyle(SimpleButtonStyle())
                 .refreshable {
                     // put code here to sync the Feed
