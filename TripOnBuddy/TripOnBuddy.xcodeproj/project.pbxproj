@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		650241AE2CA61AB000BC94E6 /* CommentSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650241AD2CA61AB000BC94E6 /* CommentSectionView.swift */; };
-		6505DA852C555B3500BB1814 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6505DA842C555B3500BB1814 /* GoogleService-Info.plist */; };
 		6505DA882C57E8A700BB1814 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DA872C57E8A700BB1814 /* FirebaseAnalytics */; };
 		6505DA8A2C57E8A700BB1814 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DA892C57E8A700BB1814 /* FirebaseAnalyticsOnDeviceConversion */; };
 		6505DA8C2C57E8A700BB1814 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DA8B2C57E8A700BB1814 /* FirebaseAnalyticsSwift */; };
@@ -39,6 +38,7 @@
 		6505DABE2C57E8A700BB1814 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DABD2C57E8A700BB1814 /* FirebaseVertexAI-Preview */; };
 		65080E202C99E3D100057CD3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */; };
 		651E06232BD6EA52008917C6 /* HotSpotsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E06222BD6EA52008917C6 /* HotSpotsModel.swift */; };
+		651E0DE62D1FDB8C00AB6867 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 651E0DE52D1FDB8C00AB6867 /* GoogleService-Info.plist */; };
 		65275C632BA7791A00EBCE34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* User.swift */; };
 		65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */; };
 		65585F5E2BBAAEBA006EAE60 /* TripsTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */; };
@@ -67,9 +67,9 @@
 		65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */; };
 		65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */; };
 		65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */; };
+		65C04D612D1FD4D900007235 /* MapsViewOfTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C04D602D1FD4D900007235 /* MapsViewOfTrip.swift */; };
 		65C689392C9B81BB00F7A90D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C689382C9B81BB00F7A90D /* SignInView.swift */; };
 		65D24C462BDC729C007578A2 /* CustomButtonTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */; };
-		65EEC09A2D1FC7FF005391BB /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 65EEC0992D1FC7FF005391BB /* GoogleMaps */; };
 		65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C12BA76AC800BD123F /* TabBarView.swift */; };
 		65FC27C82BA76FEA00BD123F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C72BA76FEA00BD123F /* ExploreView.swift */; };
 		65FC27CA2BA76FF500BD123F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C92BA76FF500BD123F /* PostView.swift */; };
@@ -81,9 +81,9 @@
 
 /* Begin PBXFileReference section */
 		650241AD2CA61AB000BC94E6 /* CommentSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSectionView.swift; sourceTree = "<group>"; };
-		6505DA842C555B3500BB1814 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		651E06222BD6EA52008917C6 /* HotSpotsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotsModel.swift; sourceTree = "<group>"; };
+		651E0DE52D1FDB8C00AB6867 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65275C622BA7791A00EBCE34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarView.swift; sourceTree = "<group>"; };
 		65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarButton.swift; sourceTree = "<group>"; };
@@ -113,6 +113,7 @@
 		65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTripCardView.swift; sourceTree = "<group>"; };
 		65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOtpView.swift; sourceTree = "<group>"; };
+		65C04D602D1FD4D900007235 /* MapsViewOfTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewOfTrip.swift; sourceTree = "<group>"; };
 		65C689382C9B81BB00F7A90D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonTemplate.swift; sourceTree = "<group>"; };
 		65FC27C12BA76AC800BD123F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -142,7 +143,6 @@
 				6505DA942C57E8A700BB1814 /* FirebaseAuth in Frameworks */,
 				6505DA982C57E8A700BB1814 /* FirebaseCrashlytics in Frameworks */,
 				6505DAB82C57E8A700BB1814 /* FirebaseRemoteConfigSwift in Frameworks */,
-				65EEC09A2D1FC7FF005391BB /* GoogleMaps in Frameworks */,
 				6505DAAA2C57E8A700BB1814 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				6505DA9C2C57E8A700BB1814 /* FirebaseDatabaseSwift in Frameworks */,
 				6505DAA62C57E8A700BB1814 /* FirebaseFunctions in Frameworks */,
@@ -253,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				65F145752C9CF1E500080999 /* Main App */,
-				6505DA842C555B3500BB1814 /* GoogleService-Info.plist */,
 				656B97922BA6234A00A1F34C /* Views */,
 				65953F9A2BA619A000381628 /* Assets.xcassets */,
 				656A8E622BB09D1300985076 /* ViewModel */,
@@ -291,6 +290,7 @@
 				65953F962BA6199E00381628 /* TripOnBuddyApp.swift */,
 				65953F982BA6199E00381628 /* RootView.swift */,
 				659ED7B82C9BAF2C0028D783 /* ContentView.swift */,
+				651E0DE52D1FDB8C00AB6867 /* GoogleService-Info.plist */,
 			);
 			path = "Main App";
 			sourceTree = "<group>";
@@ -299,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				65B85BF12BA6420F00DC6BA2 /* CustomTextFieldView.swift */,
+				65C04D602D1FD4D900007235 /* MapsViewOfTrip.swift */,
 				65FC27C12BA76AC800BD123F /* TabBarView.swift */,
 				65FEAAEB2C0E3AAB005DC2CA /* CustomChatBubbleView.swift */,
 				65B2EC412BB93C4F00B775CC /* CustomTripCardView.swift */,
@@ -369,7 +370,6 @@
 				6505DAB92C57E8A700BB1814 /* FirebaseStorage */,
 				6505DABB2C57E8A700BB1814 /* FirebaseStorageCombine-Community */,
 				6505DABD2C57E8A700BB1814 /* FirebaseVertexAI-Preview */,
-				65EEC0992D1FC7FF005391BB /* GoogleMaps */,
 			);
 			productName = TripOnBuddy;
 			productReference = 65953F932BA6199E00381628 /* TripOnBuddy.app */;
@@ -401,7 +401,6 @@
 			mainGroup = 65953F8A2BA6199E00381628;
 			packageReferences = (
 				6505DA862C57E8A700BB1814 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				65EEC0982D1FC7FF005391BB /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
 			);
 			productRefGroup = 65953F942BA6199E00381628 /* Products */;
 			projectDirPath = "";
@@ -418,8 +417,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				65953F9E2BA619A000381628 /* Preview Assets.xcassets in Resources */,
-				6505DA852C555B3500BB1814 /* GoogleService-Info.plist in Resources */,
 				65953F9B2BA619A000381628 /* Assets.xcassets in Resources */,
+				651E0DE62D1FDB8C00AB6867 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +452,7 @@
 				65C689392C9B81BB00F7A90D /* SignInView.swift in Sources */,
 				65080E202C99E3D100057CD3 /* AuthViewModel.swift in Sources */,
 				656A8E6C2BB0ACF800985076 /* SinglePostView.swift in Sources */,
+				65C04D612D1FD4D900007235 /* MapsViewOfTrip.swift in Sources */,
 				65585F632BBAB274006EAE60 /* UpcomingTripsView.swift in Sources */,
 				657284582BC8661600DAF637 /* NotificationsView.swift in Sources */,
 				65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */,
@@ -515,7 +515,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = 1;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -534,6 +534,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -572,7 +573,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -589,6 +590,8 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -616,7 +619,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -653,7 +656,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,14 +700,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 10.29.0;
-			};
-		};
-		65EEC0982D1FC7FF005391BB /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -849,11 +844,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6505DA862C57E8A700BB1814 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseVertexAI-Preview";
-		};
-		65EEC0992D1FC7FF005391BB /* GoogleMaps */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 65EEC0982D1FC7FF005391BB /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
-			productName = GoogleMaps;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

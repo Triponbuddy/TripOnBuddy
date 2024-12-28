@@ -23,31 +23,61 @@ struct RootView: View {
     @State var selectedTab: Tabs
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        ZStack {
-            VStack {
-                
-                switch selectedTab {
-                case .mySpace:
-                    MySpaceView()
-                case .explore:
-                    ExploreView()
-                case .post:
-                    PostView()
-                case .trips:
-                    TripsView(switchTabs: .completed)
-                case .profile:
-                    ProfileView()
+        NavigationStack {
+            ZStack {
+                VStack {
+                    
+                    switch selectedTab {
+                    case .mySpace:
+                        MySpaceView()
+                            .toolbar {
+                                ToolbarItem(placement: .topBarLeading) {
+                                    Text("TripOnBuddy") // Show username
+                                        .bold()
+                                        .font(.title)
+                                }
+                                ToolbarItem(placement: .topBarTrailing) {
+                                    NavigationLink(destination: {
+                                        NotificationsView()
+                                    }, label: {
+                                        Image(systemName: "bell")
+                                            .imageScale(.large)
+                                            .padding(.trailing, 5)
+                                        
+                                    })
+                                }
+                                ToolbarItem(placement: .topBarTrailing) {
+                                    NavigationLink(destination: {
+                                        AllChatsView()
+                                    }, label: {
+                                        Image(systemName: "message")
+                                            .imageScale(.large)
+                                            .padding(.trailing, 5)
+                                        
+                                    })
+                                }
+                            }
+                    case .explore:
+                        ExploreView()
+                    case .post:
+                        PostView()
+                    case .trips:
+                        TripsView(switchTabs: .completed)
+                    case .profile:
+                        ProfileView()
+                    }
+                    Spacer()
+                    
+                    TabBarView(selectedTab: $selectedTab)
+                        .ignoresSafeArea(edges: .bottom)
+                        .padding([.horizontal,.bottom], 10)
+                    
+                    
                 }
-                Spacer()
-                
-                TabBarView(selectedTab: $selectedTab)
-                    .ignoresSafeArea(edges: .bottom)
-                    .padding([.horizontal,.bottom], 10)
-                
                 
             }
+            .ignoresSafeArea(edges: .bottom)
         }
-        .ignoresSafeArea(edges: .bottom)
     }
 }
 

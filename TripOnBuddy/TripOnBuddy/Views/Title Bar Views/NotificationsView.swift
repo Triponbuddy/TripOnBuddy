@@ -9,6 +9,8 @@ import SwiftUI
 
 struct NotificationsView: View {
     let notificationMessage = "Notification Text is the text that will provide quick overview of the things happening around."
+    
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
             ZStack {
@@ -48,8 +50,20 @@ struct NotificationsView: View {
                 }
               
             }
-            .navigationBarTitleDisplayMode(.large)
-            .navigationTitle("Notifications")
+            .toolbar {
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Image(systemName: "chevron.left")
+                        .onTapGesture {
+                            dismiss()
+                        }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Notifications") // Show username
+                        .bold()
+                        .font(.title)
+                }
+            }
             .navigationBarBackButtonHidden()
         }
         

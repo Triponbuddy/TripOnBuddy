@@ -80,8 +80,7 @@ fileprivate struct TabsLayoutView: View {
                 ZStack {
                     if isSelected {
                         Capsule()
-                            .shadow(color: .blue.opacity(0.4), radius: 4, y: 10)
-                            .frame(width: 60, height: 8)
+                            .frame(width: 50, height: 4)
                             .background {
                                 Capsule()
                                     .stroke(lineWidth: 1)

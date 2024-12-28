@@ -7,7 +7,7 @@
 
 import Foundation
 struct HotSpotsModel: Identifiable, Decodable {
-    let id = UUID()
+    var id = UUID()
     var image: String
     var personImage: String?
     var title: String

@@ -1,5 +1,5 @@
 {
-  "originHash" : "9534e2f1bf9ae10da0d54739bdd539286a26bb3a8aa9b910ad0c115f937883e7",
+  "originHash" : "a1569f9895aa2be8e24832f98525d5da4eb90b5d158a82691c15b47eb72a13d7",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -80,15 +80,6 @@
       "state" : {
         "revision" : "2d12673670417654f08f5f90fdd62926dc3a2648",
         "version" : "100.0.0"
-      }
-    },
-    {
-      "identity" : "ios-maps-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/googlemaps/ios-maps-sdk",
-      "state" : {
-        "revision" : "df7ecd2f894fd83f0287f2cfb6842a0dfe6f290b",
-        "version" : "9.2.0"
       }
     },
     {
