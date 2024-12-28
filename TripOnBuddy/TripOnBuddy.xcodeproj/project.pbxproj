@@ -480,6 +480,7 @@
 /* Begin XCBuildConfiguration section */
 		65953F9F2BA619A000381628 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65EEC0962D1FC799005391BB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -543,6 +544,7 @@
 		};
 		65953FA02BA619A000381628 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65EEC0962D1FC799005391BB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -599,6 +601,7 @@
 		};
 		65953FA22BA619A000381628 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65EEC0962D1FC799005391BB /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TripOnBuddyAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -636,6 +639,7 @@
 		};
 		65953FA32BA619A000381628 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65EEC0962D1FC799005391BB /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TripOnBuddyAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
