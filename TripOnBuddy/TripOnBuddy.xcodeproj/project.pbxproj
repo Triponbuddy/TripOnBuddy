@@ -69,7 +69,6 @@
 		65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */; };
 		65C689392C9B81BB00F7A90D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C689382C9B81BB00F7A90D /* SignInView.swift */; };
 		65D24C462BDC729C007578A2 /* CustomButtonTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */; };
-		65EEC0972D1FC799005391BB /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC0962D1FC799005391BB /* Config.xcconfig */; };
 		65EEC09A2D1FC7FF005391BB /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 65EEC0992D1FC7FF005391BB /* GoogleMaps */; };
 		65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C12BA76AC800BD123F /* TabBarView.swift */; };
 		65FC27C82BA76FEA00BD123F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC27C72BA76FEA00BD123F /* ExploreView.swift */; };
@@ -116,7 +115,6 @@
 		65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOtpView.swift; sourceTree = "<group>"; };
 		65C689382C9B81BB00F7A90D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		65D24C452BDC729C007578A2 /* CustomButtonTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonTemplate.swift; sourceTree = "<group>"; };
-		65EEC0962D1FC799005391BB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		65FC27C12BA76AC800BD123F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		65FC27C72BA76FEA00BD123F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		65FC27C92BA76FF500BD123F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -292,7 +290,6 @@
 			children = (
 				65953F962BA6199E00381628 /* TripOnBuddyApp.swift */,
 				65953F982BA6199E00381628 /* RootView.swift */,
-				65EEC0962D1FC799005391BB /* Config.xcconfig */,
 				659ED7B82C9BAF2C0028D783 /* ContentView.swift */,
 			);
 			path = "Main App";
@@ -420,7 +417,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65EEC0972D1FC799005391BB /* Config.xcconfig in Resources */,
 				65953F9E2BA619A000381628 /* Preview Assets.xcassets in Resources */,
 				6505DA852C555B3500BB1814 /* GoogleService-Info.plist in Resources */,
 				65953F9B2BA619A000381628 /* Assets.xcassets in Resources */,
