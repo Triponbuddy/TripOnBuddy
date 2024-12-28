@@ -181,6 +181,7 @@
 				65585F662BBAB565006EAE60 /* TripsDetails.swift */,
 				656A8E602BB09D0B00985076 /* StoriesTabModel.swift */,
 				651E06222BD6EA52008917C6 /* HotSpotsModel.swift */,
+				656A8E632BB09D2500985076 /* DataServices.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,7 +198,6 @@
 		656A8E622BB09D1300985076 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				656A8E632BB09D2500985076 /* DataServices.swift */,
 				65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
