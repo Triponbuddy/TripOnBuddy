@@ -14,7 +14,6 @@ struct AddNewTripView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                //BackgroundView()
                 VStack {
                   
                     

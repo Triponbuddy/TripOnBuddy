@@ -15,7 +15,6 @@ struct SignInView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                BackgroundColourView()
                 VStack(alignment: .center) {
                     
                     Image("TOB")
@@ -87,4 +86,5 @@ extension SignInView: AuthenticationFormProtocol {
 
 #Preview {
     SignInView()
+        .environmentObject(AuthViewModel())
 }
