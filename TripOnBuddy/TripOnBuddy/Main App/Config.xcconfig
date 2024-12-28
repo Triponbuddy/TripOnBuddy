@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  TripOnBuddy
+//
+//  Created by Sunil Sharma on 2024-12-27.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+API_KEY = AIzaSyCXnH92M65cX_arl23EoKULAwI0jGk9dhg

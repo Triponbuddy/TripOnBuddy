@@ -14,25 +14,23 @@ struct CustomTextFieldView: View {
     var isSecureField: Bool = false
     
     var body: some View {
-        
-        VStack {
-            
-            VStack(alignment: .leading, spacing: 12) {
+      
+            VStack(alignment: .leading, spacing: 16) {
                 
                 Text(title)
+                    .font(.system(size: 16))
+                    .bold()
                     .foregroundStyle(Color.nileBlue)
-                    .font(.system(size: 14))
-                    .fontWeight(.bold)
                     
                 if isSecureField {
                     SecureField(placeholder, text: $inputText)
                         .font(.system(size: 14))
-                        .foregroundStyle(Color(.systemGray))
+                        .foregroundStyle(Color.nileBlue)
                         .padding(10)
-                        .background(RoundedRectangle(cornerRadius: 8)
-                            .foregroundStyle(Color(.systemGray3))
+                        .background(RoundedRectangle(cornerRadius: 6)
+                            .foregroundStyle(.gray.opacity(0.4))
                             .frame(height: 45)
-                            .shadow(color: .gray,radius: 1.5, x: 2, y: 2)
+                            .shadow(color: .gray.opacity(0.4),radius: 10, x: 2, y: 2)
                         )
                         
                         
@@ -40,12 +38,12 @@ struct CustomTextFieldView: View {
                 else {
                     TextField(placeholder, text: $inputText)
                         .font(.system(size: 14))
-                        .foregroundStyle(Color(.systemGray))
+                        .foregroundStyle(Color.nileBlue)
                         .padding(10)
-                        .background(RoundedRectangle(cornerRadius: 8)
-                            .foregroundStyle(Color(.systemGray3))
-                            .frame(height: 45)
-                            .shadow(color: .gray,radius: 1.5, x: 2, y: 2)
+                        .background(RoundedRectangle(cornerRadius: 6)
+                            .foregroundStyle(.gray.opacity(0.4))
+                            .frame(height: 50)
+                            .shadow(color: .gray,radius: 10, x: 2, y: 2)
                         )
                         
                         
@@ -53,8 +51,8 @@ struct CustomTextFieldView: View {
             }
             .padding(.top, 12)
 //
-        }
-        .foregroundStyle(Color.nileBlue)
+        
+        
     }
     
 }

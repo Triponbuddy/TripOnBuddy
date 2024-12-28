@@ -23,7 +23,7 @@ struct SignUpView: View {
         NavigationStack {
             ZStack {
                 
-                BackgroundColourView()
+                
                 
                 VStack(alignment: .center) {
                     Image("TOB")
@@ -94,4 +94,5 @@ extension SignUpView: AuthenticationFormProtocol {
 }
 #Preview {
     SignUpView()
+        .environmentObject(AuthViewModel())
 }
