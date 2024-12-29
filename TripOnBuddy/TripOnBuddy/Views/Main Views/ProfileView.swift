@@ -16,20 +16,24 @@ struct ProfileView: View {
             VStack(alignment: .leading) {
                 
                 if let user = viewModel.currentUser {
-                    VStack(alignment: .leading, spacing: 4) {
-                        
-                        Text(user.userName)
-                        Text(user.fullName)
-                        Text(user.bio ?? "")
-                        
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            
+                            
+                            Text(user.userName)
+                            Text(user.fullName)
+                            Text(user.bio ?? "")
+                            Image(user.userImage ?? "")
+                            
+                        }
+                        .font(.headline)
+                        Spacer()
                     }
-                    .font(.headline)
                 }
                 
                 Button("Sign Out", action: {
                     viewModel.signOut()
                 })
-                
                 
                 Spacer()
             }

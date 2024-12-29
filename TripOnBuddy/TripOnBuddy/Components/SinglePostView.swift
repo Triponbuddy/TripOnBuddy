@@ -9,105 +9,80 @@ import SwiftUI
 
 struct SinglePostView: View {
     @State var isLiked: Bool = false
-    var mySpaceViewModel: ForYouViewModel
     @State var isFollowed: Bool = false
     @State private var isCommentSectionActive: Bool = false
     @State var likeCount: Int = 0
+    
+    var post: Post  // Updated to use Post model directly
+    
     var body: some View {
-        
-        ZStack {
-            //BackgroundView()
-            VStack {
-                HStack {
-                    Text(mySpaceViewModel.name)
-                    Spacer()
-                    Button(action: {
-                        withAnimation(.easeInOut) {
-                            isFollowed = true
-                        }
-                    }) {
-                        if isFollowed {
-                            Menu(content: {
-                                Button("Remove Buddy", action: {
-                                    isFollowed = false
-                                })
-                                NavigationLink(destination: Text("User Profile View"), label: {
-                                    Text("View Profile")
-                                })
-                            }, label: {
-                                Image(systemName: "ellipsis")
-                                    .rotationEffect(Angle(degrees: 90))
-                            })
-                        }
-                        else {
-                            Text("Join")
-                        }
-                    }
-                }
-                .font(.title3)
-                .bold()
+        VStack {
+            // Header
+            HStack {
+                Text(post.fullName) // Display full name
+                    .font(.headline)
                 Spacer()
-                Image(mySpaceViewModel.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(8)
-                Spacer()
-                HStack {
-                    HStack {
-                        Button(action: {
-                            withAnimation(.easeInOut) {
-                                isLiked.toggle()
-                                if isLiked {
-                                    likeCount += 1
-                                }
-                                else  {
-                                    likeCount -= 1
-                                }
-                            }
-                        }, label: {
-                            Image(systemName: isLiked ? "heart.fill" : "heart")
-                                .symbolEffect(.bounce, value: isLiked)
-                                .foregroundStyle(isLiked ? .red : Color(.accent))
-                        })
-                        
-                        if isLiked {
-                            Text(String(likeCount))
-                        }
-                    }
-                    Button(action: {
-                        isCommentSectionActive = true
-                    }, label: {
-                        Image(systemName: "message")
-                    })
-                   
-                    Image(systemName: "arrowshape.turn.up.right")
-                    Spacer()
-                    Text("Add Trip")
-                }
-                .padding(.vertical, 10)
-                VStack (alignment: .leading, spacing: 0) {
-                    Group {
-                         Text(mySpaceViewModel.userName.capitalized)
-                             .bold()
-                             + Text(" ")
-                        + Text(mySpaceViewModel.caption!)
-                     }
-                     .padding(.bottom, 10)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-               
+                Text("@\(post.userName)") // Display username
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
             }
-            .sheet(isPresented: $isCommentSectionActive, content: {
-                CommentSectionView()
-                    .presentationDetents([ .medium,  .large])
-                    .presentationDragIndicator(.visible)
-            })
+            .padding(.bottom, 5)
             
+            // Image
+            AsyncImage(url: URL(string: post.imageUrl)) { image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
+            }
+            .aspectRatio(contentMode: .fit)
+            .cornerRadius(8)
+            .padding(.bottom, 10)
+            
+            // Caption
+            Text(post.caption)
+                .font(.body)
+                .padding(.bottom, 10)
+            
+            // Actions
+            HStack {
+                Button(action: {
+                    withAnimation {
+                        isLiked.toggle()
+                        likeCount += isLiked ? 1 : -1
+                    }
+                }) {
+                    Image(systemName: isLiked ? "heart.fill" : "heart")
+                        .foregroundColor(isLiked ? .red : .gray)
+                }
+                Text("\(likeCount)")
+                
+                Button(action: {
+                    isCommentSectionActive = true
+                }) {
+                    Image(systemName: "message")
+                }
+                
+                Image(systemName: "arrowshape.turn.up.right")
+                Spacer()
+            }
+            .padding(.vertical, 10)
         }
-        .buttonStyle(SimpleButtonStyle())
+        .padding()
+        .sheet(isPresented: $isCommentSectionActive) {
+            CommentSectionView()
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.visible)
+        }
     }
 }
 
 #Preview {
-    SinglePostView(mySpaceViewModel: ForYouViewModel(name: "Ankit", image: "TOB", userName: "ankit_03", caption: "joining teams"))
+    SinglePostView(post: Post(
+        id: "1",
+        userName: "sunil_sharma",
+        fullName: "Sunil Sharma",
+        imageUrl: "https://example.com/image.jpg",
+        caption: "Exploring the mountains!"
+    ))
 }
+

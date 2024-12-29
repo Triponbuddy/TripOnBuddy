@@ -22,7 +22,7 @@ protocol AuthenticationFormProtocol {
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? // Stores the currently signed-in user session
     @Published var currentUser: User? // Stores the current user's profile data
-
+    
     // Initialize ViewModel and fetch user data if already logged in
     init() {
         self.userSession = Auth.auth().currentUser
@@ -31,7 +31,7 @@ class AuthViewModel: ObservableObject {
             await fetchUser()
         }
     }
-
+    
     // Sign in user with email and password
     func signIN(withEmail email: String, password: String) async throws {
         do {
@@ -45,7 +45,7 @@ class AuthViewModel: ObservableObject {
             print("DEBUG: Failed to Sign In the user with error: \(error.localizedDescription)")
         }
     }
-
+    
     // Create a new user with email, password, full name, and username
     func createUser(withEmail email: String, password: String, fullName: String, username: String, image: UIImage?) async throws {
         do {
@@ -64,7 +64,7 @@ class AuthViewModel: ObservableObject {
                 }
                 profileImageUrl = result // Get image URL
             }
-
+            
             // Create a user object to store in Firestore
             let user = User(
                 id: result.user.uid,
@@ -73,7 +73,7 @@ class AuthViewModel: ObservableObject {
                 userImage: profileImageUrl,
                 emailId: email
             )
-
+            
             // Encode user data and save to Firestore
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
@@ -84,7 +84,7 @@ class AuthViewModel: ObservableObject {
             print("DEBUG: Failed to Create user with error: \(error.localizedDescription)")
         }
     }
-
+    
     // Sign out the current user
     func signOut() {
         do {
@@ -96,17 +96,17 @@ class AuthViewModel: ObservableObject {
             print("DEBUG: Failed to Sign Out the user with error: \(error.localizedDescription)")
         }
     }
-
+    
     // Delete the current user account along with their data
     func deleteAccount() async {
         guard let user = Auth.auth().currentUser else { return }
-
+        
         do {
             // Delete user data from Firestore
             let userDocRef = Firestore.firestore().collection("users").document(user.uid)
             try await userDocRef.delete()
             print("DEBUG: User data deleted from Firestore")
-
+            
             // Delete user account from Firebase Authentication
             try await user.delete()
             print("DEBUG: User account deleted successfully")
@@ -114,12 +114,12 @@ class AuthViewModel: ObservableObject {
             // Clear session and user data
             self.userSession = nil
             self.currentUser = nil
-
+            
         } catch {
             print("DEBUG: Error deleting account - \(error.localizedDescription)")
         }
     }
-
+    
     // Fetch the current user's profile data from Firestore
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -138,7 +138,7 @@ class AuthViewModel: ObservableObject {
             print("DEBUG: Error fetching user: \(error.localizedDescription)")
         }
     }
-
+    
     // Uploads a profile image to Firebase Storage
     func uploadProfileImage(image: UIImage, completion: @escaping (Result<String, Error>) -> Void) {
         // Convert image to JPEG format with compression
@@ -169,6 +169,25 @@ class AuthViewModel: ObservableObject {
                 
                 completion(.success(url)) // Return image URL on success
             }
+        }
+    }
+    
+    func fetchUserProfile(byUID uid: String) async -> User? {
+        do {
+            // Fetch the user document from Firestore based on UID
+            let snapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
+            
+            // Decode the user data if available
+            if let data = snapshot.data() {
+                let user = try Firestore.Decoder().decode(User.self, from: data)
+                return user
+            } else {
+                print("DEBUG: No user data found for UID \(uid)")
+                return nil
+            }
+        } catch {
+            print("DEBUG: Failed to fetch user profile with error: \(error.localizedDescription)")
+            return nil
         }
     }
 }

@@ -7,85 +7,100 @@
 
 import SwiftUI
 import PhotosUI
+import FirebaseAuth
 
-final class PhotoPickerViewModel: ObservableObject {
-    @Published private(set) var selecetedImage: UIImage? = nil
-    @Published var imageSelection: PhotosPickerItem? = nil {
-        didSet {
-            setImage(from: imageSelection)
+struct PostView: View {
+    @StateObject private var viewModel = PhotoPickerViewModel()
+    @State var jumpToAddCaptionView: Bool = false
+    @State var posts: [Post] = []
+    @State var selectedImage: UIImage? = nil
+    @State private var recentImage: UIImage? = nil
+    @State private var galleryImages: [UIImage] = []
+    @State var aspectRatio: ContentMode = .fit
+    
+    var body: some View {
+        
+        NavigationStack {
+            VStack {
+                // Top View: Recent Image
+                if let recentImage = selectedImage ?? recentImage {
+                    Image(uiImage: recentImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: UIScreen.main.bounds.height / 3)
+                        .clipped()
+                        .onTapGesture {
+                            selectedImage = recentImage
+                            jumpToAddCaptionView = true
+                        }
+                } else {
+                    Text("No images available")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                }
+                
+                // Grid of Gallery Images
+                ScrollView {
+                    LazyVGrid(columns: [
+                        GridItem(.flexible()),
+                        GridItem(.flexible())
+                    ], spacing: 10) {
+                        ForEach(galleryImages, id: \..self) { image in
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: UIScreen.main.bounds.width / 2 - 10, height: UIScreen.main.bounds.width / 2 - 10)
+                                .clipped()
+                                .cornerRadius(8)
+                                .onTapGesture {
+                                    selectedImage = image
+                                }
+                        }
+                    }
+                    .padding(.horizontal, 5)
+                }
+            }
+            .onAppear {
+                fetchGalleryImages()
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    NavigationLink(destination: AddCaptionViewToPost(selectedImage: selectedImage!)) {
+                        Text("Next")
+                            .fontWeight(.bold)
+                            .foregroundColor(.blue)
+                    }
+                    
+                }
+            }
         }
     }
-    private func setImage(from selection: PhotosPickerItem?) {
-        guard let selection else { return }
-        Task {
-            if let data = try? await selection.loadTransferable(type: Data.self) {
-                if let uiImage = UIImage(data: data) {
-                    selecetedImage = uiImage
-                    return
+    func fetchGalleryImages() {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        let fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        let imageManager = PHImageManager.default()
+        
+        fetchResult.enumerateObjects { asset, _, _ in
+            let requestOptions = PHImageRequestOptions()
+            requestOptions.isSynchronous = true
+            requestOptions.deliveryMode = .highQualityFormat
+            
+            imageManager.requestImage(for: asset, targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: requestOptions) { image, _ in
+                if let image = image {
+                    galleryImages.append(image)
+                }
+                if recentImage == nil {
+                    recentImage = galleryImages.first
                 }
             }
         }
     }
 }
 
-struct PostView: View {
-    @StateObject private var viewModel = PhotoPickerViewModel()
-    @State var aspectRatio: ContentMode = .fit
-    var body: some View {
-        ZStack {
-            //BackgroundColourView()
-            VStack {
-                PhotosPicker(selection: $viewModel.imageSelection, matching: .any(of: [.images, .videos, .slomoVideos, .cinematicVideos, .depthEffectPhotos, .panoramas, .timelapseVideos]),label: {
-                    
-                    if let image = viewModel.selecetedImage {
-                        ZStack {
-                            Image(uiImage: image)
-                                .resizable()
-                                .scaledToFill()
-                                .aspectRatio(contentMode: aspectRatio)
-                            //.frame(width: 80, height: 100)
-                            
-                        }
-                        .overlay(alignment: .bottomLeading, content: {
-                            Button(action: {
-                                aspectRatio = .fill
-                            }){
-                                Image(systemName: "crop")
-                                    .imageScale(.large)
-                                    .bold()
-                                    .foregroundStyle(.white)
-                                    .background(Circle()
-                                        .opacity(0.5))
-                                
-                            }
-                            .padding()
-                        })
-                        
-                    }
-                    else {
-                        ZStack {
-                            Image(systemName: "person.crop.circle")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                                .overlay(alignment: .bottomTrailing, content: {
-                                    Image(systemName: "plus")
-                                        .frame(width: 30, height: 30)
-                                        .foregroundStyle(.white)
-                                        .background(.gray)
-                                        .clipShape(Circle())
-                                })
-                            
-                        }
-                        
-                    }
-                })
-                
-            }
-            .padding([.horizontal, .top], 10)
-        }
-        
-    }
-}
+
 
 #Preview {
     PostView()

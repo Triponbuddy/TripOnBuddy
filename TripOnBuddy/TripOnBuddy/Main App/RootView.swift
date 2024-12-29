@@ -20,43 +20,24 @@ extension Color {
 
 struct RootView: View {
     
-    @State var selectedTab: Tabs
+    @StateObject private var viewModel = RootViewModel()
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack {
                     
-                    switch selectedTab {
+                    switch viewModel.selectedTab {
                     case .mySpace:
                         MySpaceView()
-                            .toolbar {
-                                ToolbarItem(placement: .topBarLeading) {
-                                    Text("TripOnBuddy") // Show username
-                                        .bold()
+                            .toolbar(content: {
+                                ToolbarItem(placement: .topBarLeading, content: {
+                                    Text("TripOnBuddy")
                                         .font(.title)
-                                }
-                                ToolbarItem(placement: .topBarTrailing) {
-                                    NavigationLink(destination: {
-                                        NotificationsView()
-                                    }, label: {
-                                        Image(systemName: "bell")
-                                            .imageScale(.large)
-                                            .padding(.trailing, 5)
-                                        
-                                    })
-                                }
-                                ToolbarItem(placement: .topBarTrailing) {
-                                    NavigationLink(destination: {
-                                        AllChatsView()
-                                    }, label: {
-                                        Image(systemName: "message")
-                                            .imageScale(.large)
-                                            .padding(.trailing, 5)
-                                        
-                                    })
-                                }
-                            }
+                                        .bold()
+                                })
+                                viewModel.toolbarContent()
+                            })
                     case .explore:
                         ExploreView()
                     case .post:
@@ -68,7 +49,7 @@ struct RootView: View {
                     }
                     Spacer()
                     
-                    TabBarView(selectedTab: $selectedTab)
+                    TabBarView(selectedTab: $viewModel.selectedTab)
                         .ignoresSafeArea(edges: .bottom)
                         .padding([.horizontal,.bottom], 10)
                     
@@ -82,5 +63,5 @@ struct RootView: View {
 }
 
 #Preview {
-    RootView(selectedTab: .mySpace)
+    RootView()
 }

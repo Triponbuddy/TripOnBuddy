@@ -9,9 +9,6 @@ import SwiftUI
 import Combine
 import Firebase
 import FirebaseAuth
-
-
-import SwiftUI
 import PhotosUI
 
 struct ImagePicker: UIViewControllerRepresentable {

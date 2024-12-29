@@ -27,7 +27,7 @@ struct ExploreView: View {
                         })
                         .searchable(text: $searchText, prompt: "Search...")
                         .onAppear {
-                            tripDetails = dataServices.getTripsData()
+                            
                         }
                     }
                 }

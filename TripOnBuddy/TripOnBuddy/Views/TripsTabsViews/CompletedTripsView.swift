@@ -21,7 +21,7 @@ struct CompletedTripsView: View {
                 })
             }
             .onAppear {
-                tripDetails = dataServices.getTripsData()
+               // tripDetails = dataServices.getTripsData()
             }
         }
         .scrollIndicators(.hidden)

@@ -7,27 +7,28 @@
 
 import SwiftUI
 import PhotosUI
+import Firebase
 
 struct MySpaceView: View {
     @StateObject private var viewModel = PhotoPickerViewModel()
     @State var yourStories: [StoriesTabModel] = []
+    @State private var posts: [Post] = []
     var dataServices = DataServices()
-    @State var forYouData: [ForYouViewModel] = []
     @State var isTapped: Bool = false
     @Environment(\.colorScheme) var colorScheme
-    var profileDetails: User = User(id: "", userName: "", fullName: "Sunil Sharma", emailId: "")
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack {
-                
+                    
                     ScrollView {
                         //
                         ScrollView(.horizontal) {
                             HStack {
                                 PhotosPicker(selection: $viewModel.imageSelection, matching: .any(of: [.images, .videos, .slomoVideos, .cinematicVideos, .depthEffectPhotos, .panoramas, .timelapseVideos]),label: {
                                     
-                                    if let image = viewModel.selecetedImage {
+                                    if let image = viewModel.selectedImage {
                                         Image(uiImage: image)
                                             .resizable()
                                             .scaledToFill()
@@ -74,7 +75,7 @@ struct MySpaceView: View {
                                 ForEach(0..<14) { item in
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 12)
-                                            .frame(width: 300, height: 200)
+                                            .frame(width: 360, height: 200)
                                             .foregroundStyle(.blue)
                                         VStack {
                                             Spacer()
@@ -107,17 +108,15 @@ struct MySpaceView: View {
                             Spacer()
                         }
                         LazyVGrid(columns: [GridItem()], spacing: 10, content: {
-                            ForEach(forYouData) { item in
-                                SinglePostView(mySpaceViewModel: ForYouViewModel(name: item.name, image: item.image, userName: item.userName, caption: item.caption))
-                            }
+                            
                         })
                     }
                     .scrollIndicators(.hidden)
                 }
                 .padding([.horizontal, .top], 10)
                 .onAppear {
-                    yourStories = dataServices.getData()
-                    forYouData = dataServices.getForYouData()
+                    //
+                    fetchPosts()
                 }
                 
             }.buttonStyle(SimpleButtonStyle())
@@ -127,6 +126,20 @@ struct MySpaceView: View {
             
         }
         .navigationBarBackButtonHidden()
+    }
+    
+    func fetchPosts() {
+        let db = Firestore.firestore()
+        db.collection("posts").getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching posts: \(error.localizedDescription)")
+                return
+            }
+            guard let documents = snapshot?.documents else { return }
+            posts = documents.compactMap { doc -> Post? in
+                try? doc.data(as: Post.self)
+            }
+        }
     }
 }
 

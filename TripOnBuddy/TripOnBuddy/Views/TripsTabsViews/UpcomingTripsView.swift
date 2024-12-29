@@ -21,7 +21,7 @@ struct UpcomingTripsView: View {
                 })
             }
             .onAppear {
-                tripDetails = dataServices.getTripsData()
+                //tripDetails = dataServices.getTripsData()
             }
         }
         .scrollIndicators(.hidden)
