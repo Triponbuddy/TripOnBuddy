@@ -13,7 +13,7 @@ struct SinglePostView: View {
     @State private var isCommentSectionActive: Bool = false
     @State var likeCount: Int = 0
     
-    var post: Post  // Updated to use Post model directly
+    var post: Post  // Directly pass a valid Post instance
     
     var body: some View {
         VStack {
@@ -39,7 +39,7 @@ struct SinglePostView: View {
             .padding(.bottom, 10)
             
             // Caption
-            Text(post.caption)
+            Text(post.caption ?? "")
                 .font(.body)
                 .padding(.bottom, 10)
             
@@ -79,10 +79,12 @@ struct SinglePostView: View {
 #Preview {
     SinglePostView(post: Post(
         id: "1",
-        userName: "sunil_sharma",
-        fullName: "Sunil Sharma",
-        imageUrl: "https://example.com/image.jpg",
-        caption: "Exploring the mountains!"
-    ))
+        data: [
+            "userName": "sunil_sharma",
+            "fullName": "Sunil Sharma",
+            "mediaUrl": "https://example.com/sample.jpg",
+            "caption": "Exploring the mountains!"
+        ]
+    )!)
 }
 

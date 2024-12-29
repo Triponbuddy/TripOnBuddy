@@ -79,15 +79,21 @@ final class PhotoPickerViewModel: ObservableObject {
 extension PhotoPickerViewModel {
     func uploadPost(caption: String, completion: @escaping (Error?) -> Void) {
         guard let selectedImage = selectedImage else { return }
+
         uploadPostImage(selectedImage) { result in
             switch result {
             case .success(let imageUrl):
-                let post = Post(id: UUID().uuidString, userName: "",
-                                fullName: "",
-                                imageUrl: imageUrl, caption: caption)
+                let postId = UUID().uuidString
+                let postData: [String: Any] = [
+                    "id": postId,
+                    "userName": "", // Replace with actual user data
+                    "fullName": "", // Replace with actual user data
+                    "mediaUrl": imageUrl,
+                    "caption": caption
+                ]
 
                 let db = Firestore.firestore()
-                db.collection("posts").document(post.id).setData(try! post.asDictionary()) { error in
+                db.collection("posts").document(postId).setData(postData) { error in
                     completion(error)
                 }
 

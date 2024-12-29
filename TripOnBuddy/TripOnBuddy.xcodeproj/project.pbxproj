@@ -78,6 +78,8 @@
 		65FD1D342D20A894005B5E7D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD1D332D20A894005B5E7D /* Post.swift */; };
 		65FD1D362D20E5D5005B5E7D /* AddCaptionViewToPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD1D352D20E5D5005B5E7D /* AddCaptionViewToPost.swift */; };
 		65FD1D382D20FEE4005B5E7D /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD1D372D20FEE4005B5E7D /* RootViewModel.swift */; };
+		65FD1D3A2D210A02005B5E7D /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD1D392D210A02005B5E7D /* PostViewModel.swift */; };
+		65FD1D3E2D211A60005B5E7D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD1D3D2D211A60005B5E7D /* ProfileViewModel.swift */; };
 		65FEAAEA2C0E392A005DC2CA /* SingleChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEAAE92C0E392A005DC2CA /* SingleChatView.swift */; };
 		65FEAAEC2C0E3AAB005DC2CA /* CustomChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEAAEB2C0E3AAB005DC2CA /* CustomChatBubbleView.swift */; };
 /* End PBXBuildFile section */
@@ -127,6 +129,8 @@
 		65FD1D332D20A894005B5E7D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		65FD1D352D20E5D5005B5E7D /* AddCaptionViewToPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCaptionViewToPost.swift; sourceTree = "<group>"; };
 		65FD1D372D20FEE4005B5E7D /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		65FD1D392D210A02005B5E7D /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		65FD1D3D2D211A60005B5E7D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		65FEAAE92C0E392A005DC2CA /* SingleChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChatView.swift; sourceTree = "<group>"; };
 		65FEAAEB2C0E3AAB005DC2CA /* CustomChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChatBubbleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,7 +210,9 @@
 			children = (
 				65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */,
 				65FD1D312D20A58F005B5E7D /* PhotoPickerViewModel.swift */,
+				65FD1D392D210A02005B5E7D /* PostViewModel.swift */,
 				65FD1D372D20FEE4005B5E7D /* RootViewModel.swift */,
+				65FD1D3D2D211A60005B5E7D /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 			files = (
 				65953F992BA6199E00381628 /* RootView.swift in Sources */,
 				65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */,
+				65FD1D3A2D210A02005B5E7D /* PostViewModel.swift in Sources */,
 				65FC27CE2BA7700F00BD123F /* ProfileView.swift in Sources */,
 				656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */,
 				658DD7D02BD6352D00F10E3A /* CustomButton.swift in Sources */,
@@ -455,6 +462,7 @@
 				65B85BF62BA6467D00DC6BA2 /* InputOtpView.swift in Sources */,
 				65953F972BA6199E00381628 /* TripOnBuddyApp.swift in Sources */,
 				65585F612BBAB26A006EAE60 /* CompletedTripsView.swift in Sources */,
+				65FD1D3E2D211A60005B5E7D /* ProfileViewModel.swift in Sources */,
 				65FEAAEC2C0E3AAB005DC2CA /* CustomChatBubbleView.swift in Sources */,
 				6559BAAE2BF28F2C007BA81B /* AddNewTripView.swift in Sources */,
 				65FD1D342D20A894005B5E7D /* Post.swift in Sources */,
@@ -631,7 +639,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -668,7 +676,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

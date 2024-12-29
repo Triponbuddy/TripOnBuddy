@@ -10,7 +10,11 @@ import Firebase
 
 struct AddCaptionViewToPost: View {
     let selectedImage: UIImage
+    let userName: String
+    let fullName: String
+    
     @State private var caption: String = ""
+    @EnvironmentObject var postViewModel: PostViewModel
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
@@ -30,8 +34,23 @@ struct AddCaptionViewToPost: View {
             Spacer()
             
             Button(action: {
-                savePostToFirestore()
-                dismiss()
+                Task {
+                    await postViewModel.uploadMediaPost(
+                        image: selectedImage,
+                        userName: userName,
+                        fullName: fullName,
+                        caption: caption
+                    ) { success in
+                        if success {
+                            print("Post uploaded successfully.")
+                            DispatchQueue.main.async {
+                                dismiss()
+                            }
+                        } else {
+                            print("Failed to upload post.")
+                        }
+                    }
+                }
             }) {
                 Text("Post")
                     .bold()
@@ -45,29 +64,9 @@ struct AddCaptionViewToPost: View {
         }
     }
     
-    func savePostToFirestore() {
-        guard let currentUser = Auth.auth().currentUser else { return }
-        
-        let db = Firestore.firestore()
-        let post = Post(
-            id: UUID().uuidString,
-            userName: currentUser.displayName ?? "Anonymous",
-            fullName: currentUser.displayName ?? "Anonymous",
-            imageUrl: "URL_placeholder", // Replace with image upload logic
-            caption: caption
-        )
-        
-        db.collection("posts").document(post.id).setData(post.asDictionary()) { error in
-            if let error = error {
-                print("Error saving post: \(error.localizedDescription)")
-            } else {
-                print("Post successfully saved!")
-            }
-        }
-    }
 }
 
 
 #Preview {
-    AddCaptionViewToPost(selectedImage: .TOB)
+    AddCaptionViewToPost(selectedImage: .TOB, userName: "example", fullName: "Sunil Sharma" )
 }
