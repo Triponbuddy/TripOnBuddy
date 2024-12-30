@@ -22,7 +22,7 @@ protocol AuthenticationFormProtocol {
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? // Stores the currently signed-in user session
     @Published var currentUser: User? // Stores the current user's profile data
-    
+    private let db = Firestore.firestore()
     // Initialize ViewModel and fetch user data if already logged in
     init() {
         self.userSession = Auth.auth().currentUser
@@ -31,7 +31,19 @@ class AuthViewModel: ObservableObject {
             await fetchUser()
         }
     }
-    
+    // check username if it exist or not
+    func checkIfUsernameExists(_ username: String, completion: @escaping (Bool) -> Void) {
+            db.collection("users")
+                .whereField("userName", isEqualTo: username)
+                .getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error checking username: \(error.localizedDescription)")
+                        completion(false)
+                        return
+                    }
+                    completion(!(snapshot?.documents.isEmpty ?? true)) // Username exists if documents are not empty
+                }
+        }
     // Sign in user with email and password
     func signIN(withEmail email: String, password: String) async throws {
         do {

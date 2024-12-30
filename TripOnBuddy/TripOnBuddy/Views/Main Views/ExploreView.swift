@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExploreView: View {
     @State var tripDetails: [TripsDetails] = []
-    var dataServices = DataServices()
+    
     @State var searchText = ""
     @State private var addNewTrip: Bool = false
     var body: some View {

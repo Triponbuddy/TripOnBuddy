@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UpcomingTripsView: View {
     @State var tripDetails: [TripsDetails] = []
-    var dataServices = DataServices()
+    
     var body: some View {
         VStack(spacing: 10) {
             ScrollView {

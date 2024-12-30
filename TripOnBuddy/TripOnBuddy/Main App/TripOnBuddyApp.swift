@@ -9,18 +9,25 @@ import SwiftUI
 import FirebaseCore
 import FirebaseAuth
 
-
-
 @main
 struct TripOnBuddyApp: App {
-    @StateObject var viewModel = AuthViewModel()
+    // Initialize the authentication view model as a shared environment object
+    @StateObject private var authViewModel = AuthViewModel()
+    
     init() {
-        FirebaseApp.configure()
+        configureFirebase()
     }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(viewModel)
+                .environmentObject(authViewModel) // Pass the auth view model to the environment
         }
+    }
+    
+    /// Configures the Firebase SDK
+    private func configureFirebase() {
+        FirebaseApp.configure()
+        print("Firebase successfully configured.")
     }
 }

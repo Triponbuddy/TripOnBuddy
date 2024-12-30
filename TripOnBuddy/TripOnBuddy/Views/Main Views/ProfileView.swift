@@ -7,94 +7,124 @@
 
 import SwiftUI
 
+// View displaying the user's profile, including personal details and posts
 struct ProfileView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel // For user authentication
-    @StateObject private var viewModel = ProfileViewModel() // ViewModel for Profile
+    @EnvironmentObject var authViewModel: AuthViewModel // ViewModel for authentication
+    @StateObject private var viewModel = ProfileViewModel() // ViewModel for managing profile data
 
     var body: some View {
         NavigationStack {
             VStack {
-                if let user = authViewModel.currentUser {
-                    // User Info Section
-                    userInfoSection(user: user)
+                // Header Section: Profile Picture, Name, and Stats
+                HStack {
+                    VStack(alignment: .leading, spacing: 6) {
+                        // Profile Picture Placeholder
+                        Image(systemName: "person.crop.circle.fill")
+                            .resizable()
+                            .frame(width: 70, height: 70)
 
-                    Divider()
+                        // Full Name
+                        Text(authViewModel.currentUser?.fullName ?? "Full Name")
+                            .font(.system(size: 16))
 
-                    // User Posts Section
-                    userPostsSection
-                } else {
-                    Text("Please log in to view your profile.")
-                        .foregroundColor(.gray)
+                        // Username
+                        Text("@\(authViewModel.currentUser?.userName ?? "userName")")
+                            .font(.system(size: 14))
+
+                        // User Bio
+                        Text(authViewModel.currentUser?.bio ?? "")
+                            .font(.system(size: 16))
+                    }
+                    .padding(.top, 10)
+
+                    Spacer()
+
+                    // Buddies Count (Placeholder for now)
+                    VStack {
+                        Text("0") // Replace with actual count in the future
+                            .bold()
+                        Text("Buddies")
+                    }
+
+                    Spacer()
+                }
+
+                Spacer()
+
+                // Sign Out Button
+                Button("Sign Out") {
+                    authViewModel.signOut()
+                }
+
+                // Posts Section
+                ScrollView {
+                    if viewModel.isLoading {
+                        // Show a loading indicator if posts are being fetched
+                        ProgressView("Loading posts...")
+                    } else if viewModel.errorMessage != nil {
+                        // Show an error message if post retrieval fails
+                        Text("Can't retrieve Posts")
+                            .foregroundColor(.red)
+                    } else if viewModel.userPosts.isEmpty {
+                        // Show a message if there are no posts
+                        Text("You haven't posted anything yet.")
+                            .foregroundColor(.gray)
+                    } else {
+                        // Display posts in a grid layout
+                        LazyVGrid(
+                            columns: [
+                                GridItem(.flexible(), spacing: 2),
+                                GridItem(.flexible(), spacing: 2),
+                                GridItem(.flexible(), spacing: 2)
+                            ],
+                            spacing: 3
+                        ) {
+                            ForEach(viewModel.userPosts) { post in
+                                // Display each post as an AsyncImage
+                                AsyncImage(url: URL(string: post.imageUrl)) { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 140, height: 140)
+                                        .clipped()
+                                } placeholder: {
+                                    // Placeholder while the image loads
+                                    Rectangle()
+                                        .fill(Color.gray.opacity(0.2))
+                                        .frame(width: 100, height: 100)
+                                        .cornerRadius(8)
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            .navigationTitle("Profile")
+            // Toolbar Section
+            .toolbar(content: {
+                // Leading Toolbar Item: Display Username
+                ToolbarItem(placement: .topBarLeading) {
+                    Text(authViewModel.currentUser?.userName.capitalized ?? "TripOnBuddy")
+                        .font(.title)
+                        .bold()
+                }
+
+                // Trailing Toolbar Item: Menu Icon (placeholder for settings or menu)
+                ToolbarItem(placement: .topBarTrailing) {
+                    Image(systemName: "line.3.horizontal")
+                }
+            })
             .onAppear {
+                // Fetch user posts when the view appears
                 Task {
                     await viewModel.fetchUserPosts()
                 }
             }
-        }
-    }
-
-    @ViewBuilder
-    private func userInfoSection(user: User) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                AsyncImage(url: URL(string: user.userImage ?? "")) { image in
-                    image.resizable()
-                } placeholder: {
-                    Image(systemName: "person.crop.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                        .foregroundColor(.gray)
-                }
-                .frame(width: 80, height: 80)
-                .clipShape(Circle())
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(user.fullName)
-                        .font(.headline)
-                    Text("@\(user.userName)")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    Text(user.bio ?? "No bio available.")
-                        .font(.body)
-                        .foregroundColor(.secondary)
-                }
-            }
-            Button("Sign Out") {
-                authViewModel.signOut()
-            }
-            .foregroundColor(.red)
-        }
-        .padding()
-    }
-
-    @ViewBuilder
-    private var userPostsSection: some View {
-        ScrollView {
-            if viewModel.isLoading {
-                ProgressView("Loading posts...")
-            } else if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-            } else if viewModel.userPosts.isEmpty {
-                Text("You haven't posted anything yet.")
-                    .foregroundColor(.gray)
-            } else {
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 15) {
-                    ForEach(viewModel.userPosts) { post in
-                        SinglePostView(post: post)
-                    }
-                }
-            }
+            .padding(.horizontal, 8)
         }
     }
 }
 
 #Preview {
     ProfileView()
-        .environmentObject(AuthViewModel())
+        .environmentObject(AuthViewModel()) // Provide the AuthViewModel for testing
 }

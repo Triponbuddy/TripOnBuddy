@@ -13,7 +13,6 @@ struct MySpaceView: View {
     @StateObject private var viewModel = PhotoPickerViewModel()
     @State var yourStories: [StoriesTabModel] = []
     @State private var posts: [Post] = []
-    var dataServices = DataServices()
     @State var isTapped: Bool = false
     @Environment(\.colorScheme) var colorScheme
     

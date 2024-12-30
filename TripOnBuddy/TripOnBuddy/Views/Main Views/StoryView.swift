@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StoryView: View {
     @State private var name: String = ""
-    var dataServices = DataServices()
+    
     var stories: StoriesTabModel
     @State private var isViewed: Bool = false
     @State private var isDown = false

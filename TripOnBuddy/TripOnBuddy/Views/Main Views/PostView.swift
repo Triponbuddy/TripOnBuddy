@@ -18,32 +18,34 @@ struct PostView: View {
                     Image(uiImage: selectedImage)
                         .resizable()
                         .scaledToFill()
-                        .frame(height: UIScreen.main.bounds.height / 3)
+                        .frame(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.height / 3)
                         .clipped()
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
                 } else {
                     Text("Select an image to upload")
                         .font(.headline)
                         .foregroundColor(.gray)
                         .frame(height: UIScreen.main.bounds.height / 3)
                 }
-
                 ScrollView {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                    LazyVGrid(columns: [GridItem(.flexible(), spacing: 1), GridItem(.flexible(), spacing: 1), GridItem(.flexible(), spacing: 1)], spacing: 3) {
                         ForEach(postViewModel.galleryImages, id: \.self) { image in
-                            Image(uiImage: image)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 70, height: 70)
-                                .clipped()
-                                .cornerRadius(6)
-                                .onTapGesture {
-                                    postViewModel.selectedImage = image
-                                }
-                        }
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: (UIScreen.main.bounds.width / 4) + 26, height: (UIScreen.main.bounds.width / 3) - 3)
+                                    .clipped()
+                                    .cornerRadius(3)
+                                    .onTapGesture {
+                                        postViewModel.selectedImage = image
+                                    }
+                            }
                     }
-                    .padding()
+                    .padding(0)
                 }
+                
             }
+            .padding(.horizontal, 8)
             .onAppear {
                 postViewModel.fetchGalleryMedia()
             }
