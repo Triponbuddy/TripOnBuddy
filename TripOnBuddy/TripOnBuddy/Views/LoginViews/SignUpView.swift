@@ -99,7 +99,7 @@ struct SignUpView: View {
                         
                         // Username input with real-time availability check
                         CustomTextFieldView(inputText: $userName, title: "User Name", placeholder: "username", isSecureField: false)
-                            .onChange(of: userName) { _ in
+                            .onChange(of: userName) {
                                 checkUsernameAvailability() // Check if the username is available
                             }
                         if isCheckingUsername {

@@ -13,13 +13,6 @@ struct TripsView: View {
         ZStack {
             //BackgroundColourView()
             VStack {
-                HStack {
-                    Text("Trips View")
-                        .font(.title)
-                        .bold()
-                    Spacer()
-                    EditButton()
-                }
                 TripsTabBarView(switchTabs: $switchTabs)
                 switch switchTabs {
                 case .completed:
@@ -32,6 +25,7 @@ struct TripsView: View {
             .padding([.horizontal, .top], 10)
            // .ignoresSafeArea(edges: .bottom)
             .navigationTitle("All Trips")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

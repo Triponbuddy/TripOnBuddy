@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ExploreView: View {
     @State var tripDetails: [TripsDetails] = []
-    
     @State var searchText = ""
     @State private var addNewTrip: Bool = false
     var body: some View {
@@ -37,6 +36,7 @@ struct ExploreView: View {
                 .scrollIndicators(.hidden)
                 .padding(.horizontal, 4)
             }
+            .navigationBarTitleDisplayMode(.large)
         }
         .overlay(alignment: .bottomTrailing, content: {
             Button(action: {

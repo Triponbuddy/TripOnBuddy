@@ -10,6 +10,7 @@ import SwiftUI
 struct SinglePostView: View {
     @State var isLiked: Bool = false
     @State var isFollowed: Bool = false
+    @State var showMenuOptions: Bool = false
     @State private var isCommentSectionActive: Bool = false
     @State var likeCount: Int = 0
     
@@ -22,9 +23,21 @@ struct SinglePostView: View {
                 Text(post.fullName) // Display full name
                     .font(.headline)
                 Spacer()
-                Text("@\(post.userName)") // Display username
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                Button(action: {
+                    
+                }, label: {
+                    if isFollowed {
+                        Image(systemName: "ellipsis")
+                            .rotationEffect(.degrees(90))
+                    }
+                    else {
+                        Button(action: {
+                            isFollowed = true
+                        }, label: {
+                            Text("Add Buddy")
+                        })
+                    }
+                })
             }
             .padding(.bottom, 5)
             
@@ -32,17 +45,24 @@ struct SinglePostView: View {
             AsyncImage(url: URL(string: post.imageUrl)) { image in
                 image.resizable()
             } placeholder: {
-                ProgressView()
+                //ProgressView()
+                Image("India Gate")
+                    .resizable(resizingMode: .stretch)
+                
             }
             .aspectRatio(contentMode: .fit)
             .cornerRadius(8)
             .padding(.bottom, 10)
             
-            // Caption
-            Text(post.caption ?? "")
+            HStack {
+                Group {
+                    Text(post.userName.capitalized).bold()
+                    + Text(" ") + Text(post.caption ?? "")
+                        
+                }
                 .font(.body)
-                .padding(.bottom, 10)
-            
+                Spacer()
+            }
             // Actions
             HStack {
                 Button(action: {
@@ -73,6 +93,9 @@ struct SinglePostView: View {
                 .presentationDetents([.medium, .large])
                 .presentationDragIndicator(.visible)
         }
+        .sheet(isPresented: $showMenuOptions, content: {
+            
+        })
     }
 }
 
@@ -83,7 +106,7 @@ struct SinglePostView: View {
             "userName": "sunil_sharma",
             "fullName": "Sunil Sharma",
             "mediaUrl": "https://example.com/sample.jpg",
-            "caption": "Exploring the mountains!"
+            "caption": "Exploring the mountains!, with the friends"
         ]
     )!)
 }

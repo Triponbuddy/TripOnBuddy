@@ -38,7 +38,6 @@
 		6505DABE2C57E8A700BB1814 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 6505DABD2C57E8A700BB1814 /* FirebaseVertexAI-Preview */; };
 		65080E202C99E3D100057CD3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */; };
 		651E06232BD6EA52008917C6 /* HotSpotsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E06222BD6EA52008917C6 /* HotSpotsModel.swift */; };
-		651E0DE62D1FDB8C00AB6867 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 651E0DE52D1FDB8C00AB6867 /* GoogleService-Info.plist */; };
 		65275C632BA7791A00EBCE34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65275C622BA7791A00EBCE34 /* User.swift */; };
 		65585F5C2BBAADA3006EAE60 /* TripsTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */; };
 		65585F5E2BBAAEBA006EAE60 /* TripsTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */; };
@@ -54,6 +53,9 @@
 		656B97982BA623A300A1F34C /* MySpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656B97972BA623A300A1F34C /* MySpaceView.swift */; };
 		657284562BC8657200DAF637 /* AllChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657284552BC8657200DAF637 /* AllChatsView.swift */; };
 		657284582BC8661600DAF637 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657284572BC8661500DAF637 /* NotificationsView.swift */; };
+		6573D0632D235E0E000A5EA2 /* CustomOptionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573D0622D235E0E000A5EA2 /* CustomOptionsMenu.swift */; };
+		6573D0692D23C484000A5EA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6573D0682D23C484000A5EA2 /* GoogleService-Info.plist */; };
+		6573D06B2D23DA00000A5EA2 /* GalleryGridViewForPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573D06A2D23DA00000A5EA2 /* GalleryGridViewForPhotos.swift */; };
 		658DD7CD2BD6307800F10E3A /* UserProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DD7CC2BD6307800F10E3A /* UserProfilePageView.swift */; };
 		658DD7D02BD6352D00F10E3A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DD7CF2BD6352D00F10E3A /* CustomButton.swift */; };
 		658DD7D22BD63FF300F10E3A /* ExploreTripCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658DD7D12BD63FF300F10E3A /* ExploreTripCardView.swift */; };
@@ -87,7 +89,6 @@
 		650241AD2CA61AB000BC94E6 /* CommentSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSectionView.swift; sourceTree = "<group>"; };
 		65080E1F2C99E3D100057CD3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		651E06222BD6EA52008917C6 /* HotSpotsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSpotsModel.swift; sourceTree = "<group>"; };
-		651E0DE52D1FDB8C00AB6867 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65275C622BA7791A00EBCE34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65585F5B2BBAADA3006EAE60 /* TripsTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarView.swift; sourceTree = "<group>"; };
 		65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTabBarButton.swift; sourceTree = "<group>"; };
@@ -103,6 +104,9 @@
 		656B97972BA623A300A1F34C /* MySpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceView.swift; sourceTree = "<group>"; };
 		657284552BC8657200DAF637 /* AllChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChatsView.swift; sourceTree = "<group>"; };
 		657284572BC8661500DAF637 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		6573D0622D235E0E000A5EA2 /* CustomOptionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOptionsMenu.swift; sourceTree = "<group>"; };
+		6573D0682D23C484000A5EA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6573D06A2D23DA00000A5EA2 /* GalleryGridViewForPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGridViewForPhotos.swift; sourceTree = "<group>"; };
 		658DD7CC2BD6307800F10E3A /* UserProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePageView.swift; sourceTree = "<group>"; };
 		658DD7CF2BD6352D00F10E3A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		658DD7D12BD63FF300F10E3A /* ExploreTripCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTripCardView.swift; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 				656A8E652BB09E5C00985076 /* StoryView.swift */,
 				65FC27CB2BA7700200BD123F /* TripsView.swift */,
 				65FC27C92BA76FF500BD123F /* PostView.swift */,
+				6573D06A2D23DA00000A5EA2 /* GalleryGridViewForPhotos.swift */,
 				65FD1D352D20E5D5005B5E7D /* AddCaptionViewToPost.swift */,
 				65FC27C72BA76FEA00BD123F /* ExploreView.swift */,
 				65FC27CD2BA7700F00BD123F /* ProfileView.swift */,
@@ -302,7 +307,7 @@
 				65953F962BA6199E00381628 /* TripOnBuddyApp.swift */,
 				65953F982BA6199E00381628 /* RootView.swift */,
 				659ED7B82C9BAF2C0028D783 /* ContentView.swift */,
-				651E0DE52D1FDB8C00AB6867 /* GoogleService-Info.plist */,
+				6573D0682D23C484000A5EA2 /* GoogleService-Info.plist */,
 			);
 			path = "Main App";
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				65585F5D2BBAAEBA006EAE60 /* TripsTabBarButton.swift */,
 				656A8E672BB0A8BD00985076 /* CustomStoryView.swift */,
 				656A8E6B2BB0ACF800985076 /* SinglePostView.swift */,
+				6573D0622D235E0E000A5EA2 /* CustomOptionsMenu.swift */,
 				650241AD2CA61AB000BC94E6 /* CommentSectionView.swift */,
 				65B85BF52BA6467D00DC6BA2 /* InputOtpView.swift */,
 			);
@@ -429,8 +435,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				65953F9E2BA619A000381628 /* Preview Assets.xcassets in Resources */,
+				6573D0692D23C484000A5EA2 /* GoogleService-Info.plist in Resources */,
 				65953F9B2BA619A000381628 /* Assets.xcassets in Resources */,
-				651E0DE62D1FDB8C00AB6867 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +457,7 @@
 				656A8E662BB09E5C00985076 /* StoryView.swift in Sources */,
 				658DD7D22BD63FF300F10E3A /* ExploreTripCardView.swift in Sources */,
 				659ED7B92C9BAF2C0028D783 /* ContentView.swift in Sources */,
+				6573D0632D235E0E000A5EA2 /* CustomOptionsMenu.swift in Sources */,
 				65FC27C22BA76AC800BD123F /* TabBarView.swift in Sources */,
 				65FC27CC2BA7700200BD123F /* TripsView.swift in Sources */,
 				650241AE2CA61AB000BC94E6 /* CommentSectionView.swift in Sources */,
@@ -471,6 +478,7 @@
 				65585F632BBAB274006EAE60 /* UpcomingTripsView.swift in Sources */,
 				65FD1D322D20A58F005B5E7D /* PhotoPickerViewModel.swift in Sources */,
 				657284582BC8661600DAF637 /* NotificationsView.swift in Sources */,
+				6573D06B2D23DA00000A5EA2 /* GalleryGridViewForPhotos.swift in Sources */,
 				65B2EC422BB93C4F00B775CC /* CustomTripCardView.swift in Sources */,
 				65FEAAEA2C0E392A005DC2CA /* SingleChatView.swift in Sources */,
 				65B85BF22BA6420F00DC6BA2 /* CustomTextFieldView.swift in Sources */,
@@ -628,7 +636,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Trip On Buddy";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSCameraUsageDescription = sadfasdasd;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Need the access to let user post images.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "App needs access to your photo library to upload images.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "add photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -665,7 +673,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Trip On Buddy";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSCameraUsageDescription = sadfasdasd;
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Need the access to let user post images.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "App needs access to your photo library to upload images.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "add photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

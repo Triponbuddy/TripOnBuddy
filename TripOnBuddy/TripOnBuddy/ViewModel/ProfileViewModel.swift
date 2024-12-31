@@ -39,7 +39,7 @@ class ProfileViewModel: ObservableObject {
             // Map Firestore documents to Post objects
             let posts = snapshot.documents.compactMap { doc -> Post? in
                 let data = doc.data() // Get raw data from Firestore document
-                print("Raw Firestore Data: \(data)") // Debugging: Print the raw Firestore data
+              //  print("Raw Firestore Data: \(data)") // Debugging: Print the raw Firestore data
                 return Post(id: doc.documentID, data: data) // Convert data to a Post object
             }
             self.userPosts = posts // Update the published userPosts property with fetched posts

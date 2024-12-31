@@ -79,12 +79,17 @@ class AuthViewModel: ObservableObject {
             
             // Create a user object to store in Firestore
             let user = User(
-                id: result.user.uid,
-                userName: username,
-                fullName: fullName,
-                userImage: profileImageUrl,
-                emailId: email
-            )
+                        id: result.user.uid,
+                        userName: username,
+                        fullName: fullName,
+                        userImage: profileImageUrl,
+                        bio: nil,
+                        profession: nil,
+                        gender: nil,
+                        emailId: email,
+                        followers: [],
+                        following: []
+                    )
             
             // Encode user data and save to Firestore
             let encodedUser = try Firestore.Encoder().encode(user)
@@ -134,17 +139,22 @@ class AuthViewModel: ObservableObject {
     
     // Fetch the current user's profile data from Firestore
     func fetchUser() async {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("DEBUG: No authenticated user found.")
+            return
+        }
+        
+        print("DEBUG: Fetching user with uid: \(uid)")
         
         do {
             let snapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
             
-            // Decode and load user data if it exists
             if let data = snapshot.data() {
+                print("DEBUG: User data: \(data)")
                 self.currentUser = try Firestore.Decoder().decode(User.self, from: data)
-                print("DEBUG: Current User is \(String(describing: self.currentUser))")
+                print("DEBUG: Current user: \(String(describing: self.currentUser))")
             } else {
-                print("DEBUG: No user data found for uid \(uid)")
+                print("DEBUG: No user document found for uid: \(uid)")
             }
         } catch {
             print("DEBUG: Error fetching user: \(error.localizedDescription)")
@@ -200,6 +210,41 @@ class AuthViewModel: ObservableObject {
         } catch {
             print("DEBUG: Failed to fetch user profile with error: \(error.localizedDescription)")
             return nil
+        }
+    }
+   
+    func followUser(followedUserId: String) async {
+        guard let currentUserId = currentUser?.id else {
+            print("DEBUG: No current user logged in.")
+            return
+        }
+        
+        do {
+            let currentUserRef = db.collection("users").document(currentUserId)
+            let followedUserRef = db.collection("users").document(followedUserId)
+            
+            // Fetch the followed user's data
+            let followedUserSnapshot = try await followedUserRef.getDocument()
+            
+            var followedUser: User
+            do {
+                followedUser = try followedUserSnapshot.data(as: User.self)
+            } catch {
+                print("DEBUG: Error decoding followed user: \(error.localizedDescription)")
+                return
+            }
+            
+            // Add the followed user's ID to the current user's following list
+            currentUser?.following.append(followedUserId)
+            try await currentUserRef.updateData(["following": FieldValue.arrayUnion([followedUserId])])
+            
+            // Add the current user's ID to the followed user's followers list
+            followedUser.followers.append(currentUserId)
+            try await followedUserRef.updateData(["followers": FieldValue.arrayUnion([currentUserId])])
+            
+            print("DEBUG: Successfully followed user \(followedUserId).")
+        } catch {
+            print("DEBUG: Error following user - \(error.localizedDescription)")
         }
     }
 }

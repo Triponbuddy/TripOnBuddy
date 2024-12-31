@@ -17,25 +17,29 @@ struct ProfileView: View {
             VStack {
                 // Header Section: Profile Picture, Name, and Stats
                 HStack {
-                    VStack(alignment: .leading, spacing: 6) {
-                        // Profile Picture Placeholder
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .frame(width: 70, height: 70)
+                    
+                    if let user = authViewModel.currentUser {
+                        VStack(alignment: .leading, spacing: 6) {
+                            // Profile Picture Placeholder
+                            Image(systemName: "person.crop.circle.fill")
+                                .resizable()
+                                .frame(width: 70, height: 70)
 
-                        // Full Name
-                        Text(authViewModel.currentUser?.fullName ?? "Full Name")
-                            .font(.system(size: 16))
+                            // Full Name
+                            Text(user.fullName)
+                                .font(.system(size: 16))
 
-                        // Username
-                        Text("@\(authViewModel.currentUser?.userName ?? "userName")")
-                            .font(.system(size: 14))
+                            // Username
+                            Text("@\(user.userName)")
+                                .font(.system(size: 14))
 
-                        // User Bio
-                        Text(authViewModel.currentUser?.bio ?? "")
-                            .font(.system(size: 16))
+                            // User Bio
+                            Text(user.bio ?? "")
+                                .font(.system(size: 16))
+                        }
+                        .padding(.top, 10)
                     }
-                    .padding(.top, 10)
+                    
 
                     Spacer()
 
@@ -73,11 +77,11 @@ struct ProfileView: View {
                         // Display posts in a grid layout
                         LazyVGrid(
                             columns: [
-                                GridItem(.flexible(), spacing: 2),
-                                GridItem(.flexible(), spacing: 2),
-                                GridItem(.flexible(), spacing: 2)
+                                GridItem(.flexible(), spacing: 0),
+                                GridItem(.flexible(), spacing: 0),
+                                GridItem(.flexible(), spacing: 0)
                             ],
-                            spacing: 3
+                            spacing: 2
                         ) {
                             ForEach(viewModel.userPosts) { post in
                                 // Display each post as an AsyncImage
@@ -85,14 +89,10 @@ struct ProfileView: View {
                                     image
                                         .resizable()
                                         .scaledToFill()
-                                        .frame(width: 140, height: 140)
+                                        .frame(width: 120, height: 120)
                                         .clipped()
                                 } placeholder: {
                                     // Placeholder while the image loads
-                                    Rectangle()
-                                        .fill(Color.gray.opacity(0.2))
-                                        .frame(width: 100, height: 100)
-                                        .cornerRadius(8)
                                 }
                             }
                         }
@@ -114,8 +114,10 @@ struct ProfileView: View {
                 }
             })
             .onAppear {
+                
                 // Fetch user posts when the view appears
                 Task {
+                     
                     await viewModel.fetchUserPosts()
                 }
             }

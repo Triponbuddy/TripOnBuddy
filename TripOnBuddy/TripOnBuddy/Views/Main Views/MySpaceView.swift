@@ -15,7 +15,7 @@ struct MySpaceView: View {
     @State private var posts: [Post] = []
     @State var isTapped: Bool = false
     @Environment(\.colorScheme) var colorScheme
-    
+    @StateObject private var profileViewModel = ProfileViewModel()
     var body: some View {
         NavigationStack {
             ZStack {
@@ -108,6 +108,10 @@ struct MySpaceView: View {
                         }
                         LazyVGrid(columns: [GridItem()], spacing: 10, content: {
                             
+                            ForEach(profileViewModel.userPosts) { post in
+                                
+                                SinglePostView(post: post)
+                            }
                         })
                     }
                     .scrollIndicators(.hidden)
@@ -116,6 +120,9 @@ struct MySpaceView: View {
                 .onAppear {
                     //
                     fetchPosts()
+                    Task {
+                        await ProfileViewModel().fetchUserPosts()
+                    }
                 }
                 
             }.buttonStyle(SimpleButtonStyle())
